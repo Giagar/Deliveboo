@@ -3,7 +3,7 @@
 
     <div class="product-container d-flex align-items-center flex-column">
         <div class="card" style="width: 20rem;">
-            <img class="card-img-top" src="{{$dish->img}}" alt="Card image cap">
+            <img class="card-img-top" src="{{asset($dish->img)}}" >
             <div class="card-body">
             <p class="card-text"><strong>#{{$dish->id}}</strong></p>
             <p class="card-text"><strong>Nome: </strong>{{$dish->name}}</p>
@@ -17,7 +17,7 @@
             <a href="{{route('dishes.edit',['dish'=>$dish->id])}}" class="btn btn-success">Modifica</a>
               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{$dish->id}}">Cancella<i class="fas fa-trash"></i>
               </button>
-              @include('dishes.layout.modal')
+              @include('layouts.modal')
             </div>
             </div>
         </div>

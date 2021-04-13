@@ -30,24 +30,24 @@ if(isset($edit) && !empty($edit)){//edit
       </div>
 
       <div class="form-group">
-        <label for="visible">Disponibilità</label>
+        <label for="visible">Disponibile</label>
         <select class="form-control"  name="visible">
-          <option value="0" {{ isset($dish) && $dish->visible=="0" ? 'selected=selected' : ""}}>Sì</option>
-          <option value="1" {{ isset($dish) && $dish->visible=="1" ? 'selected=selected' : ""}}>No</option>
+          <option value="1" {{ isset($dish) && $dish->visible=="1" ? 'selected' : ""}}>Sì</option>
+          <option value="0" {{ isset($dish) && $dish->visible=="0" ? 'selected' : ""}}>No</option>
         </select>
       </div>
       <div class="form-group">
         <label for="vegan">Vegano</label>
         <select class="form-control"  name="vegan">
-          <option value="0" {{ isset($dish) && $dish->vegan=="0" ? 'selected=selected' : ""}}>Sì</option>
-          <option value="1" {{ isset($dish) && $dish->vegan=="1" ? 'selected=selected' : ""}}>No</option>
+          <option value="1" {{ isset($dish) && $dish->vegan=="1" ? 'selected' : ""}}>Sì</option>
+          <option value="0" {{ isset($dish) && $dish->vegan=="0" ? 'selected' : ""}}>No</option>
         </select>
       </div>
       <div class="form-group">
         <label for="gluten">Glutine</label>
         <select class="form-control"  name="gluten">
-          <option value="0" {{ isset($dish) && $dish->gluten=="0" ? 'selected=selected' : ""}}>Sì</option>
-          <option value="1" {{ isset($dish) && $dish->gluten=="1" ? 'selected=selected' : ""}}>No</option>
+          <option value="0" {{ isset($dish) && $dish->gluten=="1" ? 'selected' : ""}}>Sì</option>
+          <option value="1" {{ isset($dish) && $dish->gluten=="0" ? 'selected' : ""}}>No</option>
         </select>
       </div>
       <div class="form-group">

@@ -12,10 +12,26 @@ class DishController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $dishes=Dish::where('user_id',Auth::id())->get();
-        return view('user.index',compact('dishes'));
+        $data = $request->all();
+            if (!empty($data["search1"])) {
+                $dishes=Dish::where('user_id', Auth::id())->where("type", "like", '%'.$data["search1"].'%')->get();
+            }
+            if (!empty($data['search2'])) {
+                $dishes=Dish::where('user_id', Auth::id())->where("gluten", "1")->get();
+            }
+            if (!empty($data['search3'])) {
+                $dishes=Dish::where('user_id', Auth::id())->where("vegan", "0")->get();
+            }
+            if (!empty($data['search4'])) {
+                $dishes=Dish::where('user_id', Auth::id())->orderBy('price','asc')->get();
+            }
+            if(empty($data["search1"]) && empty($data['search2']) && empty($data["search3"]) && empty($data['search4'])){
+            $dishes=Dish::where('user_id',Auth::id())->get();
+            }
+
+        return view('user.dishes.index', compact('dishes'));
     }
 
     /**
@@ -25,7 +41,7 @@ class DishController extends Controller
      */
     public function create()
     {
-      return view('user.create');
+      return view('user.dishes.create');
     }
 
     /**
@@ -38,11 +54,12 @@ class DishController extends Controller
     {
         // dd($request);
         $data=$request->all();
+        $data['user_id']=Auth::id();
         $dish= new Dish();
         $dish->fill($data);
-        $dish->user_id=Auth::id();
         $dish->img = $request->file('image')->store('images');
         $dish->save();
+        return redirect()->route('dishes.index');
     }
 
     /**
@@ -53,7 +70,7 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-        return view('user.show',compact('dish'));
+        return view('user.dishes.show',compact('dish'));
     }
 
     /**
@@ -64,7 +81,7 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-     return view('user.edit',compact('dish'));
+     return view('user.dishes.edit',compact('dish'));
     }
 
     /**

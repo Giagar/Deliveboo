@@ -16,7 +16,7 @@
             @csrf
             @method('DELETE')
             <button type="submit" name="button" data-toggle="modal" data-target="#exampleModal{{$dish->id}}" class="btn btn-danger">
-              Delete<i class="fas fa-trash"></i>
+              Cancella<i class="fas fa-trash"></i>
             </button>
           </form>
         </div>
