@@ -40,6 +40,7 @@ class DishController extends Controller
         $data=$request->all();
         $dish= new Dish();
         $dish->fill($data);
+        $dish->user_id=Auth::id();
         $dish->img = $request->file('image')->store('images');
         $dish->save();
     }
