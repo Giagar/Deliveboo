@@ -1,8 +1,9 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
+use App\Dish;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class DishController extends Controller
 {
@@ -13,7 +14,8 @@ class DishController extends Controller
      */
     public function index()
     {
-        //
+        $dishes=Dish::where('user_id',Auth::id())->get();
+        return view('user.index',compact('dishes'));
     }
 
     /**
@@ -23,7 +25,7 @@ class DishController extends Controller
      */
     public function create()
     {
-        //
+      return view('user.create');
     }
 
     /**
@@ -34,7 +36,12 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        $data=$request->all();
+        $dish= new Dish();
+        $dish->fill($data);
+        $dish->img = $request->file('image')->store('images');
+        $dish->save();
     }
 
     /**
@@ -43,9 +50,9 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Dish $dish)
     {
-        //
+        return view('user.show',compact('dish'));
     }
 
     /**
@@ -54,9 +61,9 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Dish $dish)
     {
-        //
+     return view('user.edit',compact('dish'));
     }
 
     /**
@@ -66,9 +73,13 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Dish $dish)
     {
-        //
+        $data= $request->all();
+        $dish->img = $request->file('image')->store('images');
+        $dish->update($data);
+        return redirect()->route('dishes.index');
+
     }
 
     /**
@@ -77,8 +88,10 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Dish $dish)
     {
-        //
+        //  $dish->user()->dissociate();
+        $dish->delete();
+        return redirect()->route('dishes.index');
     }
 }
