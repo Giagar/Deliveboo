@@ -15,19 +15,19 @@ class DishController extends Controller
     public function index(Request $request)
     {
         $data = $request->all();
-            if (!empty($data["search1"])) {
-                $dishes=Dish::where('user_id', Auth::id())->where("type", "like", '%'.$data["search1"].'%')->get();
+            if (!empty($data["search-type"])) {
+                $dishes=Dish::where('user_id', Auth::id())->where("type", "like", '%'.$data["search-type"].'%')->get();
             }
-            if (!empty($data['search2'])) {
-                $dishes=Dish::where('user_id', Auth::id())->where("gluten", "1")->get();
+            if (!empty($data['search-vegan'])) {
+                $dishes=Dish::where('user_id', Auth::id())->where("vegan", "1")->get();
             }
-            if (!empty($data['search3'])) {
-                $dishes=Dish::where('user_id', Auth::id())->where("vegan", "0")->get();
+            if (!empty($data['search-gluten'])) {
+                $dishes=Dish::where('user_id', Auth::id())->where("gluten", "0")->get();
             }
-            if (!empty($data['search4'])) {
+            if (!empty($data['search-price'])) {
                 $dishes=Dish::where('user_id', Auth::id())->orderBy('price','asc')->get();
             }
-            if(empty($data["search1"]) && empty($data['search2']) && empty($data["search3"]) && empty($data['search4'])){
+            if(empty($data["search-type"]) && empty($data['search-gluten']) && empty($data["search-vegan"]) && empty($data['search-price'])){
             $dishes=Dish::where('user_id',Auth::user()->id)->get();
             }
         //   id() è alternativo a user()->id
