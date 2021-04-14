@@ -28,9 +28,9 @@ class DishController extends Controller
                 $dishes=Dish::where('user_id', Auth::id())->orderBy('price','asc')->get();
             }
             if(empty($data["search1"]) && empty($data['search2']) && empty($data["search3"]) && empty($data['search4'])){
-            $dishes=Dish::where('user_id',Auth::id())->get();
+            $dishes=Dish::where('user_id',Auth::user()->id)->get();
             }
-
+        //   id() è alternativo a user()->id
         return view('user.dishes.index', compact('dishes'));
     }
 
@@ -53,6 +53,7 @@ class DishController extends Controller
     public function store(Request $request)
     {
         // dd($request);
+        $this->validateForm($request);
         $data=$request->all();
         $data['user_id']=Auth::id();
         $dish= new Dish();
@@ -93,6 +94,7 @@ class DishController extends Controller
      */
     public function update(Request $request, Dish $dish)
     {
+        $this->validateForm($request);
         $data= $request->all();
         $dish->img = $request->file('image')->store('images');
         $dish->update($data);
@@ -112,4 +114,17 @@ class DishController extends Controller
         $dish->delete();
         return redirect()->route('dishes.index');
     }
+    protected function validateForm(Request $request){
+        $request->validate([
+            'name'=>'required|max:100',
+            'description'=>'required|max:100',
+            'type'=>'required|in:antipasto,primo,secondo,contorno,dessert',
+            'price'=>'required|numeric|between:0,999.99',
+            'vegan'=>'required|boolean',
+            'gluten'=>'required|boolean',
+            'visible'=>'required|boolean',
+            'image'=>'required|image|mimes:jpg,png,jpeg,gif,svg|max:1500|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
+          ]);
+    }
+
 }
