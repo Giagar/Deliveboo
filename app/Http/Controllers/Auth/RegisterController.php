@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Category;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -47,12 +48,28 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+
+    public function showRegistrationForm()
+    {
+        $categories = Category::all();
+
+        return view('auth.register', compact('categories'));
+    }
+
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'name' => ['required', 'string', 'max:50'],
+            'surname' => ['required', 'string', 'max:50'],
+            'email' => ['required', 'string', 'email', 'max:320', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'restaurant_name' =>['required', 'string', 'max:100'],
+            'restaurant_description' =>['required', 'string', 'max:500'],
+            'restaurant_description' =>['required', 'string', 'max:11'],
+            'address' => ['required', 'string', 'max:200'],
+            'p_iva'=>['required', 'string', 'max:11'],
+            'img'=>['required', 'image', 'max:1500'],
+            'categories'=> ['required', 'exists:categories,id']
         ]);
     }
 
@@ -63,11 +80,19 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {
-        return User::create([
+    {     $user= User::create([
             'name' => $data['name'],
+            'surname'=>$data['surname'],
+            'restaurant_name' =>$data['restaurant_name'],
+            'phone_number' =>$data['phone_number'],
+            'img'=>$data['img']->store('images'),
+            'restaurant_description' =>$data['restaurant_description'],
+            'address' => $data['address'],
+            'p_iva'=>$data['p_iva'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+        $user->categories()->attach($data['categories']);
+        return $user;
     }
 }
