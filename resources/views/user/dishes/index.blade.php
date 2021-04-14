@@ -2,18 +2,19 @@
 
 @section('content')
 <nav class="navbar navbar-light bg-light">
-    <div class="d-flex justify-content-center">
+    <div class="d-flex">
+    <a class="btn btn-outline-dark" href="{{route('dishes.index')}}">Tutti i piatti</a>
     <form action="{{ route('dishes.index') }}" class="form-inline " method="GET">
-    <button class="btn btn-outline-dark"  name="search2" value="vegan" type="submit">Piatti vegani</button>
+    <button class="btn btn-outline-dark"  name="search-vegan" value="on" type="submit">Piatti vegani</button>
     </form>
     <form action="{{ route('dishes.index') }}" class="form-inline " method="GET">
-    <button class="btn btn-outline-dark" type="submit" name="search3" value="no-gluten">Piatti senza glutine</button>
+    <button class="btn btn-outline-dark" type="submit" name="search-gluten" value="on">Piatti senza glutine</button>
     </form>
     <form action="{{ route('dishes.index') }}" class="form-inline " method="GET">
-    <button class="btn btn-outline-dark" type="submit" name="search4" value="price-up">Ordina per prezzo</button>
+    <button class="btn btn-outline-dark" type="submit" name="search-price" value="on">Ordina per prezzo</button>
     </form>
     <form action="{{ route('dishes.index') }}" class="form-inline" method="GET">
-    <input class="form-control" type="search" placeholder="Cerca per tipo" name="search1" aria-label="Search">
+    <input class="form-control" type="search" placeholder="Cerca per tipo" name="search-type" aria-label="Search">
     <button class="btn btn-outline-dark" type="submit">Cerca</button>
     </form>
     </div>

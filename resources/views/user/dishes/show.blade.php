@@ -8,10 +8,10 @@
             <p class="card-text"><strong>#{{$dish->id}}</strong></p>
             <p class="card-text"><strong>Nome: </strong>{{$dish->name}}</p>
             <p class="card-text"><strong>Descrizione: </strong>{{$dish->description}}</p>
-            <p class="card-text"><strong>Prezzo: </strong>{{$dish->price}}</p>
-            <p class="card-text"><strong>Visibilità: </strong> {{$dish->visible}}</p>
-            <p class="card-text"><strong>Vegano:</strong> {{$dish->vegan}}</p>
-            <p class="card-text"><strong>Glutine:</strong> {{$dish->gluten}}</p>
+            <p class="card-text"><strong>Prezzo: </strong>{{$dish->price}} €</p>
+            <p class="card-text"><strong>Visibile: </strong> {{$dish->visible ? 'Sì' : 'No'}}</p>
+            <p class="card-text"><strong>Vegano:</strong> {{$dish->vegan ? 'Sì' : 'No'}}</p>
+            <p class="card-text"><strong>Glutine:</strong> {{$dish->gluten ? 'Sì' : 'No'}}</p>
             <p class="card-text"><strong>Tipo:</strong> {{$dish->type}}</p>
             <div class="card-buttons d-flex justify-content-between align-items-center">
             <a href="{{route('dishes.edit',['dish'=>$dish->id])}}" class="btn btn-success">Modifica</a>
