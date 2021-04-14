@@ -22,8 +22,7 @@ if(isset($edit) && !empty($edit)){//edit
       </div>
       <div class="form-group">
         <label for="description">Descrizione</label>
-        <textarea class="form-control {{ $errors->has('description') ? 'is-invalid' : ''}}" type="text" name="description" value="{{isset($dish) ? $dish->description : ''}}">
-        </textarea>
+        <textarea class="form-control {{ $errors->has('description') ? 'is-invalid' : ''}}" type="text" name="description">{{isset($dish) ? $dish->description : ''}}</textarea>
         <div class="invalid-feedback">
           {{$errors->first('description')}}
         </div>
