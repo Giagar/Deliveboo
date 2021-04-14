@@ -12,10 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// base d'atterraggio
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing-page');
 });
+
+// Route::get('/restaurants/{name}','RestaurantController@show')->name('restaurant');
 
 Auth::routes();
 
@@ -30,5 +32,6 @@ Route::prefix('user')  //// Qui entro nelle rotte /restaurant
     ->namespace('Admin')
     ->middleware('auth')
     ->group(function () {
+        Route::get('/dashboard','DashboardController@dashboard')->name('dashboard');
        Route::resource('dishes', 'DishController');
     });
