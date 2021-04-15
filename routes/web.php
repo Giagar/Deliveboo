@@ -19,6 +19,10 @@ Route::get('/', function () {
 
 Route::get('/restaurants/{name}','RestaurantController@show')->name('restaurant');
 
+// Unica rotta checkout?Una get per prendersi i dati in get e una post per storarli con braintree?
+// come index e post di una crud stessa rotta
+Route::get('restaurants/{name}/checkout','RestaurantController@checkout');
+Route::post('restaurants/{name}/checkout','RestaurantController@store'); //giosue??
 Auth::routes();
 
 //per cambiare aspetti relativi all'autenticazione devo lavorare in views.auth.register.blade(x resa grafica), in
