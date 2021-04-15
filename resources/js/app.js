@@ -6,7 +6,7 @@
 import axios from 'axios';
 import Vue from 'vue';
 window.Vue = Vue;
-require('./bootstrap'); 
+require('./bootstrap');
 
 /**
  * The following block of code may be used to automatically register your
@@ -29,4 +29,35 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    data: function() {
+        return {
+            selected: 'All',
+            onSearch: false,
+            categories: [],
+            restaurants: []
+        }
+    },
+    mounted: function() {
+        axios
+            .get('api/categories')
+            .then((response) => {
+                this.categories = response.data;
+            })
+
+        axios
+            .get('api/restaurants')
+            .then((response) => {
+                this.restaurants = response.data;
+            })
+    },
+    methods: {
+        selectedCategory(category) {
+            this.onSearch = true;
+            axios
+                .get('api/categories/' + category.name)
+                .then((response) => {
+                    this.restaurants = response.data;
+                })
+        }
+    }
 });
