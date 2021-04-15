@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav style="background-image: linear-gradient(to right, red , yellow);" class="navbar navbar-expand-lg navbar-light bg-light py-3">
             <a class="navbar-brand" href="#">Deliveroo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -22,8 +22,8 @@
               </form>
               @endif
               @if (!Auth::check())
-                <a class="btn btn-success mr-sm-1" href="/login">Login</a>
-                <a class="btn btn-success" href="/register">Register</a>
+                <a class="btn  mr-sm-1" href="/login">Login</a>
+                <a class="btn"  href="/register">Register</a>
               @else
                 <div class="btn" aria-labelledby="navbarDropdown">
                     <a style="color:red;text-decoration:none;" href="{{ route('logout') }}"
