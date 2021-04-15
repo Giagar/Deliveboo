@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 // base d'atterraggio
 Route::get('/', function () {
     return view('landing-page');
-});
+})->name('landing');
 
 // Route::get('/restaurants/{name}','RestaurantController@show')->name('restaurant');
 
@@ -34,4 +34,6 @@ Route::prefix('user')  //// Qui entro nelle rotte /restaurant
     ->group(function () {
         Route::get('/dashboard','DashboardController@dashboard')->name('dashboard');
        Route::resource('dishes', 'DishController');
+    //    Route::get('orders', 'DashboardController@orders')->name('orders');  //rotta lista ordini
+    //    Route::get('statistics', 'DashboardController@statistics')->name('statistics'); //rotta lista statistiche
     });

@@ -18,6 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('categories', 'Api\ApiCategories');
-Route::get('restaurants', 'Api\ApiRestaurants');
-Route::get('categories/{name}', 'Api\SelectedCategory');
+
+Route::get('categories','Api\ApiController@categories');
+Route::get('restaurants','Api\ApiController@restaurants');
+Route::get('categories/{name}','Api\ApiController@filteredRestaurants');
+

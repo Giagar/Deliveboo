@@ -38,7 +38,7 @@
     <tbody>
         @foreach ($dishes as $dish)
         <tr>
-            <th scope="row">{{$dish->id}}</th>
+            <th scope="row">{{uniqid()}}</th>
             <td>{{$dish->name}}</td>
             <td>{{$dish->description}}</td>
             <td>{{$dish->price }}</td>

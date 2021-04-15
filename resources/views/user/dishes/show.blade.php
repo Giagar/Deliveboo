@@ -5,7 +5,6 @@
         <div class="card" style="width: 20rem;">
             <img class="card-img-top" src="{{asset($dish->img)}}" >
             <div class="card-body">
-            <p class="card-text"><strong>#{{$dish->id}}</strong></p>
             <p class="card-text"><strong>Nome: </strong>{{$dish->name}}</p>
             <p class="card-text"><strong>Descrizione: </strong>{{$dish->description}}</p>
             <p class="card-text"><strong>Prezzo: </strong>{{$dish->price}} €</p>
