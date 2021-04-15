@@ -66,8 +66,7 @@
                             <label for="restaurant_description" class="col-md-4 col-form-label text-md-right">{{ __('Restaurant description') }}</label>
 
                             <div class="col-md-6">
-                                <textarea id="restaurant_description" class="form-control @error('restaurant_description') is-invalid @enderror" name="restaurant_description" value="{{ old('restaurant_description') }}">
-                                </textarea>
+                                <textarea id="restaurant_description" class="form-control @error('restaurant_description') is-invalid @enderror" name="restaurant_description" value="{{ old('restaurant_description') }}"></textarea>
                                 @error('restaurant_description')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
