@@ -7,7 +7,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     {{-- favicon --}}
     <title>@yield('title')</title>
-    <script src="{{ asset('js/app.js') }}"></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
@@ -20,6 +19,7 @@
         </main>
         @include('layouts.footer')
     </div>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>

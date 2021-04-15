@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('categories', 'Api\ApiCategories');
+Route::get('restaurants', 'Api\ApiRestaurants');
+Route::get('categories/{name}', 'Api\SelectedCategory');

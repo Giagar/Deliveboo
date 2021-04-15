@@ -1909,7 +1909,35 @@ vue__WEBPACK_IMPORTED_MODULE_1__.default.component('example-component', __webpac
  */
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
-  el: '#app'
+  el: '#app',
+  data: function data() {
+    return {
+      selected: 'All',
+      onSearch: false,
+      categories: [],
+      restaurants: []
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/categories').then(function (response) {
+      _this.categories = response.data;
+    });
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/restaurants').then(function (response) {
+      _this.restaurants = response.data;
+    });
+  },
+  methods: {
+    selectedCategory: function selectedCategory(category) {
+      var _this2 = this;
+
+      this.onSearch = true;
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/categories/' + category.name).then(function (response) {
+        _this2.restaurants = response.data;
+      });
+    }
+  }
 });
 
 /***/ }),
