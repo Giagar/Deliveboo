@@ -65,7 +65,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'restaurant_name' =>['required', 'string', 'max:100'],
             'restaurant_description' =>['required', 'string', 'max:500'],
-            'restaurant_description' =>['required', 'string', 'max:11'],
+            'restaurant_description' =>['required', 'string', 'max:500'],
             'address' => ['required', 'string', 'max:200'],
             'p_iva'=>['required', 'string', 'max:11'],
             'img'=>['required', 'image', 'max:1500'],

@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
         $newUser->restaurant_name=$faker->name();
         $newUser->restaurant_description=$faker->text(100);
         $newUser->email=$faker->email();
-        $newUser->phone_number=''.rand(0000000000,9999999999).'';
+        $newUser->phone_number=''.mt_rand(1000000000, mt_getrandmax()).'';
         $newUser->address= $faker->address();
         $newUser->p_iva= $faker->text(11);
         $newUser->password=Hash::make('password');

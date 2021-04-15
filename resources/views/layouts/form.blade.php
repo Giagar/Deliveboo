@@ -45,8 +45,8 @@ if(isset($edit) && !empty($edit)){//edit
       <div class="form-group">
         <label for="gluten">Glutine</label>
         <select class="form-control"  name="gluten">
-          <option value="0" {{ isset($dish) && $dish->gluten=="1" ? 'selected' : ""}}>Sì</option>
-          <option value="1" {{ isset($dish) && $dish->gluten=="0" ? 'selected' : ""}}>No</option>
+          <option value="1" {{ isset($dish) && $dish->gluten=="1" ? 'selected' : ""}}>Sì</option>
+          <option value="0" {{ isset($dish) && $dish->gluten=="0" ? 'selected' : ""}}>No</option>
         </select>
       </div>
       <div class="form-group">
