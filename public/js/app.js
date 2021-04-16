@@ -1934,6 +1934,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     selectedCategory: function selectedCategory(category) {
       var _this2 = this;
 
+      this.selected = category.name; // aggiunto per limitare numero ristoranti visualizzati
+
       this.onSearch = true;
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/categories/' + category.name).then(function (response) {
         _this2.restaurants = response.data;

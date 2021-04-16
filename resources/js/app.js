@@ -54,6 +54,7 @@ const app = new Vue({
     },
     methods: {
         selectedCategory(category) {
+            this.selected = category.name; // aggiunto per limitare numero ristoranti visualizzati
             this.onSearch = true;
             axios
                 .get('api/categories/' + category.name)
