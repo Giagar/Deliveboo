@@ -1915,7 +1915,9 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       selected: 'All',
       onSearch: false,
       categories: [],
-      restaurants: []
+      restaurants: [],
+      searchName: '',
+      searchAddress: ''
     };
   },
   mounted: function mounted() {
@@ -1935,6 +1937,32 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       this.onSearch = true;
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/categories/' + category.name).then(function (response) {
         _this2.restaurants = response.data;
+      });
+    },
+    filterByName: function filterByName() {
+      var _this3 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/restaurants').then(function (response) {
+        if (_this3.searchName) {
+          _this3.restaurants = response.data.filter(function (restaurants) {
+            return restaurants.restaurant_name.toLowerCase().startsWith(_this3.searchName.toLowerCase());
+          });
+        } else {
+          _this3.restaurants = response.data;
+        }
+      });
+    },
+    filterByAddress: function filterByAddress() {
+      var _this4 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/restaurants').then(function (response) {
+        if (_this4.searchAddress) {
+          _this4.restaurants = response.data.filter(function (restaurants) {
+            return restaurants.address.toLowerCase().includes(_this4.searchAddress.toLowerCase());
+          });
+        } else {
+          _this4.restaurants = response.data;
+        }
       });
     }
   }
