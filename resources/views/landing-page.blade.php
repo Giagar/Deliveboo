@@ -21,7 +21,20 @@
 
     <h2 class="text-center" style="margin-top: 20px">Lasciati ispirare, ordina e ricevi comodamente a casa tua!</h2>
     <section class="d-flex flex-wrap justify-content-center restaurantsSection">
-        <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-for="(restaurant, index) in restaurants" v-if="(selected === 'All' || onSearch)">
+
+        {{-- versione vecchia --}}
+        {{-- <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-for="restaurant in restaurants" v-if="selected === 'All' || onSearch">
+            <a :href="'/restaurants/' + restaurant.restaurant_name">
+                <span>@{{restaurant.restaurant_name}}</span>
+            </a>
+            <div v-for="category in restaurant.categories">
+                <h5>@{{category.name}}</h5>
+            </div>
+        </div> --}}
+        {{-- /versione vecchia --}}
+
+        {{-- versione nuova --}}
+        <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-for="(restaurant, index) in restaurants" v-if="(selected === 'All') && index < 9">
             <a :href="'/restaurants/' + restaurant.restaurant_name">
                 <span>@{{restaurant.restaurant_name}}</span>
             </a>
@@ -29,6 +42,16 @@
                 <h5>@{{category.name}}</h5>
             </div>
         </div>
+        <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-for="(restaurant, index) in restaurants" v-if="(selected !== 'All')">
+            <a :href="'/restaurants/' + restaurant.restaurant_name">
+                <span>@{{restaurant.restaurant_name}}</span>
+            </a>
+            <div v-for="category in restaurant.categories">
+                <h5>@{{category.name}}</h5>
+            </div>
+        </div>
+        {{-- /versione nuova --}}
+
     </section>
 </main>
 

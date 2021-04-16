@@ -54,6 +54,7 @@ const app = new Vue({
     },
     methods: {
         selectedCategory(category) {
+            this.selected = category.name; // aggiunto per limitare numero ristoranti visualizzati
             this.onSearch = true;
             axios
                 .get('api/categories/' + category.name)
@@ -70,6 +71,7 @@ const app = new Vue({
                             restaurants.restaurant_name.toLowerCase().startsWith(this.searchName.toLowerCase())
                             );
                     } else {
+                        this.selected === 'All'; // aggiunto per limitare numero ristoranti visualizzati
                         this.restaurants = response.data;
                     }
                 })
@@ -83,6 +85,7 @@ const app = new Vue({
                             restaurants.address.toLowerCase().includes(this.searchAddress.toLowerCase())
                             );
                     } else {
+                        this.selected === 'All'; // aggiunto per limitare numero ristoranti visualizzati
                         this.restaurants = response.data;
                     }
                 })
