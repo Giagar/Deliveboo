@@ -4,17 +4,26 @@
 
 @section('content')
 
-<main>
-    <section class="d-flex flex-wrap justify-content-center">
-        <div :style="{'background-image':'url('+category.img+')'}" class="text-center" @click="selectedCategory(category)" v-for="category in categories">
+<main class="container">
+    <h2 class="text-center">Seleziona una categoria</h2>
+    <section class="d-flex flex-wrap justify-content-center categoriesSection">
+        <div class="categories" class="text-center" @click="selectedCategory(category)" v-for="category in categories">
+            <img :src="category.img" alt="">
             <h4>@{{category.name}}</h4>
         </div>
+        @if (Request::route()->getName() == 'landing')
+              <form class="form-inline my-2 my-lg-0">
+                <input @keyup="filterByName()" class="form-control mr-sm-2" type="search" v-model="searchName" placeholder="Ricerca per nome" aria-label="Search">
+                <input @keyup="filterByAddress()" class="form-control mr-sm-2" type="search" v-model="searchAddress" placeholder="Ricerca per indirizzo" aria-label="Search">
+              </form>
+        @endif
     </section>
 
-    <section class="d-flex flex-wrap justify-content-center">
-        <div :style="{'background-image':'url('+restaurant.img+')'}" v-if="selected === 'All' || onSearch" v-for="restaurant in restaurants">
+    <h2 class="text-center" style="margin-top: 20px">Lasciati ispirare, ordina e ricevi comodamente a casa tua!</h2>
+    <section class="d-flex flex-wrap justify-content-center restaurantsSection">
+        <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-for="(restaurant, index) in restaurants" v-if="(selected === 'All' || onSearch)">
             <a :href="'/restaurants/' + restaurant.restaurant_name">
-                <h4>@{{restaurant.restaurant_name}}</h4>
+                <span>@{{restaurant.restaurant_name}}</span>
             </a>
             <div v-for="category in restaurant.categories">
                 <h5>@{{category.name}}</h5>

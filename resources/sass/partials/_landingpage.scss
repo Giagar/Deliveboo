@@ -2,3 +2,63 @@
 // in sass
 // magari nella vista metteremo un wrapper con id=landingpage
 // e da li con le graffe racchiudiamo tutto lo stile dei div figli
+
+.categoriesSection {
+    padding: 10px 0;
+    border-bottom: 1px solid black;
+
+    input {
+        font-size: 1.5em;
+        margin: 20px 0;
+    }
+
+    .categories {
+        cursor: pointer;
+        margin: 10px 20px;
+        text-align: center;
+
+        img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            text-align: center;
+        }
+
+        h4 {
+            background-color: yellow;
+            border-radius: 5px;
+            padding: 5px;
+        }
+    }
+}
+
+.restaurantsSection {
+    padding: 20px 0;
+
+    .restaurants {
+        width: 250px;
+        height: 150px;
+        border-radius: 10px;
+        margin: 20px 50px;
+        background-size: cover;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            color: black;
+
+            span {
+                background-color: rgba(255,255,255, 0.3);
+                border-radius: 5px;
+                font-size: 1.5em;
+                padding: 5px;
+            }
+        }
+
+        div {
+            align-self: flex-end;
+        }
+    }
+}
+
+
