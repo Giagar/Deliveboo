@@ -21,7 +21,7 @@
 
     <h2 class="text-center" style="margin-top: 20px">Lasciati ispirare, ordina e ricevi comodamente a casa tua!</h2>
     <section class="d-flex flex-wrap justify-content-center restaurantsSection">
-        <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-if="selected === 'All' || onSearch" v-for="restaurant in restaurants">
+        <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-for="(restaurant, index) in restaurants" v-if="(selected === 'All' || onSearch)">
             <a :href="'/restaurants/' + restaurant.restaurant_name">
                 <span>@{{restaurant.restaurant_name}}</span>
             </a>

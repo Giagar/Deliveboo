@@ -11001,4 +11001,8 @@ a.text-dark:focus {
   padding: 5px;
 }
 
+.restaurantsSection .restaurants div {
+  align-self: flex-end;
+}
+
 
