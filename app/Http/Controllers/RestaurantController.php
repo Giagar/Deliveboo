@@ -13,13 +13,14 @@ class RestaurantController extends Controller
     //   dd($restaurant);
       return view('public-menu',compact('restaurant'));
     }
+
     //qui riporto al checkout
     public function  checkout($name){
         $gateway = new \Braintree\Gateway([
             'environment' => 'sandbox',
-            'merchantId' => 'rn6zmvs8v98c9k5t',
-            'publicKey' => '6xhdy4kpk8ktd3dt',
-            'privateKey' => 'b0ea0391e8114daf7472b68caba9697e'
+            'merchantId' => 'xgv64xj9j3frqv3b',
+            'publicKey' => 'vmfv5dfmsynzxhdr',
+            'privateKey' => '7f6c22d8dffcccc4eb93413fecff9d4e'
         ]);
         $token = $gateway->ClientToken()->generate();
         $restaurant = User::where('restaurant_name',$name)->firstOrFail();
@@ -30,15 +31,14 @@ class RestaurantController extends Controller
         $newOrder = new Order();
         $newOrder->fill($data);
         $newOrder['order_active'] = 1;
-        $newOrder['notes'] = 'blabla';
+        $newOrder['notes'] = 'La consegna avverrà nelle prossime ore';
         $gateway = new \Braintree\Gateway([
             'environment' => 'sandbox',
-            'merchantId' => 'rn6zmvs8v98c9k5t',
-            'publicKey' => '6xhdy4kpk8ktd3dt',
-            'privateKey' => 'b0ea0391e8114daf7472b68caba9697e'
+            'merchantId' => 'xgv64xj9j3frqv3b',
+            'publicKey' => 'vmfv5dfmsynzxhdr',
+            'privateKey' => '7f6c22d8dffcccc4eb93413fecff9d4e'
         ]);
            $newOrder->save();
-
 
         $amount = $request->total_price;
         $nonce = $request->payment_method_nonce;
@@ -71,26 +71,10 @@ class RestaurantController extends Controller
 
 }
 
-    //    script alternativo
-        // $gateway = new \Braintree\Gateway([
-        //     'environment' => 'sandbox',
-        //     'merchantId' =>'rn6zmvs8v98c9k5t',
-        //     'publicKey'=>'6xhdy4kpk8ktd3dt',
-        //     'privateKey'=>'b0ea0391e8114daf7472b68caba9697e']);
 
-
-
-    //  return view('checkout');
-
-//    script alternativo
-    // qui porto pagina di acquisto effettuato
-    // public function store(){
     //     $gateway = new \Braintree\Gateway([
     //         'environment' => 'sandbox',
     //         'merchantId' =>'rn6zmvs8v98c9k5t',
     //         'publicKey'=>'6xhdy4kpk8ktd3dt',
     //         'privateKey'=>'b0ea0391e8114daf7472b68caba9697e']);
-
-    //     return view('purchase-made');
-    // }
 }
