@@ -36,12 +36,12 @@
       </tr>
     </thead>
     <tbody>
-        @foreach ($dishes as $dish)
+        @foreach ($dishes as $key=>$dish)
         <tr>
-            <th scope="row">{{uniqid()}}</th>
+            <th scope="row">{{$key + 1}}</th>
             <td>{{$dish->name}}</td>
             <td>{{$dish->description}}</td>
-            <td>{{$dish->price }}</td>
+            <td>{{'€ '.$dish->price}}</td>
             <td>{{$dish->visible ? 'Si' : 'No'}}</td>
             <td>{{$dish->vegan ? 'Si' : 'No'}}</td>
             <td>{{$dish->gluten ? 'Si' : 'No'}}</td>

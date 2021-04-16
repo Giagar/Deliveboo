@@ -8,7 +8,7 @@
           </button>
         </div>
         <div class="modal-body">
-         Se continui il piatto #{{$dish->id}} sarà cancellato,l'azione non è reversibile.
+         Se continui il piatto "{{$dish->name}}" sarà cancellato: l'azione non è reversibile.
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
