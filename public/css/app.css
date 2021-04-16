@@ -10952,6 +10952,11 @@ a.text-dark:focus {
   border-bottom: 1px solid black;
 }
 
+.categoriesSection input {
+  font-size: 1.5em;
+  margin: 20px 0;
+}
+
 .categoriesSection .categories {
   cursor: pointer;
   margin: 10px 20px;
@@ -10976,8 +10981,8 @@ a.text-dark:focus {
 }
 
 .restaurantsSection .restaurants {
-  width: 350px;
-  height: 250px;
+  width: 250px;
+  height: 150px;
   border-radius: 10px;
   margin: 20px 50px;
   background-size: cover;
@@ -10992,7 +10997,7 @@ a.text-dark:focus {
 .restaurantsSection .restaurants a span {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 5px;
-  font-size: 2.5em;
+  font-size: 1.5em;
   padding: 5px;
 }
 
