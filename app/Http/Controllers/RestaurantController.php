@@ -14,8 +14,9 @@ class RestaurantController extends Controller
     }
     //qui riporto al checkout
     public function checkout(){
-        return view('checkout');
+     return view('checkout');
     }
+
     // qui porto pagina di acquisto effettuato
     public function store(){
         return view('purchase-made');
