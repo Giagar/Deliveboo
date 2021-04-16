@@ -17,8 +17,10 @@
               </ul>
               @if (Request::route()->getName() == 'landing')
               <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 mr-sm-4" type="submit">Search</button>
+                <input @keyup="filterByName()" class="form-control mr-sm-2" type="search" v-model="searchName" placeholder="Ricerca per nome" aria-label="Search">
+                <!-- <button class="btn btn-outline-success my-2 mr-sm-4" type="submit">Search</button> -->
+                <input @keyup="filterByAddress()" class="form-control mr-sm-2" type="search" v-model="searchAddress" placeholder="Ricerca per indirizzo" aria-label="Search">
+                <!-- <button class="btn btn-outline-success my-2 mr-sm-4" type="submit">Search</button> -->
               </form>
               @endif
               @if (!Auth::check())

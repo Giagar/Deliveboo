@@ -34,7 +34,9 @@ const app = new Vue({
             selected: 'All',
             onSearch: false,
             categories: [],
-            restaurants: []
+            restaurants: [],
+            searchName: '',
+            searchAddress: ''
         }
     },
     mounted: function() {
@@ -58,6 +60,33 @@ const app = new Vue({
                 .then((response) => {
                     this.restaurants = response.data;
                 })
+        },
+        filterByName() {
+            axios
+                .get('api/restaurants')
+                .then((response) => {
+                    if(this.searchName) {
+                        this.restaurants = response.data.filter(restaurants =>
+                            restaurants.restaurant_name.toLowerCase().startsWith(this.searchName.toLowerCase())
+                            );
+                    } else {
+                        this.restaurants = response.data;
+                    }
+                })
+        },
+        filterByAddress() {
+            axios
+                .get('api/restaurants')
+                .then((response) => {
+                    if(this.searchAddress) {
+                        this.restaurants = response.data.filter(restaurants =>
+                            restaurants.address.toLowerCase().includes(this.searchAddress.toLowerCase())
+                            );
+                    } else {
+                        this.restaurants = response.data;
+                    }
+                })
+
         }
     }
 });
