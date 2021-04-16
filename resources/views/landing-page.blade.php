@@ -23,14 +23,14 @@
     <section class="d-flex flex-wrap justify-content-center restaurantsSection">
 
         {{-- versione vecchia --}}
-        <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-for="restaurant in restaurants" v-if="selected === 'All' || onSearch">
+        {{-- <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-for="restaurant in restaurants" v-if="selected === 'All' || onSearch">
             <a :href="'/restaurants/' + restaurant.restaurant_name">
                 <span>@{{restaurant.restaurant_name}}</span>
             </a>
             <div v-for="category in restaurant.categories">
                 <h5>@{{category.name}}</h5>
             </div>
-        </div>
+        </div> --}}
         {{-- /versione vecchia --}}
 
         {{-- versione nuova --}}
