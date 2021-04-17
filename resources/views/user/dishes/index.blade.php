@@ -38,6 +38,7 @@
     <tbody>
         @foreach ($dishes as $key=>$dish)
         <tr>
+            {{-- Qui risolto problema id pubblico mettendo la chiave di ciclo --}}
             <th scope="row">{{$key + 1}}</th>
             <td>{{$dish->name}}</td>
             <td>{{$dish->description}}</td>
