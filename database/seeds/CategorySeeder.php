@@ -17,7 +17,7 @@ class CategorySeeder extends Seeder
         ['name'=>'Caffetteria','img'=>'https://enegabest.it/wp-content/uploads/2019/04/caffetteria-torino2.jpg'],
         ['name'=>'Cinese','img'=>'https://www.scattidigusto.it/wp-content/uploads/2013/11/Xiaolongbao-%C2%A9rfung8.jpg'],
         ['name'=>'Coreano','img'=>'https://www.marcotogni.it/v-2/33/cucina-coreana.jpg'],
-        ['name'=>'Dolci e Dessert','img'=>'https://www.buttalapasta.it/wp-content/uploads/2020/11/dolci-veloci.jpg'],
+        ['name'=>'Dessert','img'=>'https://www.buttalapasta.it/wp-content/uploads/2020/11/dolci-veloci.jpg'],
         ['name'=>'Gelato','img'=>'https://www.ilfaroonline.it/photogallery_new/images/2019/10/gelati-114260.660x368.jpg'],
         ['name'=>'Giapponese','img'=>'https://www.watabi.it/blog/wp-content/uploads/2019/09/udon-cibo-giapponese.jpg'],
         ['name'=>'Hamburger','img'=>'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/RedDot_Burger.jpg/1200px-RedDot_Burger.jpg'],

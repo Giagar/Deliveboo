@@ -42,4 +42,3 @@
 </div>
 </div>
 <script src="{{ asset('js/carrello.js') }}"></script>
-ß
