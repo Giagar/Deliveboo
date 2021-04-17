@@ -3,6 +3,7 @@
 <html>
 <body>
     <div id="carrello">
+        {{-- Qui forse c'è un problema nell'usare due volte id carrello su due pagine diverse --}}
     <div v-for='dish in cart'>
           <span  @click='decreaseQuantity(dish)'>-</span>
           <span>@{{dish.quantity}}</span>
@@ -34,7 +35,7 @@
           <div class="bt-drop-in-wrapper">
             <div id="bt-dropin"></div>
           </div>
-          <div class="clearfix">
+          <div>
             <input id="nonce" name="payment_method_nonce" type="hidden" />
             <button  v-if="calculateTotal !==0">Procedi al pagamento</button>
           </div>
