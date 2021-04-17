@@ -25,12 +25,12 @@
          <input type="text" name="customer_surname" placeholder="surname">
          <input type="text" name="customer_email" placeholder="email">
          <input type="text" name="customer_address" placeholder="address">
-         <input type = "hidden" name = "total_price" :value = "calculateTotal" />
-         {{-- per passare la quantità e il numero di piatti uso input di tipo hidden
+         {{-- per passare la quantità,il prezzo e il numero di piatti uso input di tipo hidden
          in quel modo poi lato backend avrò dalla request i dati che mi servono
          per associare gli ordini ai piatti, grazie alfredo per l'extra in boolpress --}}
          <input v-for ="dish in cart" type = "hidden" name = "dishes[]" :value = "dish.item.id"/>
          <input v-for ="dish in cart" type = "hidden" name = "quantity[]" :value = "dish.quantity"/>
+         <input type = "hidden" name ="amount" :value = "calculateTotal" />
           <a>Torna indietro</a>
           <div class="bt-drop-in-wrapper">
             <div id="bt-dropin"></div>
@@ -42,6 +42,8 @@
       </form>
       </div>
       <script src="{{ asset('js/carrello.js') }}"></script>
+
+      {{-- script braintree --}}
       <script src="https://js.braintreegateway.com/web/dropin/1.13.0/js/dropin.min.js"></script>
       <script>
           var form = document.querySelector('#payment-form');
@@ -75,6 +77,7 @@
             });
           });
       </script>
+      {{-- fine script braintree --}}
       </body>
 </html>
 
