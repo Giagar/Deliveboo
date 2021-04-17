@@ -13,8 +13,7 @@ class CategorySeeder extends Seeder
     public function run()
     {
         $categories =
-        [['name'=>'Africano','img'=>'https://www.buttalapasta.it/wp-content/uploads/500xNxcous-cous-alle-tre-carni.jpg.pagespeed.ic.LJd9hGDz6x.jpg'],
-        ['name'=>'Americano','img'=>'https://www.agrodolce.it/app/uploads/2015/06/shutterstock_129032666.jpg'],
+        [ ['name'=>'Americano','img'=>'https://www.agrodolce.it/app/uploads/2015/06/shutterstock_129032666.jpg'],
         ['name'=>'Caffetteria','img'=>'https://enegabest.it/wp-content/uploads/2019/04/caffetteria-torino2.jpg'],
         ['name'=>'Cinese','img'=>'https://www.scattidigusto.it/wp-content/uploads/2013/11/Xiaolongbao-%C2%A9rfung8.jpg'],
         ['name'=>'Coreano','img'=>'https://www.marcotogni.it/v-2/33/cucina-coreana.jpg'],

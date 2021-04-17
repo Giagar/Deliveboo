@@ -11,12 +11,12 @@
             <img :src="category.img" alt="">
             <h4>@{{category.name}}</h4>
         </div>
-        @if (Request::route()->getName() == 'landing')
+        {{-- @if (Request::route()->getName() == 'landing') --}}
               <form class="form-inline my-2 my-lg-0">
                 <input @keyup="filterByName()" class="form-control mr-sm-2" type="search" v-model="searchName" placeholder="Ricerca per nome" aria-label="Search">
                 <input @keyup="filterByAddress()" class="form-control mr-sm-2" type="search" v-model="searchAddress" placeholder="Ricerca per indirizzo" aria-label="Search">
               </form>
-        @endif
+        {{-- @endif --}}
     </section>
 
     <h2 class="text-center" style="margin-top: 20px">Lasciati ispirare, ordina e ricevi comodamente a casa tua!</h2>

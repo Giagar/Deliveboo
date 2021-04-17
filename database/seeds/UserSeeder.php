@@ -13,110 +13,170 @@ class UserSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run()
     {
-      $dishTypes=array('primo','secondo','contorno','antipasto','dessert');
-      for ($i=0; $i < 20 ; $i++) {
-        $newUser=new User();
-        $newUser->name=$faker->name();
-        $newUser->surname=$faker->name();
-        $newUser->restaurant_name=$faker->name();
-        $newUser->restaurant_description=$faker->text(100);
-        $newUser->email=$faker->email();
-        $newUser->phone_number=''.mt_rand(1000000000, mt_getrandmax()).'';
-        $newUser->address= $faker->address();
-        $newUser->p_iva= $faker->text(11);
+        $newUser = new User;
+        $newUser->name = "Mario";
+        $newUser->surname = "Rossi";
+        $newUser->email = "mariorossi15@gmail.com";
+        $newUser->restaurant_name = "Berton";
+        $newUser->restaurant_description = "Siamo lieti di darvi il benvenuto, la specialità del nostro ristorante è la carne di qualità";
+        $newUser->img = "https://www.ilgiornaledelcibo.it/wp-content/uploads/2008/06/tagliata-di-manzo-alle-erbe-mediterranee.jpg";
+        $newUser->phone_number = '3334514548';
+        $newUser->address="Via Barbaria 3";
+        $newUser->p_iva= '54963789512';
         $newUser->password=Hash::make('password');
-        $newUser->img='https://picsum.photos/seed/'.rand(0, 1000).'/200/300';
         $newUser->save();
-        $newUser->categories()->attach(rand(1,20));
-        $newUser->categories()->attach(rand(1,20));
+        $newUser->categories()->attach(8);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+        $newUser->categories()->attach(1); //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
 
-        for ($v=0; $v < rand(0,10) ; $v++) {
-            $newDish=new Dish();
-            $newDish->name = $faker->name();
-            $newDish->description = $faker->text(500);
-            $newDish->price= rand(0,50000) * 0.01;
-            $newDish->visible = rand(0,1);
-            $newDish->vegan = rand(0,1);
-            $newDish->gluten = rand(0,1);
-            $newDish->type=$dishTypes[array_rand($dishTypes)];
-            $newDish->img = 'https://picsum.photos/seed/'.rand(0, 1000).'/200/300';
-            $newUser->dishes()->save($newDish);
-            $newDish->orders()->attach(rand(1,20));
-            $newDish->orders()->attach(rand(1,20));
-        }
-      }
+
+        $newUser = new User;
+        $newUser->name = "Guendalina";
+        $newUser->surname = "Russo";
+        $newUser->email = "guerusso@gmail.com";
+        $newUser->restaurant_name = "Laite";
+        $newUser->restaurant_description = "Il nostro bar è il migliore in fatto di aroma del caffè";
+        $newUser->img = "https://www.medicalfacts.it/wp-content/uploads/2020/07/bigstock-Close-up-And-Top-View-Of-Hot-B-350989136-900x580.jpg";
+        $newUser->phone_number = '3338549634';
+        $newUser->address="Via Miola";
+        $newUser->p_iva= '10324579630';
+        $newUser->password=Hash::make('password');
+        $newUser->save();
+        $newUser->categories()->attach(2);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+        $newUser->categories()->attach(5); //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+
+
+        $newUser = new User;
+        $newUser->name = "Marco";
+        $newUser->surname = "Greco";
+        $newUser->email = "marcogr@gmail.com";
+        $newUser->restaurant_name = "Devero";
+        $newUser->restaurant_description = "I migliori panini li facciamo noi";
+        $newUser->img = "https://www.schaer.com/sites/default/files/styles/header_large/public/1975_Deli%20Style%20Panini.webp?itok=-OJbLWMi";
+        $newUser->phone_number = '3382549534';
+        $newUser->address="Via Vinazzi";
+        $newUser->p_iva= '78945874296';
+        $newUser->password=Hash::make('password');
+        $newUser->save();
+        $newUser->categories()->attach(8);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+        $newUser->categories()->attach(18); //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+
+
+        $newUser = new User;
+        $newUser->name = "Ciro";
+        $newUser->surname = "Esposito";
+        $newUser->email = "maradona10@gmail.com";
+        $newUser->restaurant_name = "Bella Napoli";
+        $newUser->restaurant_description = "La vera pizza napoletana solo per voi";
+        $newUser->img = "https://www.wondernetmag.com/wp-content/uploads/2020/06/pizza-960x727.png";
+        $newUser->phone_number = '3398559663';
+        $newUser->address="Via Napoli";
+        $newUser->p_iva= '63784591235';
+        $newUser->password=Hash::make('password');
+        $newUser->save();
+        $newUser->categories()->attach(12);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+        $newUser->categories()->attach(17); //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+
+
+        $newUser = new User;
+        $newUser->name = "Bruno";
+        $newUser->surname = "Conti";
+        $newUser->email = "contibr@gmail.com";
+        $newUser->restaurant_name = "I sapori della terra";
+        $newUser->restaurant_description = "La miglior pizza al taglio";
+        $newUser->img = "http://cdn.cook.stbm.it/thumbnails/ricette/142/142771/hd750x421.jpg";
+        $newUser->phone_number = '3378565674';
+        $newUser->address="Piazza Uccelli";
+        $newUser->p_iva= '85479632145';
+        $newUser->password=Hash::make('password');
+        $newUser->save();
+        $newUser->categories()->attach(18);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+        $newUser->categories()->attach(12); //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+        $newUser->categories()->attach(17); //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+
+
+        $newUser = new User;
+        $newUser->name = "Sara";
+        $newUser->surname = "Ricci";
+        $newUser->email = "sararicci@gmail.com";
+        $newUser->restaurant_name = "Duomo";
+        $newUser->restaurant_description = "La vera cotoletta alla milanese";
+        $newUser->img = "https://wips.plug.it/cips/paginegialle.it/magazine/cms/2018/10/98367409_s-1.jpg?w=744&h=418&a=c";
+        $newUser->phone_number = '3374562784';
+        $newUser->address="Via Santa";
+        $newUser->p_iva= '14572396657';
+        $newUser->password=Hash::make('password');
+        $newUser->save();
+        $newUser->categories()->attach(18);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+        $newUser->categories()->attach(12); //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+
+
+        $newUser = new User;
+        $newUser->name = "Wu";
+        $newUser->surname = "Zhyang";
+        $newUser->email = "uwangzhy@gmail.com";
+        $newUser->restaurant_name = "Sapporo";
+        $newUser->restaurant_description = "Il sushi migliore d'Italia";
+        $newUser->img = "https://www.romatoday.it/~media/horizontal-hi/21276864781105/sushi-2853382_640-2.jpg";
+        $newUser->phone_number = '3388574674';
+        $newUser->address="Via Roma";
+        $newUser->p_iva= '78465989744';
+        $newUser->password=Hash::make('password');
+        $newUser->save();
+        $newUser->categories()->attach(19);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+        $newUser->categories()->attach(7); //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+
+
+        $newUser = new User;
+        $newUser->name = "Elmundo";
+        $newUser->surname = "Espirito";
+        $newUser->email = "espirito1@gmail.com";
+        $newUser->restaurant_name = "La Peca";
+        $newUser->restaurant_description = "I sapori del massico per voi";
+        $newUser->img = "https://www.ristorantemessicanosantafe.it/wp-content/uploads/2018/05/Piatto-Tacos-de-pastor-3-845x684.jpeg";
+        $newUser->phone_number = '3378565674';
+        $newUser->address="Via Orbaga";
+        $newUser->p_iva= '78566554321';
+        $newUser->password=Hash::make('password');
+        $newUser->save();
+        $newUser->categories()->attach(15);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+        $newUser->categories()->attach(1); //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+
+
+        $newUser = new User;
+        $newUser->name = "Giorgio";
+        $newUser->surname = "Vanni";
+        $newUser->email = "vannigio@gmail.com";
+        $newUser->restaurant_name = "Cesar Salad";
+        $newUser->restaurant_description = "Solo cibo genuino e salutare";
+        $newUser->img = "https://www.negroni.com/sites/negroni.com/files/styles/scale__1440_x_1440_/public/insalata-di-primavera.jpg?itok=Ubbkj7qB";
+        $newUser->phone_number = '3376483274';
+        $newUser->address="Viale Pratello";
+        $newUser->p_iva= '89602100230';
+        $newUser->password=Hash::make('password');
+        $newUser->save();
+        $newUser->categories()->attach(18);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+        $newUser->categories()->attach(9); //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+        $newUser->categories()->attach(11); //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+
+
+        $newUser = new User;
+        $newUser->name = "Mustafa";
+        $newUser->surname = "Turan";
+        $newUser->email = "turanat10@gmail.com";
+        $newUser->restaurant_name = "Demir Kebab";
+        $newUser->restaurant_description = "Il kebab migliore";
+        $newUser->img = "https://assets.eatintime.it/eatintime/img/media/2097-da-demir-kebab-carne-piemontese-torino-md.jpg";
+        $newUser->phone_number = '3389597674';
+        $newUser->address="Via Rialto";
+        $newUser->p_iva= '00102549965';
+        $newUser->password=Hash::make('password');
+        $newUser->save();
+        $newUser->categories()->attach(17);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+        $newUser->categories()->attach(18); //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+        $newUser->categories()->attach(13); //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
+
+
     }
 }
-
-//questo che segue lo fai nello UserSeeder nella public function run (il faker non serve)
-
-        /* ristorante 1  */
-
-        // $newUser = new User;
-        // $newUser->name = "";
-        // $newUser->surname = "";
-        // $newUser->restaurant_name = ""
-        // $newUser->restaurant_description = "Siamo lieti di darvi il benvenuto...Il Ristorante è immerso nella natura,copia da internet";
-        // $newUser->img = "immagineristorante.img";
-        // $newUser->phone_number = 11numeri;
-        // $newUser->address="";
-        // $newUser->p_iva= 11caratteri;
-        // $newUser->password=Hash::make('password');
-        // $newUser->save();
-        // $newUser->categories()->attach(19);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
-        // $newUser->categories()->attach(12); //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
-
-        // e cosi per altri ristoranti
-
-
-// questo che segue lo fai nel DishSeeder (il faker non serve)
-
-
-        /* Piatti ristorante 1 */
-
-        // $names1 = ["Pennette panna e salmone", "Carbonara", "Insalata"];
-        // $images1 = ["immaginedipennette.jpg",'immaginedicarbonara.jpg',"imgdiinsalata.png"];
-        // $descriptions1=['descrizione1','descrizione2','descrizione3'];
-        // for ($i=0; $i < 10; $i++) {
-        //     $newDish = new Dish;
-        //     $newDish->name = $names1[$i];
-        //     $newDish->img = $images1[$i];
-        //     $newDish->description = $ingred1[$i];
-        //     $newDish->price = number_format(rand(100, 1000) / 100, 2);
-        //     $newDish->visible = rand(0,1);
-        //     $newDish->vegan = mettere o 0 o 1 ;
-        //     $newDish->gluten = mettere o 0 o 1;
-        //     $newDish->type=mettere o primo o secondo o antipasto o dessert;
-        //     $newDish->user_id = 1;
-            //    $newDish->save();
-        //     $newDish->orders()->attach(rand(1,20));
-       //      $newDish->orders()->attach(rand(1,20));
-        // }
-
-        //     /* Piatti ristorante 2 */
-
-        // $names2 = ["Pennette panna e salmone", "Carbonara", "Insalata"];
-        // $images2 = ["immaginedipennette.jpg",'immaginedicarbonara.jpg',"imgdiinsalata.png"];
-
-        // for ($i=0; $i < 10; $i++) {
-        //     $newDish = new Dish;
-        //     $newDish->name = $names2[$i];
-        //     $newDish->img = $images2[$i];
-        //     $newDish->price = number_format(rand(100, 1000) / 100, 2);
-         //     $newDish->visible = rand(0,1);
-        //     $newDish->vegan = mettere o 0 se non vegano o 1 se vegano;
-        //     $newDish->gluten = mettere o 0 se non glutine o 1 se glutine;
-        //     $newDish->type=mettere o primo o secondo o antipasto o dessert;
-        //     $newDish->user_id = 2;
-        //     $newDish->save();
-        //     $newDish->orders()->attach(rand(1,20));
-       //      $newDish->orders()->attach(rand(1,20));
-        //
-        // }
-
-        // e cosi via
-
-        // alla fine lanci php artisan migrate:refresh
-        // poi il seeder categorie,poi il seeder order,poi il seeder user e infine il seeder dish
