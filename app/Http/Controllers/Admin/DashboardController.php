@@ -13,14 +13,10 @@ class DashboardController extends Controller
     }
     public function statistics(){
         // qui usero javascript quindi passo un json
-        $orders = json_encode(Auth::user()->orders);
-        dd($orders);
         return view('user.statistics',compact('orders'));
     }
     public function orders(){
         // questa pagina la gestiremo con blade
-        $orders = Auth::user()->orders;
-        dd($orders);
         return view('user.orders',compact('orders'));
     }
 }
