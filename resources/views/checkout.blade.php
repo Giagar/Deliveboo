@@ -2,6 +2,22 @@
 
 <html>
 <body>
+    <div id="carrello">
+        {{-- Qui forse c'è un problema nell'usare due volte id carrello su due pagine diverse --}}
+    <div v-for='dish in cart'>
+          <span  @click='decreaseQuantity(dish)'>-</span>
+          <span>@{{dish.quantity}}</span>
+          <span  @click='increaseQuantity(dish)'>+</span>
+
+        <span>@{{dish.item.name}}</span>
+        <span>€ @{{(dish.item.price * dish.quantity).toFixed(2)}}</span>
+      </div>
+
+      <div>
+        <span>Totale</span>
+        <span>€ @{{calculateTotal}}</span>
+      </div>
+
     <form action="{{ route('pay', $restaurant->restaurant_name) }}" id="payment-form" method="POST">
         @method('POST')
         @csrf
@@ -9,12 +25,23 @@
          <input type="text" name="customer_surname" placeholder="surname">
          <input type="text" name="customer_email" placeholder="email">
          <input type="text" name="customer_address" placeholder="address">
+         <input type = "hidden" name = "total_price" :value = "calculateTotal" />
+         {{-- per passare la quantità e il numero di piatti uso input di tipo hidden
+         in quel modo poi lato backend avrò dalla request i dati che mi servono
+         per associare gli ordini ai piatti, grazie alfredo per l'extra in boolpress --}}
+         <input v-for ="dish in cart" type = "hidden" name = "dishes[]" :value = "dish.item.id"/>
+         <input v-for ="dish in cart" type = "hidden" name = "quantity[]" :value = "dish.quantity"/>
           <a>Torna indietro</a>
-          <input id="nonce" name="payment_method_nonce" type="hidden" />
-          <button >Procedi al pagamento</button>
-
+          <div class="bt-drop-in-wrapper">
+            <div id="bt-dropin"></div>
+          </div>
+          <div>
+            <input id="nonce" name="payment_method_nonce" type="hidden" />
+            <button  v-if="calculateTotal !==0">Procedi al pagamento</button>
+          </div>
       </form>
-
+      </div>
+      <script src="{{ asset('js/carrello.js') }}"></script>
       <script src="https://js.braintreegateway.com/web/dropin/1.13.0/js/dropin.min.js"></script>
       <script>
           var form = document.querySelector('#payment-form');
@@ -50,3 +77,4 @@
       </script>
       </body>
 </html>
+

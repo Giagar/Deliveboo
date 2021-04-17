@@ -28,15 +28,15 @@
         </div>
         <div v-for='dish in cart'>
             <span @click='decreaseQuantity(dish)'>Sottrai quantità</span>
-            <span>@{{ dish . quantity }}</span>
+            <span>@{{ dish.quantity }}</span>
             <span @click='increaseQuantity(dish)'>Aumenta quantità</span>
-            <span>@{{ dish. item . name }}</span>
-            <span>€ @{{ dish.item . price * dish . quantity . toFixed(2) }}</span>
+            <span>@{{ dish.item.name }}</span>
+            <span>€ @{{ dish.item.price * dish.quantity.toFixed(2) }}</span>
         </div>
         <span v-if="calculateTotal == 0">Il carrello è vuoto</span>
         <div v-else>
             <span>Totale</span>
-            <span>@{{ calculateTotal . toFixed(2) }} </span>
+            <span>@{{ calculateTotal.toFixed(2) }} </span>
         </div>
     </div>
 </div>
