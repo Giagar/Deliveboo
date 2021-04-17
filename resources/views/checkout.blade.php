@@ -28,7 +28,7 @@
          <input type = "hidden" name = "total_price" :value = "calculateTotal" />
          {{-- per passare la quantità e il numero di piatti uso input di tipo hidden
          in quel modo poi lato backend avrò dalla request i dati che mi servono
-         per associare gli ordini ai piatti --}}
+         per associare gli ordini ai piatti, grazie alfredo per l'extra in boolpress --}}
          <input v-for ="dish in cart" type = "hidden" name = "dishes[]" :value = "dish.item.id"/>
          <input v-for ="dish in cart" type = "hidden" name = "quantity[]" :value = "dish.quantity"/>
           <a>Torna indietro</a>

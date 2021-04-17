@@ -39,6 +39,16 @@ class RestaurantController extends Controller
             'privateKey' => '7f6c22d8dffcccc4eb93413fecff9d4e'
         ]);
            $newOrder->save();
+        //    devo associare gli ordini ai piatti
+        // col count dell'array della quantità
+           $count = 0;
+           for ($j=0; $j < count($data['quantity']) ; $j++) {
+               $quantity = $data['quantity'][$j];
+               for ($i=0; $i < $quantity ; $i++) {
+                   $newOrder->dishes()->attach($data['dishes'][$count]);
+               }
+               $count++;
+           }
 
         $amount = $request->total_price;
         $nonce = $request->payment_method_nonce;
@@ -70,11 +80,4 @@ class RestaurantController extends Controller
         }
 
 }
-
-
-    //     $gateway = new \Braintree\Gateway([
-    //         'environment' => 'sandbox',
-    //         'merchantId' =>'rn6zmvs8v98c9k5t',
-    //         'publicKey'=>'6xhdy4kpk8ktd3dt',
-    //         'privateKey'=>'b0ea0391e8114daf7472b68caba9697e']);
 }

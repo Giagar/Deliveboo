@@ -59,10 +59,10 @@ const app = new Vue({
           const prodIndex = this.cart.indexOf(dish);
           this.cart.splice(prodIndex, 1);
         },
-        checkout() {
-          let parsed = JSON.stringify(this.cart);
-          localStorage.setItem('cart', parsed);
-        }
+        saveLocalStorage() {
+            let parsed = JSON.stringify(this.cart);
+            localStorage.setItem('cart', parsed);
+          }
       },
       computed: {
         calculateTotal() {
