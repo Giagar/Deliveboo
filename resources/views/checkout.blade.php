@@ -31,7 +31,7 @@
          <input v-for ="dish in cart" type = "hidden" name = "dishes[]" :value = "dish.item.id"/>
          <input v-for ="dish in cart" type = "hidden" name = "quantity[]" :value = "dish.quantity"/>
          <input type = "hidden" name ="amount" :value = "calculateTotal" />
-          <a>Torna indietro</a>
+          <a @click='saveCart'>Torna indietro</a>
           <div class="bt-drop-in-wrapper">
             <div id="bt-dropin"></div>
           </div>

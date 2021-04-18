@@ -49675,10 +49675,11 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       var prodIndex = this.cart.indexOf(dish);
       this.cart.splice(prodIndex, 1);
     },
-    checkout: function checkout() {
+    saveCart: function saveCart() {
       var parsed = JSON.stringify(this.cart);
       localStorage.setItem('cart', parsed);
-    }
+    } //   per salvare sulla carta i piatti che hai scelto
+
   },
   computed: {
     calculateTotal: function calculateTotal() {
