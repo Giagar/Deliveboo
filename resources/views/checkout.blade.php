@@ -4,7 +4,7 @@
 @section('title','Home')
 
 @section('content')
-    <div id="carrello">
+    <div id="carrello" class="checkout">
         {{-- Qui forse c'è un problema nell'usare due volte id carrello su due pagine diverse --}}
     <div v-for='dish in cart'>
           <span  @click='decreaseQuantity(dish)'>-</span>
