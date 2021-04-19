@@ -1,7 +1,9 @@
 {{-- questo sarà il checkout page --}}
+@extends('layouts.base')
 
-<html>
-<body>
+@section('title','Home')
+
+@section('content')
     <div id="carrello">
         {{-- Qui forse c'è un problema nell'usare due volte id carrello su due pagine diverse --}}
     <div v-for='dish in cart'>
@@ -75,6 +77,4 @@
             });
           });
       </script>
-      </body>
-</html>
-
+@endsection

@@ -1,4 +1,9 @@
 {{-- Questa è il Menu pubblico --}}
+@extends('layouts.base')
+
+@section('title','Home')
+
+@section('content')
 
 <div id="carrello">
     {{-- @dd($restaurant) --}}
@@ -42,4 +47,5 @@
 </div>
 </div>
 <script src="{{ asset('js/carrello.js') }}"></script>
-ß
+
+@endsection
