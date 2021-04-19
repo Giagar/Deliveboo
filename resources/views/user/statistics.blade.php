@@ -1,6 +1,6 @@
 Statistiche
 <script>
 const orders ={!! $orders !!};
-console.log(orders);
+console.log(typeof orders);
 </script>
 

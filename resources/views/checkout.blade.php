@@ -27,7 +27,7 @@
          <input type="text" name="customer_surname" placeholder="surname">
          <input type="text" name="customer_email" placeholder="email">
          <input type="text" name="customer_address" placeholder="address">
-         <input type = "hidden" name = "total_price" :value = "calculateTotal" />
+         <input type = "hidden" name = "amount" :value = "calculateTotal" />
          {{-- per passare la quantità e il numero di piatti uso input di tipo hidden
          in quel modo poi lato backend avrò dalla request i dati che mi servono
          per associare gli ordini ai piatti, grazie alfredo per l'extra in boolpress --}}
