@@ -6,4 +6,7 @@
 @section('content')
 il tuo pagamento è avvenuto con successo
 
+{{$transaction}}
+{{$newOrder}}
+
 @endsection

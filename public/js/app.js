@@ -1869,6 +1869,136 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/app.js":
+/*!*****************************!*\
+  !*** ./resources/js/app.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
+
+
+window.Vue = vue__WEBPACK_IMPORTED_MODULE_1__.default;
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+/**
+ * The following block of code may be used to automatically register your
+ * Vue components. It will recursively scan this directory for the Vue
+ * components and automatically register them with their "basename".
+ *
+ * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ */
+// const files = require.context('./', true, /\.vue$/i)
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+
+
+vue__WEBPACK_IMPORTED_MODULE_1__.default.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+
+var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
+  el: '#app',
+  data: function data() {
+    return {
+      selected: 'All',
+      onSearch: false,
+      categories: [],
+      restaurants: [],
+      searchName: '',
+      searchAddress: '',
+      maxRestaurantShown: 9
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/categories').then(function (response) {
+      _this.categories = response.data;
+    });
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/restaurants').then(function (response) {
+      _this.restaurants = response.data;
+    });
+  },
+  methods: {
+    selectedCategory: function selectedCategory(category) {
+      var _this2 = this;
+
+      this.selected = category.name; // aggiunto per limitare numero ristoranti visualizzati
+
+      this.searchAddress = ""; // prova: azzere campo di ricerca per indirizzo
+
+      this.searchName = ""; // prova: azzere campo di ricerca per nome
+
+      this.onSearch = true;
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/categories/' + category.name).then(function (response) {
+        _this2.restaurants = response.data;
+      });
+    },
+    filterByName: function filterByName() {
+      var _this3 = this;
+
+      this.searchAddress = ""; // prova: azzera campo ricerca per indirizzo
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/restaurants').then(function (response) {
+        if (_this3.searchName) {
+          _this3.selected = "searchByName";
+          _this3.restaurants = response.data.filter(function (restaurants) {
+            return console.log("name activated", _this3.searchName, _this3.selected), restaurants.restaurant_name.toLowerCase().startsWith(_this3.searchName.toLowerCase());
+          });
+        } else {
+          _this3.selected = 'All'; // aggiunto per limitare numero ristoranti visualizzati
+
+          _this3.restaurants = response.data;
+        }
+      });
+    },
+    filterByAddress: function filterByAddress() {
+      var _this4 = this;
+
+      this.searchName = ""; // prova: azzera campo ricerca per nome
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/restaurants').then(function (response) {
+        _this4.selected = "searchByAddress";
+
+        if (_this4.searchAddress) {
+          _this4.restaurants = response.data.filter(function (restaurants) {
+            return console.log("address activated", _this4.selected), restaurants.address.toLowerCase().includes(_this4.searchAddress.toLowerCase());
+          });
+        } else {
+          _this4.selected = 'All'; // aggiunto per limitare numero ristoranti visualizzati
+
+          _this4.restaurants = response.data;
+        }
+      });
+    },
+    // prova: reset
+    showAll: function showAll() {
+      var _this5 = this;
+
+      this.selected = "All";
+      this.searchName = "";
+      this.searchAddress = "";
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/restaurants').then(function (response) {
+        _this5.restaurants = response.data;
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/bootstrap.js":
 /*!***********************************!*\
   !*** ./resources/js/bootstrap.js ***!
@@ -34458,6 +34588,19 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
+/***/ "./resources/sass/app.scss":
+/*!*********************************!*\
+  !*** ./resources/sass/app.scss ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./node_modules/popper.js/dist/esm/popper.js":
 /*!***************************************************!*\
   !*** ./node_modules/popper.js/dist/esm/popper.js ***!
@@ -49540,7 +49683,41 @@ Vue.compile = compileToFunctions;
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					result = fn();
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -49602,135 +49779,66 @@ Vue.compile = compileToFunctions;
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"/js/app": 0,
+/******/ 			"css/app": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			for(moduleId in moreModules) {
+/******/ 				if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 					__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 				}
+/******/ 			}
+/******/ 			if(runtime) runtime(__webpack_require__);
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkIds[i]] = 0;
+/******/ 			}
+/******/ 			__webpack_require__.O();
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
-(() => {
-"use strict";
-/*!*****************************!*\
-  !*** ./resources/js/app.js ***!
-  \*****************************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-
-window.Vue = vue__WEBPACK_IMPORTED_MODULE_1__.default;
-
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
-
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
-  el: '#app',
-  data: function data() {
-    return {
-      selected: 'All',
-      onSearch: false,
-      categories: [],
-      restaurants: [],
-      searchName: '',
-      searchAddress: '',
-      maxRestaurantShown: 9
-    };
-  },
-  mounted: function mounted() {
-    var _this = this;
-
-    axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/categories').then(function (response) {
-      _this.categories = response.data;
-    });
-    axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/restaurants').then(function (response) {
-      _this.restaurants = response.data;
-    });
-  },
-  methods: {
-    selectedCategory: function selectedCategory(category) {
-      var _this2 = this;
-
-      this.selected = category.name; // aggiunto per limitare numero ristoranti visualizzati
-
-      this.searchAddress = ""; // prova: azzere campo di ricerca per indirizzo
-
-      this.searchName = ""; // prova: azzere campo di ricerca per nome
-
-      this.onSearch = true;
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/categories/' + category.name).then(function (response) {
-        _this2.restaurants = response.data;
-      });
-    },
-    filterByName: function filterByName() {
-      var _this3 = this;
-
-      this.searchAddress = ""; // prova: azzera campo ricerca per indirizzo
-
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/restaurants').then(function (response) {
-        if (_this3.searchName) {
-          _this3.selected = "searchByName";
-          _this3.restaurants = response.data.filter(function (restaurants) {
-            return console.log("name activated", _this3.searchName, _this3.selected), restaurants.restaurant_name.toLowerCase().startsWith(_this3.searchName.toLowerCase());
-          });
-        } else {
-          _this3.selected = 'All'; // aggiunto per limitare numero ristoranti visualizzati
-
-          _this3.restaurants = response.data;
-        }
-      });
-    },
-    filterByAddress: function filterByAddress() {
-      var _this4 = this;
-
-      this.searchName = ""; // prova: azzera campo ricerca per nome
-
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/restaurants').then(function (response) {
-        _this4.selected = "searchByAddress";
-
-        if (_this4.searchAddress) {
-          _this4.restaurants = response.data.filter(function (restaurants) {
-            return console.log("address activated", _this4.selected), restaurants.address.toLowerCase().includes(_this4.searchAddress.toLowerCase());
-          });
-        } else {
-          _this4.selected = 'All'; // aggiunto per limitare numero ristoranti visualizzati
-
-          _this4.restaurants = response.data;
-        }
-      });
-    },
-    // prova: reset
-    showAll: function showAll() {
-      var _this5 = this;
-
-      this.selected = "All";
-      this.searchName = "";
-      this.searchAddress = "";
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/restaurants').then(function (response) {
-        _this5.restaurants = response.data;
-      });
-    }
-  }
-});
-})();
-
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
 /******/ })()
 ;
