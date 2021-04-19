@@ -20,6 +20,7 @@ class OrderSeeder extends Seeder
         $newOrder->order_active=rand(0,1);
         $newOrder->customer_address= $faker->address();
         $newOrder->notes= $faker->text();
+        $newOrder->amount= rand(0,100);
         $newOrder->save();
       }
     }
