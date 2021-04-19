@@ -24,7 +24,7 @@
     <div>
         <div>
             <span v-if="calculateTotal !== 0">
-                <a @click='checkout' href="{{ route('checkout', $restaurant->restaurant_name) }}">Vai alla cassa</a>
+                <a @click='saveCart' href="{{ route('checkout', $restaurant->restaurant_name) }}">Vai alla cassa</a>
         </div>
         <div v-for='dish in cart'>
             <span @click='decreaseQuantity(dish)'>Sottrai quantità</span>
