@@ -36,7 +36,8 @@ const app = new Vue({
             categories: [],
             restaurants: [],
             searchName: '',
-            searchAddress: ''
+            searchAddress: '',
+            maxRestaurantShown: 9,
         }
     },
     mounted: function() {
@@ -55,6 +56,8 @@ const app = new Vue({
     methods: {
         selectedCategory(category) {
             this.selected = category.name; // aggiunto per limitare numero ristoranti visualizzati
+            this.searchAddress = ""; // prova: azzere campo di ricerca per indirizzo
+            this.searchName = ""; // prova: azzere campo di ricerca per nome
             this.onSearch = true;
             axios
                 .get('api/categories/' + category.name)
@@ -63,33 +66,48 @@ const app = new Vue({
                 })
         },
         filterByName() {
+            this.searchAddress = ""; // prova: azzera campo ricerca per indirizzo
             axios
-                .get('api/restaurants')
-                .then((response) => {
-                    if(this.searchName) {
+            .get('api/restaurants')
+            .then((response) => {
+                if(this.searchName) {
+                        this.selected = "searchByName";
                         this.restaurants = response.data.filter(restaurants =>
-                            restaurants.restaurant_name.toLowerCase().startsWith(this.searchName.toLowerCase())
+                            (console.log("name activated", this.searchName, this.selected), restaurants.restaurant_name.toLowerCase().startsWith(this.searchName.toLowerCase()))
                             );
                     } else {
-                        this.selected === 'All'; // aggiunto per limitare numero ristoranti visualizzati
+                        this.selected = 'All'; // aggiunto per limitare numero ristoranti visualizzati
                         this.restaurants = response.data;
                     }
                 })
         },
         filterByAddress() {
+            this.searchName = ""; // prova: azzera campo ricerca per nome
             axios
-                .get('api/restaurants')
-                .then((response) => {
+            .get('api/restaurants')
+            .then((response) => {
+                    this.selected = "searchByAddress";
                     if(this.searchAddress) {
                         this.restaurants = response.data.filter(restaurants =>
-                            restaurants.address.toLowerCase().includes(this.searchAddress.toLowerCase())
+                            (console.log("address activated", this.selected), restaurants.address.toLowerCase().includes(this.searchAddress.toLowerCase()))
                             );
                     } else {
-                        this.selected === 'All'; // aggiunto per limitare numero ristoranti visualizzati
+                        this.selected = 'All'; // aggiunto per limitare numero ristoranti visualizzati
                         this.restaurants = response.data;
                     }
                 })
 
+        },
+        // prova: reset
+        showAll() {
+            this.selected = "All";
+            this.searchName = "";
+            this.searchAddress = "";
+            axios
+            .get('api/restaurants')
+            .then((response) => {
+                this.restaurants = response.data;
+            })
         }
     }
 });
