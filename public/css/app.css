@@ -11111,4 +11111,18 @@ footer div a {
   color: #fff;
 }
 
+nav {
+  background: #ec352b;
+  background: linear-gradient(0deg, #ec352b 30%, #ff8c40 85%);
+}
+
+nav .container a img {
+  height: 100px;
+  width: 100px;
+}
+
+nav .container .login a {
+  color: #fff;
+}
+
 

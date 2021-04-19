@@ -1,5 +1,6 @@
-<nav style="background: rgb(236,53,43);
-background: linear-gradient(0deg, rgba(236,53,43,1) 30%, rgba(255,140,64,1) 85%);" class="navbar navbar-expand-lg navbar-light py-3">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+
         <div class="container">
             <a class="navbar-brand" href="#">
               <img src="{{asset('images/logo.jpg')}}" style="border-radius: 50%; ">
