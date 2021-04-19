@@ -49675,7 +49675,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       var prodIndex = this.cart.indexOf(dish);
       this.cart.splice(prodIndex, 1);
     },
-    checkout: function checkout() {
+    saveLocalStorage: function saveLocalStorage() {
       var parsed = JSON.stringify(this.cart);
       localStorage.setItem('cart', parsed);
     }

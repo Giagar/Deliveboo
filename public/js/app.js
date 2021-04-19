@@ -1950,6 +1950,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
             return restaurants.restaurant_name.toLowerCase().startsWith(_this3.searchName.toLowerCase());
           });
         } else {
+          _this3.selected === 'All'; // aggiunto per limitare numero ristoranti visualizzati
+
           _this3.restaurants = response.data;
         }
       });
@@ -1963,6 +1965,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
             return restaurants.address.toLowerCase().includes(_this4.searchAddress.toLowerCase());
           });
         } else {
+          _this4.selected === 'All'; // aggiunto per limitare numero ristoranti visualizzati
+
           _this4.restaurants = response.data;
         }
       });
