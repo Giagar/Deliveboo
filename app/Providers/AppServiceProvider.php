@@ -30,4 +30,5 @@ class AppServiceProvider extends ServiceProvider
         \Braintree\Configuration::privateKey(env('BTREE_PRIVATE_KEY','7f6c22d8dffcccc4eb93413fecff9d4e'));
 
     }
+
 }

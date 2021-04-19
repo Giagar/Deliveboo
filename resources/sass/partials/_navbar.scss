@@ -1,0 +1,20 @@
+nav{
+    background: rgb(236,53,43);
+    background: linear-gradient(0deg, rgba(236,53,43,1) 30%, rgba(255,140,64,1) 85%);
+
+    .container{
+
+        a{
+
+            img{
+                height: 100px;
+                width: 100px;
+            }
+        }
+        .login{
+            a{
+                color: #fff;
+            }
+        }
+    }
+}
