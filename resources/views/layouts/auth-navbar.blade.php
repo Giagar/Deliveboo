@@ -1,6 +1,9 @@
-<nav style="background-image: linear-gradient(to right, red , yellow);" class="navbar navbar-expand-lg navbar-light bg-light py-3">
+<nav style="background: rgb(236,53,43);
+background: linear-gradient(0deg, rgba(236,53,43,1) 30%, rgba(255,140,64,1) 85%);" class="navbar navbar-expand-lg navbar-light py-3">
         <div class="container">
-            <a class="navbar-brand" href="#">Deliveroo</a>
+            <a class="navbar-brand" href="#">
+              <img src="{{asset('images/logo.jpg')}}" style="border-radius: 50%; ">
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>

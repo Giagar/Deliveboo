@@ -12,7 +12,7 @@
   
           <!-- Grid column -->
           <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-            <h6 class="mb-0">Connettiti con noi sui social</h6>
+            <h6 class="text-uppercase mb-0">Connettiti con noi sui social</h6>
           </div>
           <!-- Grid column -->
   
@@ -62,16 +62,16 @@
           <h6 class="text-uppercase font-weight-bold">Scopri Deliveboo</h6>
           <hr class=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
           <p>
-            <a href="#!">MDBootstrap</a>
+            <a href="#!">Lavora con noi</a>
           </p>
           <p>
-            <a href="#!">MDWordPress</a>
+            <a href="#!">Negozi partner</a>
           </p>
           <p>
-            <a href="#!">BrandFlow</a>
+            <a href="#!">Corrieri</a>
           </p>
           <p>
-            <a href="#!">Bootstrap Angular</a>
+            <a href="#!">Deliveboo Business</a>
           </p>
   
         </div>
@@ -84,16 +84,16 @@
           <h6 class="text-uppercase font-weight-bold">Link di interesse</h6>
           <hr class=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
           <p>
-            <a href="#!">MDBootstrap</a>
+            <a href="#!">Chi siamo</a>
           </p>
           <p>
-            <a href="#!">MDWordPress</a>
+            <a href="#!">FAQ</a>
           </p>
           <p>
-            <a href="#!">BrandFlow</a>
+            <a href="#!">Blog</a>
           </p>
           <p>
-            <a href="#!">Bootstrap Angular</a>
+            <a href="#!">Diventa nostro partner</a>
           </p>
   
         </div>
@@ -106,16 +106,16 @@
           <h6 class="text-uppercase font-weight-bold">Auito</h6>
           <hr class=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
           <p>
-            <a href="#!">Your Account</a>
+            <a href="#!">Termini & Condizioni</a>
           </p>
           <p>
-            <a href="#!">Become an Affiliate</a>
+            <a href="#!">Informativa sulla privacy</a>
           </p>
           <p>
-            <a href="#!">Shipping Rates</a>
+            <a href="#!">Cookies</a>
           </p>
           <p>
-            <a href="#!">Help</a>
+            <a href="#!">Altro</a>
           </p>
   
         </div>
@@ -128,9 +128,9 @@
           <h6 class="text-uppercase font-weight-bold">Contact</h6>
           <hr class=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
           <p>
-            <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+            <i class="fas fa-home mr-3"></i> Roma, RM 00118, IT</p>
           <p>
-            <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+            <i class="fas fa-envelope mr-3"></i> deliveboo.contact@gmail.com</p>
           <p>
             <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
           <p>
@@ -146,8 +146,8 @@
     <!-- Footer Links -->
   
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-      <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    <div class="footer-copyright text-center py-3">© 2021 Copyright:
+      <a href="#"> Deliveboo.com</a>
     </div>
     <!-- Copyright -->
   

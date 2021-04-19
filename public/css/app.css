@@ -11090,7 +11090,7 @@ footer .top {
 }
 
 footer .top div .grid-row div h6 {
-  color: #3490dc;
+  color: #080808;
   font-weight: bold;
 }
 
@@ -11105,6 +11105,10 @@ footer .links div div hr {
 
 footer .links div div h6 {
   color: #080808;
+}
+
+footer div a {
+  color: #fff;
 }
 
 
