@@ -8,18 +8,19 @@
     {{-- favicon --}}
     <title>@yield('title')</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <script src="{{ asset('js/base.js') }}"></script>
 </head>
 
 <body>
-    <div id="app">
+    {{-- <div id="app"> --}}
         @include('layouts.auth-navbar')
 
         <main class="py-4">
             @yield('content')
         </main>
         @include('layouts.footer')
-    </div>
-    <script src="{{ asset('js/app.js') }}"></script>
+    {{-- </div> --}}
+    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
 </body>
 
 </html>

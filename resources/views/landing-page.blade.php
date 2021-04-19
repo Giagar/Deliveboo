@@ -3,7 +3,7 @@
 @section('title','Home')
 
 @section('content')
-
+<div id="app">
 <main class="container">
     <h2 class="text-center">Seleziona una categoria</h2>
     <section class="d-flex flex-wrap justify-content-center categoriesSection">
@@ -55,5 +55,6 @@
 
     </section>
 </main>
-
+</div>
+<script src="{{ asset('js/app.js') }}"></script>
 @endsection
