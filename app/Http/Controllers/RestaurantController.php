@@ -69,7 +69,7 @@ class RestaurantController extends Controller
             if ($result->success) {
                 $transaction = $result->transaction;
                 Mail::to($newOrder->customer_email)->send(new PayMail($newOrder));
-                return view('purchase-made', ['transaction'=>$transaction,'newOrder'=>$newOrder]);
+                return redirect()->route('purchase-made', ['transaction'=>$transaction,'newOrder'=>$newOrder]);
             } else {
                 $errorString = "";
 
