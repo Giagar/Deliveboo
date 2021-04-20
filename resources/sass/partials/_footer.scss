@@ -5,7 +5,7 @@ footer{
     background: linear-gradient(0deg, rgba(236,53,43,1) 30%, rgba(255,140,64,1) 80%);    .top{
         background-color: #ff8c40    ;
         div{
-            
+
             .grid-row{
 
                 div{
@@ -14,16 +14,19 @@ footer{
                         color: #080808;
                         font-weight: bold;
                     }
+
+
                 }
             }
         }
     }
-    
+
     .links{
 
         div{
 
             div{
+
 
                 a{
                     text-decoration: none;
@@ -35,6 +38,16 @@ footer{
                 h6{
                     color: #080808;
                 }
+
+
+                    .contact-details {
+                        display: flex;
+
+                        @media screen and (max-width: 762px) {
+                              justify-content: center;
+                          }
+                    }
+
             }
         }
     }
