@@ -1,25 +1,29 @@
 @extends('layouts.base')
 
 @section('content')
+
 <nav class="navbar navbar-light bg-light">
-    <div class="d-flex">
-    <a class="btn btn-outline-dark" href="{{route('dishes.index')}}">Tutti i piatti</a>
+ <div class="nav-left">
+    <div class="crud-search-section">
+    <button><a href="{{route('dishes.index')}}">Tutti i piatti</a></button>
     <form action="{{ route('dishes.index') }}" class="form-inline " method="GET">
-    <button class="btn btn-outline-dark"  name="search-vegan" value="on" type="submit">Piatti vegani</button>
+    <button class="{{strpos(Request::fullUrl(),'vegan') !== false ? 'crud-btn-active' : '' }}" name="search-vegan" value="on" type="submit">Piatti vegani</button>
     </form>
     <form action="{{ route('dishes.index') }}" class="form-inline " method="GET">
-    <button class="btn btn-outline-dark" type="submit" name="search-gluten" value="on">Piatti senza glutine</button>
+    <button  class="{{strpos(Request::fullUrl(),'gluten') !== false ? 'crud-btn-active' : '' }}" type="submit" name="search-gluten" value="on">Piatti senza glutine</button>
     </form>
     <form action="{{ route('dishes.index') }}" class="form-inline " method="GET">
-    <button class="btn btn-outline-dark" type="submit" name="search-price" value="on">Ordina per prezzo</button>
+    <button class="{{strpos(Request::fullUrl(),'price') !== false ? 'crud-btn-active' : '' }}" type="submit" name="search-price" value="on">Ordina per prezzo</button>
     </form>
-    <form action="{{ route('dishes.index') }}" class="form-inline" method="GET">
-    <input class="form-control" type="search" placeholder="Cerca per tipo" name="search-type" aria-label="Search">
-    <button class="btn btn-outline-dark" type="submit">Cerca</button>
+    <form action="{{ route('dishes.index') }}" method="GET" class="d-flex">
+    <input type="search" placeholder="Cerca per tipo" name="search-type" aria-label="Search">
+    <button type="submit">Cerca</button>
     </form>
     </div>
+  </div>
     <a class="btn btn-success" href="{{route('dishes.create')}}">Crea piatto</a>
 </nav>
+<div style="min-height:50vh;" class="table-responsive">
 <table class="table table-striped">
     <thead>
       <tr>
@@ -60,4 +64,6 @@
 
     </tbody>
   </table>
+</div>
+
 @endsection
