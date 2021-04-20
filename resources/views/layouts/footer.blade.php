@@ -20,8 +20,8 @@
           <div class="col-md-6 col-lg-7 text-center text-md-right">
 
             <!-- Facebook -->
-            <a class="fb-ic">
-              <i class="fab fa-facebook-f white-text mr-4"> </i>
+            <a class="fb-ic  mr-4">
+              <i class="fab fa-facebook-f white-text"> </i>
             </a>
             <!-- Twitter -->
             <a class="tw-ic">
