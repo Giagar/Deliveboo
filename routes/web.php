@@ -24,7 +24,9 @@ Route::get('/restaurants/{name}','RestaurantController@show')->name('restaurant'
 Route::get('restaurants/{name}/checkout','RestaurantController@checkout')->name('checkout');
 Route::post('restaurants/{name}/checkout','RestaurantController@store')->name('pay');
 Auth::routes();
-
+Route::get('/restaurants/order/success', function () {
+    return view('purchase-made');
+})->name('purchase-made');
 //per cambiare aspetti relativi all'autenticazione devo lavorare in views.auth.register.blade(x resa grafica), in
 // e in controllers/Auth/RegisterController per creazione dati ristoratore/validazioni
 
