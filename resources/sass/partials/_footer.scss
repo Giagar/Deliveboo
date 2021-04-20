@@ -1,11 +1,14 @@
 footer{
-/*     background: rgb(52,144,220);
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+/*  background: rgb(52,144,220);
     background: linear-gradient(0deg, rgba(52,144,220,1) 65%, rgba(240,147,49,1) 80%); */
     background: rgb(236,53,43);
     background: linear-gradient(0deg, rgba(236,53,43,1) 30%, rgba(255,140,64,1) 80%);    .top{
         background-color: #ff8c40    ;
         div{
-            
+
             .grid-row{
 
                 div{
@@ -18,7 +21,7 @@ footer{
             }
         }
     }
-    
+
     .links{
 
         div{

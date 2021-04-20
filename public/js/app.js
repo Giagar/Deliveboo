@@ -49664,6 +49664,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/restaurants').then(function (response) {
       _this.restaurants = response.data;
     });
+    localStorage.clear();
   },
   methods: {
     selectedCategory: function selectedCategory(category) {
