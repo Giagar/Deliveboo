@@ -32,8 +32,11 @@
         <div class="dishes-list">
             @foreach ($restaurant->dishes as $dish)
                 @if ($dish->visible)
+                @php
+                $dish->img=asset($dish->img);
+                @endphp
                 <div class="dish">
-                    <div class="dish-left" :style="{'background-image':'url({{ asset($dish->img) }})'}">
+                    <div class="dish-left" :style="{'background-image':'url({{ $dish->img }})'}">
                         {{-- <img src="{{ asset($dish->img) }}"> --}}
                     </div>
                     <div class="dish-right">
