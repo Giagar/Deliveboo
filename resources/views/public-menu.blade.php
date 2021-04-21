@@ -28,8 +28,8 @@
     </div>
 
     <div class="main">
-    <section class="dishes-list">
-        <div>
+    <section class="dishes-list-container">
+        <div class="dishes-list">
             @foreach ($restaurant->dishes as $dish)
                 @if ($dish->visible)
                 <div class="dish">
@@ -37,14 +37,39 @@
                         {{-- <img src="{{ asset($dish->img) }}"> --}}
                     </div>
                     <div class="dish-right">
-                        <h3>{{ $dish->name }}</h3>
-                        <p>{{ $dish->description }}</p>
-                        <div class="price"><b>Prezzo: {{ $dish->price }} €</b></div>
-                        <button class="btn" @click='addToCart({{ $dish }})'>Aggiungi a carrello</button>
+                        <div class="dish-right-top">
+                            <h3>{{ $dish->name }}</h3>
+                            <p>{{ $dish->description }}</p>
+                        </div>
+                        <div class="dish-right-bottom">
+                            <div class="price"><b>Prezzo: {{ $dish->price }} €</b></div>
+                            <button class="btn" @click='addToCart({{ $dish }})'>Aggiungi a carrello</button>
+                        </div>
                     </div>
                 </div>
                 @endif
             @endforeach
+            <section class="mobile-cart-section">
+                <div class="mobile-cart-wrapper">
+                    <div class="text-center">
+                        <h4>Il Tuo Ordine</h4>
+                    </div>
+                    <div class="mobile-cart" v-for='dish in cart'>
+                        <p><b>@{{ dish.item.name }}</b></p>
+                        <div class="mobile-cart-right">
+                            <span class="changeQuantity" @click='decreaseQuantity(dish)'><i class="fas fa-minus"></i></span>
+                            <span>@{{ dish.quantity }}</span>
+                            <span class="changeQuantity" @click='increaseQuantity(dish)'><i class="fas fa-plus"></i></span>
+                        </div>
+                    </div>
+                    <p class="total-mobile"><b>Totale</b> € @{{ calculateTotal.toFixed(2) }}</p>
+                </div>
+                <div class="button-wrapper-mobile" v-if="calculateTotal !== 0">
+                    <button class="btn">
+                        <a @click='saveCart' href="{{ route('checkout', $restaurant->restaurant_name) }}">Procedi all'ordine</a>
+                    </button>
+                </div>
+            </section>
         </div>
     </section>
 
@@ -105,11 +130,6 @@
             </div>
         </section>
     </div>
-    {{-- <div class="button-wrapper" v-if="calculateTotal !== 0">
-        <button class="btn">
-            <a @click='saveCart' href="{{ route('checkout', $restaurant->restaurant_name) }}">Procedi all'ordine</a>
-        </button>
-    </div> --}}
 </div>
 </div>
 
