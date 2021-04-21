@@ -26,6 +26,7 @@
     </section>
 
     <h2 class="text-center" style="margin-top: 20px">Lasciati ispirare, ordina e ricevi comodamente a casa tua!</h2>
+    <h3 class="search-title" v-if="searchResultsTitle !== '' && selected !== 'All'">Ecco i risultati della tua ricerca per @{{searchResultsTitle}}</h3>
     <section class="d-flex flex-wrap justify-content-center restaurantsSection">
 
         {{-- versione vecchia --}}

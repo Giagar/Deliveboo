@@ -49653,7 +49653,9 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       searchName: '',
       searchAddress: '',
       maxRestaurantShown: 9,
-      restaurantsFound: 0 // prova
+      restaurantsFound: 0,
+      // flag per messaggio errore ricerca ristoranti
+      searchResultsTitle: "" // titolo mostrato a seconda della ricerca fatta
 
     };
   },
@@ -49677,10 +49679,13 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
 
       this.searchName = ""; // prova: azzere campo di ricerca per nome
 
+      this.searchResultsTitle = "categoria"; // titolo dipendente dalla ricerca fatta
+
       this.onSearch = true;
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/categories/' + category.name).then(function (response) {
         // messaggio di errore in caso di nessuna corrispondenza nei ristoranti
-        response.data.length === 0 ? _this2.restaurantsFound = 0 : _this2.restaurantsFound = response.data.length; // / messaggio di errore in caso di nessuna corrispondenza nei ristoranti
+        // noRestaurantsFound(response.data);
+        response.data.length === 0 ? _this2.restaurantsFound = 0 : _this2.restaurantsFound = 1; // / messaggio di errore in caso di nessuna corrispondenza nei ristoranti
 
         _this2.restaurants = response.data;
       });
@@ -49690,12 +49695,15 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
 
       this.searchAddress = ""; // prova: azzera campo ricerca per indirizzo
 
+      this.searchResultsTitle = "nome"; // titolo dipendente dalla ricerca fatta
+
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/restaurants').then(function (response) {
         if (_this3.searchName) {
           _this3.selected = "searchByName";
           _this3.restaurants = response.data.filter(function (restaurants) {
             return console.log("name activated", _this3.searchName, _this3.selected), restaurants.restaurant_name.toLowerCase().startsWith(_this3.searchName.toLowerCase());
-          });
+          }); // noRestaurantsFound(this.restaurants);
+
           _this3.restaurants.length === 0 ? _this3.restaurantsFound = 0 : _this3.restaurantsFound = 1;
         } else {
           _this3.selected = 'All'; // aggiunto per limitare numero ristoranti visualizzati
@@ -49709,13 +49717,16 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
 
       this.searchName = ""; // prova: azzera campo ricerca per nome
 
+      this.searchResultsTitle = "indirizzo"; // titolo dipendente dalla ricerca fatta
+
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/restaurants').then(function (response) {
         _this4.selected = "searchByAddress";
 
         if (_this4.searchAddress) {
           _this4.restaurants = response.data.filter(function (restaurants) {
             return console.log("address activated", _this4.selected), restaurants.address.toLowerCase().includes(_this4.searchAddress.toLowerCase());
-          });
+          }); // noRestaurantsFound(this.restaurants);
+
           _this4.restaurants.length === 0 ? _this4.restaurantsFound = 0 : _this4.restaurantsFound = 1;
         } else {
           _this4.selected = 'All'; // aggiunto per limitare numero ristoranti visualizzati
@@ -49724,6 +49735,11 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
         }
       });
     },
+    // noRestaurantsFound(restaurantsSearchedResults) {
+    //     restaurantsSearchedResults.length === 0
+    //     ? this.restaurantsFound = 0
+    //     : this.restaurantsFound = 1;
+    // }
     // prova: reset
     showAll: function showAll() {
       var _this5 = this;
@@ -49731,6 +49747,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       this.selected = "All";
       this.searchName = "";
       this.searchAddress = "";
+      this.searchResultsTitle = "";
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/restaurants').then(function (response) {
         _this5.restaurants = response.data;
       });
