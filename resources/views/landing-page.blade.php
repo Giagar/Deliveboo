@@ -8,18 +8,20 @@
     <section>
         <h2 class="text-center">Seleziona una categoria</h2>
         <div class="d-flex flex-wrap justify-content-center categoriesSection">
-            <div class="categories" class="text-center" @click="selectedCategory(category)" v-for="category in categories">
+            <div @click="selectedCategory(category)" v-for="(category, indexCategory) in categories" :key="indexCategory" :class="'categories text-center' + (selected === category.name ? ' active-category ' : '')">
                 <img :src="category.img" alt="">
                 <h4>@{{category.name}}</h4>
             </div>
 
         </div>
         {{-- @if (Request::route()->getName() == 'landing') --}}
-        <form class="form-inline my-2 my-lg-0 advanced-search">
+        <form class="form-inline my-3 advanced-search">
             <input @keyup="filterByName()" class="form-control mr-sm-2" type="search" v-model="searchName" placeholder="Ricerca per nome" aria-label="Search" id="searchByName" name="searchByName">
             <input @keyup="filterByAddress()" class="form-control mr-sm-2" type="search" v-model="searchAddress" placeholder="Ricerca per indirizzo" aria-label="Search" id="searchByAdress" name="searchByAdress">
-            <input class="btn btn-danger" @click="showAll()" value="Reset">
         </form>
+        <div class="buttons-container">
+            <button class="btn btn-danger reset-btn" @click="showAll()">Reset</button>
+        </div>
     {{-- @endif --}}
     </section>
 
@@ -54,6 +56,10 @@
                 <h5>@{{category.name}}</h5>
             </div> --}}
         </div>
+
+        {{-- <div class="no-results-msg" v-if="!restaurantsSearched && selected !== 'All'">
+            Mi dispiace, non ci sono ristoranti con le caratteristiche richieste
+        </div> --}}
         {{-- /versione nuova --}}
 
 

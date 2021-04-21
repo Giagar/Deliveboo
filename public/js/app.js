@@ -49652,7 +49652,9 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       restaurants: [],
       searchName: '',
       searchAddress: '',
-      maxRestaurantShown: 9
+      maxRestaurantShown: 9,
+      restaurantsSearched: false // prova
+
     };
   },
   mounted: function mounted() {
@@ -49677,7 +49679,14 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
 
       this.onSearch = true;
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/categories/' + category.name).then(function (response) {
-        _this2.restaurants = response.data;
+        console.log('response', response.data == false);
+        _this2.restaurants = response.data; // response.data == true
+        // ? (
+        //     this.restaurants = response.data,
+        //     this.restaurantsSearched = true
+        //     ) : (
+        //         this.restaurantsSearched = false
+        //         );
       });
     },
     filterByName: function filterByName() {

@@ -38,6 +38,7 @@ const app = new Vue({
             searchName: '',
             searchAddress: '',
             maxRestaurantShown: 9,
+            restaurantsSearched: false, // prova
         }
     },
     mounted: function() {
@@ -62,7 +63,16 @@ const app = new Vue({
             axios
                 .get('api/categories/' + category.name)
                 .then((response) => {
+                    console.log('response', response.data == false)
                     this.restaurants = response.data;
+
+                    // response.data == true
+                    // ? (
+                    //     this.restaurants = response.data,
+                    //     this.restaurantsSearched = true
+                    //     ) : (
+                    //         this.restaurantsSearched = false
+                    //         );
                 })
         },
         filterByName() {

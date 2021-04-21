@@ -10953,9 +10953,8 @@ a.text-dark:focus {
   padding: 0;
 }
 
-.active {
-  background-color: yellow;
-  color: darkgrey;
+.active-category {
+  outline: 2px solid red;
 }
 
 .categoriesSection {
@@ -10980,6 +10979,8 @@ a.text-dark:focus {
   height: 80px;
   border-radius: 50%;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .categoriesSection .categories h4 {
@@ -10993,6 +10994,7 @@ a.text-dark:focus {
   bottom: -15px;
   transform: translateX(-50%);
   left: 50%;
+  z-index: 2;
 }
 
 .categoriesSection .categories:hover {
@@ -11001,7 +11003,13 @@ a.text-dark:focus {
 }
 
 .advanced-search {
-  background-color: yellow;
+  display: flex;
+  justify-content: center;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
 }
 
 .restaurantsSection {
