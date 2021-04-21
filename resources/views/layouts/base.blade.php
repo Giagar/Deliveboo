@@ -8,7 +8,7 @@
     {{-- favicon --}}
     <title>@yield('title')</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <script src="{{ asset('js/base.js') }}"></script>
+    <script src="{{ asset('js/base.js') }}"></script>
 </head>
 
 <body>

@@ -1,0 +1,70 @@
+.header {
+    height: 200px;
+    background-image: url('https://images.adsttc.com/media/images/5e4c/1025/6ee6/7e0b/9d00/0877/large_jpg/feature_-_Main_hall_1.jpg?1582043123');
+    background-position: 50% 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-size: 3.5em;
+        color: white;
+        text-shadow: 5px 5px 5px black;
+    }
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    padding: 30px 0;
+
+    .info-container {
+        width: 300px;
+        border-radius: 50px;
+        box-shadow: 0 0 10px #000;
+        padding: 40px;
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .boxes-container {
+        width: 800px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .box {
+            border-radius: 50px;
+            box-shadow: 0 0 10px #000;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+
+            img {
+                height: 150px;
+                border-radius: 20px;
+            }
+
+            button {
+                margin-top: 20px;
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+
+
+
