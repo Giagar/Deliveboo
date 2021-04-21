@@ -49655,8 +49655,30 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       maxRestaurantShown: 9,
       restaurantsFound: 0,
       // flag per messaggio errore ricerca ristoranti
-      searchResultsTitle: "" // titolo mostrato a seconda della ricerca fatta
-
+      searchResultsTitle: "",
+      // titolo mostrato a seconda della ricerca fatta
+      categoryIcons: {
+        Americano: 'Am',
+        Cinese: 'Ci',
+        Coreano: 'Co',
+        Giapponese: 'Gi',
+        Indiano: 'In',
+        Italiano: 'It',
+        Messicano: 'Mes',
+        Mediterraneo: 'Med',
+        Street_food: 'SF',
+        Sushi: 'Su',
+        Thailandese: 'Th',
+        Pasta: 'Pa',
+        Pizza: 'Pi',
+        Insalate: 'In',
+        Kebab: 'Ke',
+        Healthy: 'He',
+        Hamburger: 'Ha',
+        Dessert: 'De',
+        Gelato: 'Ge',
+        Caffetteria: 'Ca'
+      }
     };
   },
   mounted: function mounted() {

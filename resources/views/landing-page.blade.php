@@ -41,22 +41,64 @@
         {{-- /versione vecchia --}}
 
         {{-- versione nuova --}}
-        <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-for="(restaurant, index) in restaurants" v-if="(selected === 'All') && index < maxRestaurantShown">
+        {{-- <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-for="(restaurant, index) in restaurants" v-if="(selected === 'All') && index < maxRestaurantShown">
             <a :href="'/restaurants/' + restaurant.restaurant_name">
                 <span>@{{restaurant.restaurant_name}}</span>
-            </a>
+            </a> --}}
             {{-- <div v-for="category in restaurant.categories">
                 <h5>@{{category.name}}</h5>
             </div> --}}
-        </div>
+        {{-- </div>
         <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-for="(restaurant, index) in restaurants" v-if="(selected !== 'All')">
             <a :href="'/restaurants/' + restaurant.restaurant_name">
                 <span>@{{restaurant.restaurant_name}}</span>
-            </a>
+            </a> --}}
             {{-- <div v-for="category in restaurant.categories">
                 <h5>@{{category.name}}</h5>
             </div> --}}
-        </div>
+        {{-- </div> --}}
+
+        {{-- prova --}}
+        <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-for="(restaurant, index) in restaurants" v-if="(selected !== 'All')">
+            <a :href="'/restaurants/' + restaurant.restaurant_name"></a>
+            <div class="restaurant-name">@{{restaurant.restaurant_name}}</div>
+            <div class="restaurant-categories">
+                <span v-for="category in restaurant.categories">@{{categoryIcons[category.name]}}</span>
+            </div>
+
+            {{-- <div v-for="category in restaurant.categories">
+                <h5>@{{category.name}}</h5>
+            </div> --}}
+      </div>
+
+
+        <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-for="(restaurant, index) in restaurants" v-if="(selected === 'All') && index < maxRestaurantShown">
+            <a :href="'/restaurants/' + restaurant.restaurant_name"></a>
+            <div class="restaurant-name">@{{restaurant.restaurant_name}}</div>
+            <div class="restaurant-categories">
+                <span v-for="category in restaurant.categories">@{{categoryIcons[category.name]}}</span>
+            </div>
+
+            {{-- <div v-for="category in restaurant.categories">
+                <h5>@{{category.name}}</h5>
+            </div> --}}
+      </div>
+
+        {{-- <div class="restaurants d-flex"  v-for="(restaurant, index) in restaurants" v-if="(selected === 'All') && index < maxRestaurantShown">
+            <a :href="'/restaurants/' + restaurant.restaurant_name">
+                <div class="restaurant-name">
+                    <span>@{{restaurant.restaurant_name}}</span>
+                </div>
+                <div class="restaurant-img" :style="{'background-image':'url('+restaurant.img+')'}"></div>
+                <div class="restaurant-categories">categories</div>
+                    {{-- <div v-for="category in restaurant.categories">
+                        <h5>@{{category.name}}</h5>
+                    </div> --}}
+            {{-- </a>
+        </div> --}}
+
+
+        {{-- /prova --}}
 
         <div class="no-restaurants-found message" v-if="restaurantsFound === 0 && selected !== 'All'">
             Mi dispiace, non ci sono ristoranti con le caratteristiche richieste
