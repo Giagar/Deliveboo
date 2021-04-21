@@ -7,34 +7,101 @@
 
 .public-menu {
 min-height:100vh;
+
+    .main {
+        padding: 9% 0;
+        background: #D1913C;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, rgba(#FFD194, 0.3), rgba(#D1913C, 0.3));  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, rgba(#FFD194, 0.3), rgba(#D1913C, 0.3)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    .restaurant-info {
+        background-color: $bg-secondary-color;
+        width: 40%;
+        padding: 1%;
+        border-radius: $border-radius-windows-large;
+        opacity: 0.9;
+        border: 1px solid $primary-color;
+        position: absolute;
+        top: 50%;
+    }
+
     .header {
         padding-left: 50px;
+        background-position: center;
         background-size: cover;
+        background-repeat: no-repeat;
+        height: 40vh;
+        position: relative;
 
+        ul {
+            list-style: none;
+            li {
+                display: flex;
+                align-items: center;
+                padding: 0.5%;
+
+                .info {
+                    font-size: $medium-text;
+                }
+
+                .info-icon {
+                    margin-right: 20px;
+                    width: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    i {
+                        font-size: 30px;
+                    }
+                }
+
+                .info-detail {
+                    font-size: $medium-text;
+                }
+            }
+        }
         h1 {
-            color: white;
-            text-shadow: 2px 2px 5px gold;
-            font-size: 5em;
+            color: $primary-color;
+            font-size: 4em;
         }
 
         p {
             color: white;
-            text-shadow: 2px 2px 5px gold;
             font-size: 2.5em;
             margin-left: 100px;
         }
+
+
     }
 
-    .wrapper-top {
-
+    .dishes-list {
         width: 60%;
-        margin-left: 20px;
+        margin-left: 50px;
 
         .dish {
             border-radius: 50px;
             box-shadow: 0 0 10px #000;
-            padding: 5%;
-            margin: 20px 0;
+            margin: 50px 0;
+            display: flex;
+            justify-content: space-between;
+
+            &-left {
+                width: 50%;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                border-radius: 50px 0 0 50px;
+            }
+
+            &-right {
+                width: 50%;
+                padding: 5%;
+                border-radius: 0 50px 50px 0;
+                background-color: $secondary-color;
+                font-size: $medium-text;
+            }
 
             img {
             width: 200px;
@@ -52,8 +119,13 @@ min-height:100vh;
 
     .wrapper {
         position: absolute;
-        top: 310px;
-        right: 20px;
+        top: 78%;
+        right: 3%;
+        display: block;
+
+        @media (max-width: 576px) {
+            display: none;
+        }
 
         .cart {
             min-height: 500px;
@@ -72,10 +144,8 @@ min-height:100vh;
                 margin-bottom: 5%;
             }
 
-            .top-container {
-            }
             .list-container{
-                padding-top:20px;
+             padding-top:20px;
              height:300px;
              overflow-y: auto;
             }
@@ -108,6 +178,7 @@ min-height:100vh;
                     &-content {
                         margin-top: 5%;
                         margin-left: 10%;
+                        font-size: 16px;
                     }
                 }
                 &-image {
@@ -205,3 +276,4 @@ min-height:100vh;
 
     }
 }
+

@@ -8,22 +8,37 @@
 <div id="carrello" class="public-menu">
 
     <div class="header" style="background-image: url({{ asset($restaurant->img) }})">
-        <div>
+        <div class="restaurant-info">
             <h1>{{ $restaurant->restaurant_name }}</h1>
-            <p>Menu</p>
+            <ul>
+                <li>
+                    <h4>{{$restaurant->restaurant_description}}</h4>
+                </li>
+                <li>
+                    <span class="info-icon"><i class="fas fa-map-marker-alt"></i></span><span class="info-detail">{{$restaurant->address}}</span>
+                </li>
+                <li>
+                   <span class="info-icon"><i class="fas fa-mobile-alt"></i></span><span class="info-detail">{{$restaurant->phone_number}}</span>
+                </li>
+                <li>
+                    <span class="info-icon"><i class="fas fa-envelope-open-text"></i></span><span class="info-detail">{{$restaurant->email}}</span>
+                </li>
+            </ul>
         </div>
     </div>
 
     <div class="main">
-    <div class="wrapper-top">
+    <section class="dishes-list">
         <div>
             @foreach ($restaurant->dishes as $dish)
                 @if ($dish->visible)
                 <div class="dish">
-                    <img src="{{ asset($dish->img) }}">
-                    <h3>{{ $dish->name }}</h3>
-                    <p>{{ $dish->description }}</p>
-                    <div>
+                    <div class="dish-left" :style="{'background-image':'url({{ asset($dish->img) }})'}">
+                        {{-- <img src="{{ asset($dish->img) }}"> --}}
+                    </div>
+                    <div class="dish-right">
+                        <h3>{{ $dish->name }}</h3>
+                        <p>{{ $dish->description }}</p>
                         <div class="price"><b>Prezzo: {{ $dish->price }} €</b></div>
                         <button class="btn" @click='addToCart({{ $dish }})'>Aggiungi a carrello</button>
                     </div>
@@ -31,10 +46,10 @@
                 @endif
             @endforeach
         </div>
-    </div>
+    </section>
 
     <div class="wrapper">
-        <div class="cart">
+        <section class="cart">
 
             <div class="top-container">
                 <div class="header-wrapper">
@@ -84,13 +99,17 @@
 
                 <div class="button-wrapper" v-if="calculateTotal !== 0">
                     <button class="btn">
-                            <a @click='saveCart' href="{{ route('checkout', $restaurant->restaurant_name) }}">Procedi all'ordine</a>
+                        <a @click='saveCart' href="{{ route('checkout', $restaurant->restaurant_name) }}">Procedi all'ordine</a>
                     </button>
                 </div>
             </div>
-
-        </div>
+        </section>
     </div>
+    {{-- <div class="button-wrapper" v-if="calculateTotal !== 0">
+        <button class="btn">
+            <a @click='saveCart' href="{{ route('checkout', $restaurant->restaurant_name) }}">Procedi all'ordine</a>
+        </button>
+    </div> --}}
 </div>
 </div>
 
