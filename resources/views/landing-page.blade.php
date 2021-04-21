@@ -57,9 +57,9 @@
             </div> --}}
         </div>
 
-        {{-- <div class="no-results-msg" v-if="!restaurantsSearched && selected !== 'All'">
+        <div class="no-restaurants-found message" v-if="restaurantsFound === 0 && selected !== 'All'">
             Mi dispiace, non ci sono ristoranti con le caratteristiche richieste
-        </div> --}}
+        </div>
         {{-- /versione nuova --}}
 
 

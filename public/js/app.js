@@ -49653,7 +49653,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       searchName: '',
       searchAddress: '',
       maxRestaurantShown: 9,
-      restaurantsSearched: false // prova
+      restaurantsFound: 0 // prova
 
     };
   },
@@ -49679,14 +49679,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
 
       this.onSearch = true;
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/categories/' + category.name).then(function (response) {
-        console.log('response', response.data == false);
-        _this2.restaurants = response.data; // response.data == true
-        // ? (
-        //     this.restaurants = response.data,
-        //     this.restaurantsSearched = true
-        //     ) : (
-        //         this.restaurantsSearched = false
-        //         );
+        // messaggio di errore in caso di nessuna corrispondenza nei ristoranti
+        response.data.length === 0 ? _this2.restaurantsFound = 0 : _this2.restaurantsFound = response.data.length; // / messaggio di errore in caso di nessuna corrispondenza nei ristoranti
+
+        _this2.restaurants = response.data;
       });
     },
     filterByName: function filterByName() {
@@ -49700,6 +49696,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
           _this3.restaurants = response.data.filter(function (restaurants) {
             return console.log("name activated", _this3.searchName, _this3.selected), restaurants.restaurant_name.toLowerCase().startsWith(_this3.searchName.toLowerCase());
           });
+          _this3.restaurants.length === 0 ? _this3.restaurantsFound = 0 : _this3.restaurantsFound = 1;
         } else {
           _this3.selected = 'All'; // aggiunto per limitare numero ristoranti visualizzati
 
@@ -49719,6 +49716,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
           _this4.restaurants = response.data.filter(function (restaurants) {
             return console.log("address activated", _this4.selected), restaurants.address.toLowerCase().includes(_this4.searchAddress.toLowerCase());
           });
+          _this4.restaurants.length === 0 ? _this4.restaurantsFound = 0 : _this4.restaurantsFound = 1;
         } else {
           _this4.selected = 'All'; // aggiunto per limitare numero ristoranti visualizzati
 

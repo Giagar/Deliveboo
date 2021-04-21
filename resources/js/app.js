@@ -38,7 +38,7 @@ const app = new Vue({
             searchName: '',
             searchAddress: '',
             maxRestaurantShown: 9,
-            restaurantsSearched: false, // prova
+            restaurantsFound: 0, // prova
         }
     },
     mounted: function() {
@@ -63,16 +63,15 @@ const app = new Vue({
             axios
                 .get('api/categories/' + category.name)
                 .then((response) => {
-                    console.log('response', response.data == false)
+
+                    // messaggio di errore in caso di nessuna corrispondenza nei ristoranti
+                    response.data.length === 0
+                    ? this.restaurantsFound = 0
+                    : this.restaurantsFound = response.data.length;
+                    // / messaggio di errore in caso di nessuna corrispondenza nei ristoranti
+
                     this.restaurants = response.data;
 
-                    // response.data == true
-                    // ? (
-                    //     this.restaurants = response.data,
-                    //     this.restaurantsSearched = true
-                    //     ) : (
-                    //         this.restaurantsSearched = false
-                    //         );
                 })
         },
         filterByName() {
@@ -85,6 +84,9 @@ const app = new Vue({
                         this.restaurants = response.data.filter(restaurants =>
                             (console.log("name activated", this.searchName, this.selected), restaurants.restaurant_name.toLowerCase().startsWith(this.searchName.toLowerCase()))
                             );
+                        this.restaurants.length === 0
+                        ? this.restaurantsFound = 0
+                        : this.restaurantsFound = 1;
                     } else {
                         this.selected = 'All'; // aggiunto per limitare numero ristoranti visualizzati
                         this.restaurants = response.data;
@@ -101,6 +103,10 @@ const app = new Vue({
                         this.restaurants = response.data.filter(restaurants =>
                             (console.log("address activated", this.selected), restaurants.address.toLowerCase().includes(this.searchAddress.toLowerCase()))
                             );
+
+                        this.restaurants.length === 0
+                        ? this.restaurantsFound = 0
+                        : this.restaurantsFound = 1;
                     } else {
                         this.selected = 'All'; // aggiunto per limitare numero ristoranti visualizzati
                         this.restaurants = response.data;
