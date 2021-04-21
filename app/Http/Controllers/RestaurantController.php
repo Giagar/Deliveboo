@@ -33,6 +33,7 @@ class RestaurantController extends Controller
     }
     public function store(Request $request)
     {
+        $this->validateForm($request);
         $data = $request->all();
         // dd($data);
         $newOrder = new Order();
@@ -49,12 +50,14 @@ class RestaurantController extends Controller
         //    devo associare gli ordini ai piatti
         // col count dell'array della quantità che ho passato con input hidden
         $count = 0;
-        for ($j=0; $j < count($data['quantity']) ; $j++) {
+        for ($j=0; $j < count($data['quantity']) ; $j++)
+        {
             $quantity = $data['quantity'][$j];
             for ($i=0; $i < $quantity ; $i++) {
                 $newOrder->dishes()->attach($data['dishes'][$count]);
             }
             $count++;
+        }
             $amount = $request->amount;
             $nonce = $request->payment_method_nonce;
 
@@ -80,5 +83,18 @@ class RestaurantController extends Controller
                 return back()->withErrors('An error occurred with the message: '.$result->message);
             }
         }
+        // public function $formValidation = [
+        //     'customer_name' => 'required | max: 60',
+        //     'customer_address' => 'required | max: 80',
+        //     'customer_phone' => 'required | max: 15',
+        // ];
+        protected function validateForm(Request $request){
+            $request->validate([
+            'customer_name' => 'required | max: 100',
+            'customer_surname' => 'required | max: 100',
+            'customer_address' => 'required | max: 200',
+           'customer_email' => 'required | max: 320',
+
+              ]);
+        }
     }
-}
