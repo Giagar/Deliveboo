@@ -8,33 +8,73 @@
 <div id="carrello" class="public-menu">
 
     <div class="header" style="background-image: url({{ asset($restaurant->img) }})">
-        <div>
+        <div class="restaurant-info">
             <h1>{{ $restaurant->restaurant_name }}</h1>
-            <p>Menu</p>
+            <ul>
+                <li>
+                    <h4>{{$restaurant->restaurant_description}}</h4>
+                </li>
+                <li>
+                    <span class="info-icon"><i class="fas fa-map-marker-alt"></i></span><span class="info-detail">{{$restaurant->address}}</span>
+                </li>
+                <li>
+                   <span class="info-icon"><i class="fas fa-mobile-alt"></i></span><span class="info-detail">{{$restaurant->phone_number}}</span>
+                </li>
+                <li>
+                    <span class="info-icon"><i class="fas fa-envelope-open-text"></i></span><span class="info-detail">{{$restaurant->email}}</span>
+                </li>
+            </ul>
         </div>
     </div>
 
     <div class="main">
-    <div class="wrapper-top">
-        <div>
+    <section class="dishes-list-container">
+        <div class="dishes-list">
             @foreach ($restaurant->dishes as $dish)
                 @if ($dish->visible)
                 <div class="dish">
-                    <img src="{{ asset($dish->img) }}">
-                    <h3>{{ $dish->name }}</h3>
-                    <p>{{ $dish->description }}</p>
-                    <div>
-                        <div class="price"><b>Prezzo: {{ $dish->price }} €</b></div>
-                        <button class="btn" @click='addToCart({{ $dish }})'>Aggiungi a carrello</button>
+                    <div class="dish-left" :style="{'background-image':'url({{ asset($dish->img) }})'}">
+                        {{-- <img src="{{ asset($dish->img) }}"> --}}
+                    </div>
+                    <div class="dish-right">
+                        <div class="dish-right-top">
+                            <h3>{{ $dish->name }}</h3>
+                            <p>{{ $dish->description }}</p>
+                        </div>
+                        <div class="dish-right-bottom">
+                            <div class="price"><b>Prezzo: {{ $dish->price }} €</b></div>
+                            <button class="btn" @click='addToCart({{ $dish }})'>Aggiungi a carrello</button>
+                        </div>
                     </div>
                 </div>
                 @endif
             @endforeach
+            <section class="mobile-cart-section">
+                <div class="mobile-cart-wrapper">
+                    <div class="text-center">
+                        <h4>Il Tuo Ordine</h4>
+                    </div>
+                    <div class="mobile-cart" v-for='dish in cart'>
+                        <p><b>@{{ dish.item.name }}</b></p>
+                        <div class="mobile-cart-right">
+                            <span class="changeQuantity" @click='decreaseQuantity(dish)'><i class="fas fa-minus"></i></span>
+                            <span>@{{ dish.quantity }}</span>
+                            <span class="changeQuantity" @click='increaseQuantity(dish)'><i class="fas fa-plus"></i></span>
+                        </div>
+                    </div>
+                    <p class="total-mobile"><b>Totale</b> € @{{ calculateTotal.toFixed(2) }}</p>
+                </div>
+                <div class="button-wrapper-mobile" v-if="calculateTotal !== 0">
+                    <button class="btn">
+                        <a @click='saveCart' href="{{ route('checkout', $restaurant->restaurant_name) }}">Procedi all'ordine</a>
+                    </button>
+                </div>
+            </section>
         </div>
-    </div>
+    </section>
 
     <div class="wrapper">
-        <div class="cart">
+        <section class="cart">
 
             <div class="top-container">
                 <div class="header-wrapper">
@@ -84,12 +124,11 @@
 
                 <div class="button-wrapper" v-if="calculateTotal !== 0">
                     <button class="btn">
-                            <a @click='saveCart' href="{{ route('checkout', $restaurant->restaurant_name) }}">Procedi all'ordine</a>
+                        <a @click='saveCart' href="{{ route('checkout', $restaurant->restaurant_name) }}">Procedi all'ordine</a>
                     </button>
                 </div>
             </div>
-
-        </div>
+        </section>
     </div>
 </div>
 </div>
