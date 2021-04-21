@@ -5,19 +5,22 @@
 @section('content')
 <div id="app">
 <main class="container">
-    <h2 class="text-center">Seleziona una categoria</h2>
-    <section class="d-flex flex-wrap justify-content-center categoriesSection">
-        <div class="categories" class="text-center" @click="selectedCategory(category)" v-for="category in categories">
-            <img :src="category.img" alt="">
-            <h4>@{{category.name}}</h4>
+    <section>
+        <h2 class="text-center">Seleziona una categoria</h2>
+        <div class="d-flex flex-wrap justify-content-center categoriesSection">
+            <div class="categories" class="text-center" @click="selectedCategory(category)" v-for="category in categories">
+                <img :src="category.img" alt="">
+                <h4>@{{category.name}}</h4>
+            </div>
+
         </div>
         {{-- @if (Request::route()->getName() == 'landing') --}}
-              <form class="form-inline my-2 my-lg-0">
-                <input @keyup="filterByName()" class="form-control mr-sm-2" type="search" v-model="searchName" placeholder="Ricerca per nome" aria-label="Search" id="searchByName" name="searchByName">
-                <input @keyup="filterByAddress()" class="form-control mr-sm-2" type="search" v-model="searchAddress" placeholder="Ricerca per indirizzo" aria-label="Search" id="searchByAdress" name="searchByAdress">
-                <input class="btn btn-danger" @click="showAll()" value="Reset">
-            </form>
-        {{-- @endif --}}
+        <form class="form-inline my-2 my-lg-0 advanced-search">
+            <input @keyup="filterByName()" class="form-control mr-sm-2" type="search" v-model="searchName" placeholder="Ricerca per nome" aria-label="Search" id="searchByName" name="searchByName">
+            <input @keyup="filterByAddress()" class="form-control mr-sm-2" type="search" v-model="searchAddress" placeholder="Ricerca per indirizzo" aria-label="Search" id="searchByAdress" name="searchByAdress">
+            <input class="btn btn-danger" @click="showAll()" value="Reset">
+        </form>
+    {{-- @endif --}}
     </section>
 
     <h2 class="text-center" style="margin-top: 20px">Lasciati ispirare, ordina e ricevi comodamente a casa tua!</h2>
