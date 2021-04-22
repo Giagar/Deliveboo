@@ -1,5 +1,6 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 // Variables
 @import 'variables';
@@ -15,7 +16,10 @@
 @import 'partials/crud';
 @import 'partials/dashboard';
 @import 'partials/orders';
+@import 'partials/checkout';
+
 
 main {
   background-color: #EAE7DC;
 }
+
