@@ -4,9 +4,10 @@ footer{
     width: 100%;
 /*  background: rgb(52,144,220);
     background: linear-gradient(0deg, rgba(52,144,220,1) 65%, rgba(240,147,49,1) 80%); */
-    background: white;
+    background: $bg-secondary-color;
+    background: linear-gradient(0deg, $bg-secondary-color 30%, $bg-primary-color 80%);
     .top{
-        background-color: white;
+        background-color: $bg-primary-color;
         div{
 
             .grid-row{
@@ -14,9 +15,11 @@ footer{
                 div{
 
                     h6{
-                        color: #080808;
+                        color: $primary-color;
                         font-weight: bold;
                     }
+
+
                 }
             }
         }
@@ -28,16 +31,27 @@ footer{
 
             div{
 
+
                 a{
                     text-decoration: none;
-                    color: black;
+                    color: $primary-color;
                 }
                 hr{
-                    background-color:#080808;
+                    background-color:$primary-color;
                 }
                 h6{
-                    color: #080808;
+                    color: $primary-color;
                 }
+
+
+                    .contact-details {
+                        display: flex;
+
+                        @media screen and (max-width: 762px) {
+                              justify-content: center;
+                          }
+                    }
+
             }
         }
     }

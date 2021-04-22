@@ -16,18 +16,6 @@
 @import 'partials/dashboard';
 @import 'partials/orders';
 
-@include animations-keyframes;
-
-.fadeIn {
-  @include fade-in;
-  position: relative;
-}
-
-.fadeOut {
-  @include fade-out;
-  position: relative;
-}
-
-.fade {
-  @include fade;
+main {
+  background-color: #EAE7DC;
 }
