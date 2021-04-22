@@ -64,13 +64,33 @@
             </div>
         </section>
 
+        <div class="mobile-checkout-cart">
+            <section class="mobile-cart-section">
+                <div class="mobile-cart-wrapper">
+                    <div class="text-center">
+                        <h5>Controlla il tuo ordine</h5>
+                    </div>
+                    <div class="mobile-cart" v-for='dish in cart'>
+                        <p><b>@{{ dish.item.name }}</b></p>
+                        <div class="mobile-cart-right">
+                            <span class="changeQuantity" @click='decreaseQuantity(dish)'><i class="fas fa-minus"></i></span>
+                            <span>@{{ dish.quantity }}</span>
+                            <span class="changeQuantity" @click='increaseQuantity(dish)'><i class="fas fa-plus"></i></span>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="total-mobile"><b>Totale</b> € @{{ calculateTotal.toFixed(2) }}</p>
+                </div>
+            </section>
+        </div>
+
     <form action="{{ route('pay', $restaurant->restaurant_name) }}" id="payment-form" method="POST">
         @method('POST')
         @csrf
         <div class="form-group">
          <input type="text" class="form-control" name="customer_name" placeholder="Inserisci nome">
          <input type="text" class="form-control" name="customer_surname" placeholder="Inserisci cognome">
-         <input type="email" class="form-control" name="customer_email" placeholder="Inserisci indirizzo email">
+         <input type="email" class="form-control" name="customer_email" placeholder="Inserisci email">
          <input type="text" class="form-control" name="customer_address" placeholder="Inserisci indirizzo">
          <input type = "hidden" name = "amount" :value = "calculateTotal" />
          {{-- per passare la quantità e il numero di piatti uso input di tipo hidden
@@ -84,7 +104,7 @@
           </div>
           <div>
             <input id="nonce" name="payment_method_nonce" type="hidden" />
-            <button  v-if="calculateTotal !==0">Procedi al pagamento</button>
+            <button class="btn btn-warning" v-if="calculateTotal !==0">Procedi al pagamento</button>
           </div>
       </form>
       </div>
