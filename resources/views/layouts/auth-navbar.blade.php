@@ -10,7 +10,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-                @if (Auth::check())
+                @if (Auth::check() && Request::route()->getName() !== 'dashboard')
                 {{-- <li class="nav-item active">
                   <a class="nav-link" href="#">Link<span class="sr-only">(current)</span></a>
                 </li>
@@ -26,7 +26,7 @@
                 <a class="btn"  href="/register">Register</a>
               @else
                 <div class="btn" aria-labelledby="navbarDropdown">
-                    <a style="color:red;text-decoration:none;" href="{{ route('logout') }}"
+                    <a style="color:white;text-decoration:none;" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
