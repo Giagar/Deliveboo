@@ -4,9 +4,17 @@
 @section('title','Home')
 
 @section('content')
+
 <div class="checkout-container">
     <div id="carrello" class="checkout"> {{-- Qui forse c'è un problema nell'usare due volte id carrello su due pagine diverse --}}
         <section class="cart">
+
+    <!-- <div id="carrello" class="checkout" style="min-height:50vh;">
+        {{-- Qui forse c'è un problema nell'usare due volte id carrello su due pagine diverse --}}
+    <div v-for='dish in cart'>
+          <span  @click='decreaseQuantity(dish)'>-</span>
+          <span>@{{dish.quantity}}</span>
+          <span  @click='increaseQuantity(dish)'>+</span> -->
 
             <div class="top-container">
                 <div class="header-wrapper">

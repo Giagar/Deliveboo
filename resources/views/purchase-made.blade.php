@@ -4,10 +4,10 @@
 @section('title','Home')
 
 @section('content')
-<div class="">
-Il tuo pagamento è avvenuto con successo.
-Ti abbiamo inviato una mail con i dettagli del tuo ordine.
-Grazie per aver ordinato su Deliveroo.
+<div style="min-height:70vh;padding-top:50px;padding-left:30px;">
+<h2>Il tuo pagamento è avvenuto con successo.</h2>
+<p>Ti abbiamo inviato una mail con i dettagli del tuo ordine.</p>
+<p>Grazie per aver ordinato su Deliveroo.</p>
 </div>
 {{-- {{$transaction}}
 {{$newOrder}} --}}
