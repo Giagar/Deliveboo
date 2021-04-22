@@ -1,20 +1,18 @@
-nav{
-    z-index: 1;
-     background: rgb(236,53,43);
-     background: linear-gradient(0deg, rgba(236,53,43,1) 30%, rgba(255,140,64,1) 85%);
-
-    .container{
-
-        a{
-
-            img{
-                height: 100px;
-                width: 100px;
+nav {
+    background-color: $bg-primary-color;
+    /*     background: $bg-secondary-color;
+    background: linear-gradient(0deg, $bg-secondary-color 30%, $bg-primary-color 85%);
+ */
+    .container {
+        a {
+            img {
+                height: 68.6px;
+                width: 89.6px;
             }
         }
-        .login{
-            a{
-                color: #fff;
+        .login {
+            a {
+                color: $secondary-color;
             }
         }
     }
