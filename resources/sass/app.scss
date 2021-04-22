@@ -3,7 +3,7 @@
 
 // Variables
 @import 'variables';
-
+@import "mixins";
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
@@ -15,3 +15,19 @@
 @import 'partials/crud';
 @import 'partials/dashboard';
 @import 'partials/orders';
+
+@include animations-keyframes;
+
+.fadeIn {
+  @include fade-in;
+  position: relative;
+}
+
+.fadeOut {
+  @include fade-out;
+  position: relative;
+}
+
+.fade {
+  @include fade;
+}
