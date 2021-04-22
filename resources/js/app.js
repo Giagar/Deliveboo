@@ -77,6 +77,7 @@ const app = new Vue({
             .then((response) => {
                 this.restaurants = response.data;
             })
+            localStorage.clear();
     },
     methods: {
         selectedCategory(category) {

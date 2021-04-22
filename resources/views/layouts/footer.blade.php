@@ -1,5 +1,8 @@
 
-@if (Request::route()->getName() !== 'login' && Request::route()->getName() !== 'register' && Request::route()->getName() !== 'logout')
+@if (Request::route()->getName() !== 'login'
+&& Request::route()->getName() !== 'register'
+&& Request::route()->getName() !== 'logout'
+)
 
 <!-- Footer -->
 <footer class="page-footer font-small">

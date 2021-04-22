@@ -6,21 +6,257 @@
 }
 
 .public-menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+min-height:100vh;
+
+    .main {
+        padding: 9% 0;
+        background: #D1913C;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, rgba(#FFD194, 0.3), rgba(#D1913C, 0.3));  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, rgba(#FFD194, 0.3), rgba(#D1913C, 0.3)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        @media (max-width: 576px) {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 10% 0;
+        }
+
+        .dishes-list {
+
+            .mobile-cart-section {
+                display: none;
+            }
+            @media (max-width: 576px) {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+
+                .mobile-cart-section {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: max-content;
+                    background-color: $bg-secondary-color;
+                    border-radius: 20px;
+                    margin-top: 50px;
+
+                    .mobile-cart-wrapper{
+                        width: 300px;
+                        height: 200px;
+                        background-color: $bg-secondary-color;
+                        overflow-y: auto;
+                        padding: 10px;
+                        border-radius: 20px;
+
+                        .mobile-cart {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            border-bottom: 1px solid $third-color;
+                            padding-top: 10px;
+
+                            p {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .restaurant-info {
+        background-color: $bg-secondary-color;
+        width: 40%;
+        padding: 1%;
+        border-radius: $border-radius-windows-large;
+        opacity: 0.9;
+        border: 1px solid $primary-color;
+        position: absolute;
+        left:10%;
+        top: 50%;
+
+        @media (max-width: 576px) {
+            // width: 90%;
+            // padding: 5px;
+            // opacity: 0.9;
+            // border: 1px solid $primary-color;
+            // position: absolute;
+            // top: 50%;
+            // left: 1%;
+            display: none;
+        }
+    }
+
+    .header {
+        padding-left: 50px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 40vh;
+        position: relative;
+
+        ul {
+            list-style: none;
+
+            h4 {
+                @media (max-width: 576px) {
+                    font-size: 18px;
+                }
+            }
+
+            li {
+                display: flex;
+                align-items: center;
+                padding: 0.5%;
+
+                .info {
+                    font-size: $medium-text;
+                }
+
+                .info-icon {
+                    margin-right: 20px;
+                    width: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    i {
+                        font-size: 30px;
+
+                        @media (max-width: 576px) {
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                .info-detail {
+                    font-size: $medium-text;
+
+                    @media (max-width: 576px) {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+        h1 {
+            color: $primary-color;
+            font-size: 4em;
+
+            @media (max-width: 576px) {
+                font-size: 36px;
+            }
+        }
+
+        p {
+            color: white;
+            font-size: 2.5em;
+            margin-left: 100px;
+        }
+
+    }
+
+    .dishes-list-container {
+
+        width: 60%;
+        margin-left: 50px;
+
+        .button-wrapper-mobile {
+
+            @media (max-width: 576px) {
+                display: block;
+                padding: 20px;
+
+                button {
+                    background-color: #ffc107;
+
+                    a {
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 576px) {
+            width: 95%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .dish {
+            border-radius: 50px;
+            box-shadow: 0 0 10px #000;
+            margin: 50px 0;
+            display: flex;
+            justify-content: space-between;
+            height: 400px;
+            width: 100%;
+
+            @media (max-width: 576px) {
+               margin: 10px 0;
+               height: 300px;
+            }
+
+            &-left {
+                width: 50%;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                border-radius: 50px 0 0 50px;
+            }
+
+            &-right {
+                width: 50%;
+                padding: 5%;
+                border-radius: 0 50px 50px 0;
+                background-color: $secondary-color;
+                font-size: $medium-text;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                @media (max-width: 576px) {
+                   font-size: 14px;
+                }
+            }
+
+            img {
+            width: 200px;
+            }
+
+            button {
+                background-color: rgba(#ffc107, 0.8);
+                padding: 10px;
+                font-weight: bold;
+                margin-top: 10px;
+
+                &:hover {
+                    background-color: #ffc107;
+                }
+            }
+        }
+    }
 
     .wrapper {
-        position: fixed;
-        top: 20%;
-        right: 10%;
+        position: absolute;
+        top: 78%;
+        right: 3%;
+        display: block;
+
+        @media (max-width: 576px) {
+            display: none;
+        }
 
         .cart {
-            min-height: 650px;
-            width: 600px;
+            min-height: 500px;
+            width: 450px;
             border-radius: 50px;
             box-shadow: 0 0 10px #000;
             position: relative;
+            background-color: white;
 
             .flex-wrapper {
                 position: relative;
@@ -28,12 +264,13 @@
                 justify-content: center;
                 align-items: center;
                 width: 100%;
-                height: 20%;
                 margin-bottom: 5%;
             }
 
-            .top-container {
-                min-height: calc(650px - 150px);
+            .list-container{
+             padding-top:20px;
+             height:300px;
+             overflow-y: auto;
             }
 
             .header-wrapper {
@@ -52,18 +289,19 @@
             &-product {
                 display: inline-block;
                 width: 90%;
-                height: 90%;
-                border: 1px solid blue;
+                height: 100px;
 
                 &-stats {
                     float: left;
                     height: 100%;
-                    width: 50%;
-                    background-color: sandybrown;
+                    width: 49%;
+                    box-shadow: 0 0 8px #000;
+                    border-radius: 10px 0 0 10px;
 
                     &-content {
                         margin-top: 5%;
                         margin-left: 10%;
+                        font-size: 16px;
                     }
                 }
                 &-image {
@@ -72,8 +310,12 @@
                     align-items: center;
                     float: right;
                     height: 100%;
-                    width: 50%;
-                    background-color: orangered;
+                    width: 49%;
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    border-radius: 0 10px 10px 0;
+                    box-shadow: 0 0 8px #000;
                 }
             }
 
@@ -85,7 +327,6 @@
                 left: 5%;
                 width: 30%;
                 height: 30%;
-                background-color: salmon;
 
                 span {
                     display: flex;
@@ -93,14 +334,31 @@
                     align-items: center;
                     width: 33%;
                     font-size: 30px;
+                    border-radius: 5px;
+                    background-color: #ffc107;
+                }
+
+                .changeQuantity {
                     cursor: pointer;
-                    border: 1px solid black;
+                    background-color: rgba(#ffc107, 0.8);
+
+                    &:hover{
+                        background-color: #ffc107;
+                        transition: 0.3s;
+                    }
                 }
             }
 
             &-bottom {
-                height: 150px;
+                min-height: 100px;
                 width: 100%;
+
+                svg {
+                    position: absolute;
+                    top: 40%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
 
                 .total {
                     display: flex;
@@ -108,6 +366,11 @@
                     align-items: center;
                     width: 100%;
                     height: 10%;
+                    padding: 20px 30px;
+                }
+
+                #empty {
+                    text-align: center;
                 }
 
                 .button-wrapper {
@@ -116,15 +379,19 @@
                     align-items: center;
                     width: 100%;
                     height: 70%;
+                    padding: 20px;
 
                     button {
-                        height: 60%;
-                        width: 70%;
-                        border: none;
-                        outline: none;
-                        border-radius: 30px;
-                        cursor: pointer;
-                        background-color: orange;
+                        background-color: rgba(#ffc107, 0.8);
+
+                        &:hover {
+                            background-color: #ffc107;
+                        }
+
+                        a {
+                            text-decoration: none;
+                            color: black;
+                        }
                     }
                 }
             }
@@ -132,3 +399,4 @@
 
     }
 }
+

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.receipt-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .receipt {
+        box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5);
+        padding: 20px 40px;
+        margin: 0 auto;
+        width: 400px;
+        background: #FFF;
+        font-family: 'VT323', monospace;
+
+        .logo {
+            text-align: center;
+            img {
+                filter: grayscale(100%);
+            }
+        }
+
+        .info {
+            p {
+                color: grey;
+            }
+        }
+    }
+}
+
+
+
