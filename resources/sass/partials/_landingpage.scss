@@ -9,14 +9,46 @@
 .active-category {
     // background-color: yellow !important;
     // color: darkgrey !important;
-    outline: 2px solid $bg-secondary-color;
+    // outline: 2px solid $bg-secondary-color;
+    box-shadow: 0 0 5px 2px darkgrey;
+    border-radius: $border-radius-btn;
+}
+
+.section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    // display: inline-block;
+}
+
+
+
+.section-title {
+    font-size: 32px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 50px;
+    letter-spacing: 1.5px;
+    color: $primary-color;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    background-color: $bg-secondary-color;
+    width: 55%;
+    height: 100%;
+    bottom: -10px;
+    left: 50%;
+    position: absolute;
+    z-index: -1;
+    transform: skewX(35deg) translateX(-50%);
 
 }
 
 .categoriesSection {
     // font-family: 'Noto Sans JP', sans-serif;
     padding: 10px 0;
-    border-bottom: 1px solid $primary-color;
+    // border-bottom: 1px solid $primary-color;
 
     input {
         font-size: 1.5em;
@@ -28,6 +60,7 @@
         margin: 10px 20px;
         text-align: center;
         position: relative;
+        border-radius: $border-radius-windows;
 
         img {
             width: 80px;
@@ -55,8 +88,8 @@
     }
 
     .categories:hover {
-        transform: scale(1.15);
-        transition: 0.25s ease-in-out;
+        transform: scale(1.05);
+        transition: 0.15s;
     }
 
     // .active-category::after {
@@ -117,6 +150,7 @@
 
 .restaurantsSection {
     padding: 20px 0;
+    position: relative;
 
     .restaurants {
         width: 250px;
@@ -157,6 +191,7 @@
             color: white;
             background-color: $bg-primary-color;
             z-index: 5;
+            border-radius: 4px;
         }
 
         .restaurant-categories {
@@ -164,6 +199,7 @@
             height: 35px;
             display: flex;
             align-items: center;
+            justify-content: center;
             min-width: 50px;
             padding: 4px 10px;
             bottom: -5px;
@@ -171,6 +207,7 @@
             color: white;
             background-color: $bg-primary-color;
             z-index: 5;
+            border-radius: 4px;
         }
 
         div {
@@ -179,7 +216,7 @@
     }
 
     .restaurants:hover {
-        box-shadow: 0 0 5px 5px lightgray;
+        box-shadow: 0 0 5px 4px hsl(0, 2%, 69%);
         transform: scale(1.05);
         transition: 0.25s;
     }
@@ -191,6 +228,68 @@
     .restaurants:active {
         outline: 2px solid hsl(221, 80%, 44%);
     }
+
+    .search-indicator {
+        background-color: $bg-secondary-color;
+        padding: 6px 10px;
+        color: white;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        // .triangle-pointer {
+        //     position: absolute;
+        //     right:-10px;
+        //     bottom: 0;
+        //     background-color: green;
+
+        //     .arrow-up {
+        //         width: 0;
+        //         height: 0;
+        //         border-left: 5px solid transparent;
+        //         border-right: 5px solid transparent;
+
+        //         border-bottom: 5px solid black;
+        //     }
+
+        //     .arrow-down {
+        //     width: 0;
+        //     height: 0;
+        //     border-left: 20px solid transparent;
+        //     border-right: 20px solid transparent;
+
+        //     border-top: 20px solid #f00;
+        //     }
+
+        //     .arrow-right {
+        //     width: 0;
+        //     height: 0;
+        //     border-top: 60px solid transparent;
+        //     border-bottom: 60px solid transparent;
+
+        //     border-left: 60px solid green;
+        //     }
+
+        //     .arrow-left {
+        //     width: 0;
+        //     height: 0;
+        //     border-top: 10px solid transparent;
+        //     border-bottom: 10px solid transparent;
+
+        //     border-right:10px solid blue;
+        //     }
+
+        // }
+    }
+
+    .no-restaurants-found.message {
+        font-size:15px;
+        border-bottom: 2px solid $bg-secondary-color;
+        padding-top: 50px;
+    }
+
 }
 
 
