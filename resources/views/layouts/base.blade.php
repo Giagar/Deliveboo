@@ -16,9 +16,9 @@
 <body>
     {{-- <div id="app"> --}}
         @include('layouts.auth-navbar')
-
+        <main>
          @yield('content')
-
+        </main>
         @include('layouts.footer')
     {{-- </div> --}}
     {{-- <script src="{{ asset('js/app.js') }}"></script> --}}

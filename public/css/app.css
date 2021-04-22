@@ -11579,6 +11579,8 @@ footer div a {
 
 nav {
   z-index: 1;
+  background: #ec352b;
+  background: linear-gradient(0deg, #ec352b 30%, #ff8c40 85%);
 }
 
 nav .container a img {
