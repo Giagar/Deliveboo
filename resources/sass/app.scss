@@ -3,7 +3,7 @@
 
 // Variables
 @import 'variables';
-
+@import "mixins";
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
@@ -16,7 +16,6 @@
 @import 'partials/dashboard';
 @import 'partials/orders';
 
-// Mystyle
 main {
-    // background-color: #EAE7DC;
+  background-color: #EAE7DC;
 }
