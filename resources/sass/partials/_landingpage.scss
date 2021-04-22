@@ -3,9 +3,52 @@
 // magari nella vista metteremo un wrapper con id=landingpage
 // e da li con le graffe racchiudiamo tutto lo stile dei div figli
 
+* {box-sizing: border-box; margin: 0; padding: 0;}
+
+
+.active-category {
+    // background-color: yellow !important;
+    // color: darkgrey !important;
+    // outline: 2px solid $bg-secondary-color;
+    box-shadow: 0 0 5px 2px darkgrey;
+    border-radius: $border-radius-btn;
+}
+
+.section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    // display: inline-block;
+}
+
+
+
+.section-title {
+    font-size: 32px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 50px;
+    letter-spacing: 1.5px;
+    color: $primary-color;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    background-color: $bg-secondary-color;
+    width: 55%;
+    height: 100%;
+    bottom: -10px;
+    left: 50%;
+    position: absolute;
+    z-index: -1;
+    transform: skewX(35deg) translateX(-50%);
+
+}
+
 .categoriesSection {
+    // font-family: 'Noto Sans JP', sans-serif;
     padding: 10px 0;
-    border-bottom: 1px solid black;
+    // border-bottom: 1px solid $primary-color;
 
     input {
         font-size: 1.5em;
@@ -16,24 +59,98 @@
         cursor: pointer;
         margin: 10px 20px;
         text-align: center;
+        position: relative;
+        border-radius: $border-radius-windows;
 
         img {
             width: 80px;
             height: 80px;
             border-radius: 50%;
             text-align: center;
+            position: relative; // per .active-category
+            z-index: 2; // per .active-category
         }
 
         h4 {
-            background-color: yellow;
+            // background-color: yellow;
             border-radius: 5px;
-            padding: 5px;
+            padding: 3px 5px;
+            position: absolute;
+            font-size: 15px;
+            background: $bg-primary-color;
+            color: white;
+            border-radius: 4px;
+            bottom: -15px;
+            transform: translateX(-50%);
+            left: 50%;
+            z-index: 2; // per .active-category
         }
     }
+
+    .categories:hover {
+        transform: scale(1.05);
+        transition: 0.15s;
+    }
+
+    // .active-category::after {
+    //     content: "";
+    //     display: block;
+    //     background-color: lightblue;
+    //     z-index: 1;
+    //     width: 100%;
+    //     height: 100%;
+    //     position: absolute;
+    //     bottom: 0;
+    //     left: 0;
+    //     opacity: 0.5;
+    //     border-radius: $border-radius-windows
+    // }
 }
+
+.advanced-search {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+// .restaurantsSection {
+//     padding: 20px 0;
+
+//     .restaurants {
+//         width: 250px;
+//         height: 150px;
+//         border-radius: 10px;
+//         margin: 20px 50px;
+//         background-size: cover;
+//         justify-content: center;
+//         align-items: center;
+
+//         a {
+//             color: $primary-color;
+
+//             span {
+//                 background-color: rgba(255,255,255, 0.3);
+//                 border-radius: 5px;
+//                 font-size: 1.5rem;
+//                 padding: 5px;
+//             }
+//         }
+
+//         div {
+//             align-self: flex-end;
+//         }
+//     }
+// }
 
 .restaurantsSection {
     padding: 20px 0;
+    position: relative;
 
     .restaurants {
         width: 250px;
@@ -41,68 +158,141 @@
         border-radius: 10px;
         margin: 20px 50px;
         background-size: cover;
-        justify-content: center;
-        align-items: center;
+        // justify-content: center;
+        // align-items: center;
+        position: relative;
 
         a {
-            color: black;
+            color: $primary-color;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
 
-            span {
-                background-color: rgba(255,255,255, 0.3);
-                border-radius: 5px;
-                font-size: 1.5em;
-                padding: 5px;
-            }
+            // span {
+            //     background-color: rgba(255,255,255, 0.3);
+            //     border-radius: 5px;
+            //     font-size: 1.5rem;
+            //     padding: 5px;
+            // }
+
+        }
+
+        .restaurant-name {
+            position: absolute;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            padding: 4px 10px;
+            // width: 150px;
+            top: -5px;
+            right: -10px;
+            color: white;
+            background-color: $bg-primary-color;
+            z-index: 5;
+            border-radius: 4px;
+        }
+
+        .restaurant-categories {
+            position: absolute;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 50px;
+            padding: 4px 10px;
+            bottom: -5px;
+            left: -10px;
+            color: white;
+            background-color: $bg-primary-color;
+            z-index: 5;
+            border-radius: 4px;
         }
 
         div {
-            align-self: flex-end;
+            // align-self: flex-end;
         }
     }
-}
-.waves {
-    position:relative;
-    width: 100%;
-    height:15vh;
-    margin-bottom:-30px; 
-    min-height:50px;
-    max-height:150px;
-  }
-  /* Animation */
 
-  .parallax > use {
-    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
-  }
-  .parallax > use:nth-child(1) {
-    animation-delay: -2s;
-    animation-duration: 7s;
-  }
-  .parallax > use:nth-child(2) {
-    animation-delay: -3s;
-    animation-duration: 10s;
-  }
-  .parallax > use:nth-child(3) {
-    animation-delay: -4s;
-    animation-duration: 13s;
-  }
-  .parallax > use:nth-child(4) {
-    animation-delay: -5s;
-    animation-duration: 20s;
-  }
-  @keyframes move-forever {
-    0% {
-     transform: translate3d(-90px,0,0);
+    .restaurants:hover {
+        box-shadow: 0 0 5px 4px hsl(0, 2%, 69%);
+        transform: scale(1.05);
+        transition: 0.25s;
     }
-    100% {
-      transform: translate3d(85px,0,0);
+
+    .restaurants:visited {
+        outline: 2px solid hsl(221, 80%, 44%);
     }
-  }
-  /*Shrinking for mobile*/
-  @media (max-width: 768px) {
-    .waves {
-      height:40px;
-      min-height:40px;
+
+    .restaurants:active {
+        outline: 2px solid hsl(221, 80%, 44%);
     }
-  }
+
+    .search-indicator {
+        background-color: $bg-secondary-color;
+        padding: 6px 10px;
+        color: white;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        // .triangle-pointer {
+        //     position: absolute;
+        //     right:-10px;
+        //     bottom: 0;
+        //     background-color: green;
+
+        //     .arrow-up {
+        //         width: 0;
+        //         height: 0;
+        //         border-left: 5px solid transparent;
+        //         border-right: 5px solid transparent;
+
+        //         border-bottom: 5px solid black;
+        //     }
+
+        //     .arrow-down {
+        //     width: 0;
+        //     height: 0;
+        //     border-left: 20px solid transparent;
+        //     border-right: 20px solid transparent;
+
+        //     border-top: 20px solid #f00;
+        //     }
+
+        //     .arrow-right {
+        //     width: 0;
+        //     height: 0;
+        //     border-top: 60px solid transparent;
+        //     border-bottom: 60px solid transparent;
+
+        //     border-left: 60px solid green;
+        //     }
+
+        //     .arrow-left {
+        //     width: 0;
+        //     height: 0;
+        //     border-top: 10px solid transparent;
+        //     border-bottom: 10px solid transparent;
+
+        //     border-right:10px solid blue;
+        //     }
+
+        // }
+    }
+
+    .no-restaurants-found.message {
+        font-size:15px;
+        border-bottom: 2px solid $bg-secondary-color;
+        padding-top: 50px;
+    }
+
+}
+
+
+
 
 
