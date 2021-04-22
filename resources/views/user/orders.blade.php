@@ -4,18 +4,6 @@
 
 @section('content')
 
-{{-- soluzione  a --}}
-
-{{-- @foreach ($dishes as $dish)
-@foreach ($dish->orders as $order )
-  {{$order->customer_name}}
-  {{$order->customer_surname}}
-@endforeach
-@endforeach --}}
-
-
-{{-- soluzione b che è meglio --}}
-{{-- @dd($orders) --}}
 <div class="receipt-container">
 @foreach ($orders as $order)
 
@@ -50,13 +38,12 @@
                     <tr>
                         <td>{{$dish->name}}</td>
                         <td>1</td>
-                        <td>€</td>
+                        <td>{{$dish->price}} €</td>
                     </tr>
                     @endforeach
                     <tr class="total">
                         <td></td>
-                        <td><b>Totale</b></td>
-                        <td><b>€</b></td>
+                        <td><b>Totale : {{collect($order->dishes)->sum('price')}} €</b></td>
                     </tr>
                 </tbody>
             </table>
@@ -66,3 +53,24 @@
 </div>
 
 @endsection
+
+
+{{-- soluzione  a --}}
+
+{{-- @foreach ($dishes as $dish)
+@foreach ($dish->orders as $order )
+  {{$order->customer_name}}
+  {{$order->customer_surname}}
+@endforeach
+@endforeach --}}
+
+
+{{-- @foreach ($orders as $order)
+    @foreach ($order->dishes->unique() as $dish)
+ {{$dish->name}}
+ {{$dish->price}}
+    @endforeach
+@endforeach --}}
+
+{{-- soluzione b che è meglio --}}
+{{-- @dd($orders) --}}
