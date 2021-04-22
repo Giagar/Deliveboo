@@ -45,7 +45,7 @@ min-height:100vh;
                             display: flex;
                             justify-content: space-between;
                             align-items: center;
-                            border-bottom: 1px solid $third-color;
+                            border-bottom: 1px solid $secondary-color;
                             padding-top: 10px;
 
                             p {
@@ -59,7 +59,7 @@ min-height:100vh;
     }
 
     .restaurant-info {
-        background-color: $bg-secondary-color;
+        background-color:white;
         width: 40%;
         padding: 1%;
         border-radius: $border-radius-windows-large;
