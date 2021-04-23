@@ -82,6 +82,15 @@
 
             button {
                 margin-top: 20px;
+             // restyling da verificare
+             //   background-color: $bg-primary-color;
+
+            //    &:hover {
+                 //   background-color: $bg-footer-color;
+                 //   color: #fff;
+               // }
+
+
                 background-color: rgba(#ffc107, 0.8);
                 padding: 10px;
                 font-weight: bold;
@@ -95,6 +104,7 @@
                 &:hover {
                     background-color: #ffc107;
                 }
+
 
                 a {
                     text-decoration: none;

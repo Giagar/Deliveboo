@@ -27,11 +27,9 @@ min-height:100vh;
 
     .main {
         padding: 9% 0;
-        // background: #D1913C;  /* fallback for old browsers */
-        // background: -webkit-linear-gradient(to right, rgba(#FFD194, 0.3), rgba(#D1913C, 0.3));  /* Chrome 10-25, Safari 5.1-6 */
-        // background: linear-gradient(to right, rgba(#FFD194, 0.3), rgba(#D1913C, 0.3)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         background-color: lightgrey;
         position: relative;
+
 
         @media (max-width: $desktop) {
             @include flex;
@@ -302,13 +300,14 @@ min-height:100vh;
             }
 
             button {
-                background-color: rgba(#ffc107, 0.8);
+                background-color: $bg-primary-color;
                 padding: 10px;
                 font-weight: bold;
                 margin-top: 10px;
 
                 &:hover {
-                    background-color: #ffc107;
+                    background-color: $bg-footer-color;
+                    color: #fff;
                 }
             }
         }

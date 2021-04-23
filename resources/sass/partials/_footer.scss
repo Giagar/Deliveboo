@@ -1,69 +1,64 @@
-footer{
+footer {
     position: absolute;
     z-index: 2;
     width: 100%;
-    background-color: #1d1d1d;
-/*  background: rgb(52,144,220);
-    background: linear-gradient(0deg, rgba(52,144,220,1) 65%, rgba(240,147,49,1) 80%); */
-/*     background: $bg-secondary-color;
-    background: linear-gradient(0deg, $bg-secondary-color 30%, $bg-primary-color 80%);
- */    .top{
+    background-color: $bg-footer-color;
+
+    .top {
         background-color: $bg-primary-color;
-        div{
-
-            .grid-row{
-
-                div{
-
-                    h6{
-                        color: #1d1d1d;
+        div {
+            .grid-row {
+                div {
+                    h6 {
+                        color: $bg-footer-color;
                         font-weight: bold;
                     }
-                    a{
-                        color: #1d1d1d;
+                    a {
+                        height: 14px !important;
+                        width: 14.41px !important;
+                        color: $bg-footer-color;
+                        
                     }
-
+                    i{
+                        &:hover{
+                            color: white;
+                        }
+                    }
                 }
             }
         }
     }
 
-    .links{
+    .links {
         color: white;
 
-
-        div{
-            
-            div{
-
-
-                a{
+        div {
+            div {
+                a {
                     text-decoration: none;
                     color: $secondary-color;
                 }
-                hr{
-                    background-color:$secondary-color;
+                hr {
+                    background-color: $secondary-color;
                 }
-                h6{
+                h6 {
                     color: $secondary-color;
                 }
 
+                .contact-details {
+                    display: flex;
 
-                    .contact-details {
-                        display: flex;
-
-                        @media screen and (max-width: 762px) {
-                              justify-content: center;
-                          }
+                    @media screen and (max-width: 762px) {
+                        justify-content: center;
                     }
-
+                }
             }
         }
     }
 
-    div{
+    div {
         color: $secondary-color;
-        a{
+        a {
             color: $bg-primary-color;
         }
     }
