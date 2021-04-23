@@ -5,11 +5,12 @@
 
     .receipt {
         box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5);
-        padding: 20px 40px;
-        margin: 0 auto;
+        padding: 80px 30px;
+        margin: 20px auto;
         width: 400px;
         background: #FFF;
         font-family: 'VT323', monospace;
+        position:relative;
 
         .logo {
             text-align: center;
