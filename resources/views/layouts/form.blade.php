@@ -9,7 +9,7 @@ if(isset($edit) && !empty($edit)){//edit
 @endphp
 
 @section('content')
-  <div class="container">
+  <div class="container" style="margin-top: 25px; margin-bottom: 25px;">
     <form id="validateForm" action="{{$url}}" method="post" enctype="multipart/form-data">
       @csrf
       @method($method)
