@@ -26,7 +26,7 @@
 
         <div id="table">
             <table class="table">
-                <thead class="thead-light">
+                <thead class="header-table">
                     <tr>
                         <th scope="col">Prodotto</th>
                         <th scope="col">Quantità</th>
