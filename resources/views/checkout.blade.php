@@ -80,6 +80,9 @@
                     </div>
                     <hr>
                     <p class="total-mobile"><b>Totale</b> € @{{ calculateTotal.toFixed(2) }}</p>
+                    <div class="checkout-bottom" v-if="calculateTotal == 0">
+                        <button class="btn">Torna ai piatti</button>
+                    </div>
                 </div>
             </section>
         </div>
