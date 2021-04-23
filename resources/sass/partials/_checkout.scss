@@ -110,6 +110,7 @@
             &-bottom {
                 min-height: 100px;
                 width: 100%;
+                text-align: center;
 
                 svg {
                     position: absolute;
@@ -129,6 +130,15 @@
 
                 #empty {
                     text-align: center;
+                }
+
+                button {
+                    background-color: rgba(#ffc107, 0.8);
+                    font-weight: bold;
+
+                    &:hover {
+                        background-color: #ffc107;
+                    }
                 }
             }
         }
@@ -183,6 +193,15 @@
             box-shadow: 0 0 10px #000;
             background-color: white;
             padding: 40px;
+
+            button {
+                background-color: rgba(#ffc107, 0.8);
+                font-weight: bold;
+
+                &:hover {
+                    background-color: #ffc107;
+                }
+            }
 
             .form-group {
                 margin-bottom: 40px;

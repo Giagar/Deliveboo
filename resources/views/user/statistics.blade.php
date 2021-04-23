@@ -1,6 +1,6 @@
 {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> --}}
 
-@extends('layouts.base')
+@extends('layouts.baseuser')
 @section('title', 'Statistiche')
 @section('content')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.0/chart.min.js"></script>
@@ -17,27 +17,27 @@ let result = {
     "01": {
         totalOrders: 0,
         money: 0,
+        monthName: "Gennaio",
     },
 
     "02": {
         totalOrders: 0,
         money: 0,
+        monthName: "Febbraio",
     },
 
     "03": {
         totalOrders: 0,
         money: 0,
+        monthName: "Marzo",
     },
 
     "04": {
         totalOrders: 0,
         money: 0,
+        monthName: "Aprile",
     },
 
-    "05": {
-        totalOrders: 0,
-        money: 0,
-    },
 }
 
     orders.forEach(order => {
@@ -55,7 +55,7 @@ let result = {
         // console.log(key)
         orderValues.push(result[key].totalOrders);
         moneyValues.push(result[key].money);
-        monthValues.push(key);
+        monthValues.push(result[key].monthName);
     }
 
 
@@ -66,9 +66,19 @@ let result = {
 
 </script>
 
+<section class="section stats wrapper">
+    <div class="title-container">
+        <h1 class="section-title">Statistiche</h1>
+    </div>
 
+    <div class="stats-year">Anno 2021</div>
 
-<canvas id="myChart" width="400" height="400"></canvas>
+    <div class="chart-container">
+        <canvas id="myChart" width="100" height="75"></canvas>
+    </div>
+
+</section>
+
 
 <script>
     var ctx = document.getElementById('myChart').getContext('2d');
@@ -79,23 +89,24 @@ var myChart = new Chart(ctx, {
         datasets: [
           // first graph
           {
-            label: 'orders', // legend
+            label: 'Numero ordini', // legend
             data: [...orderValues], // the y value adapt automatically to contain all the values in the array
-            fill: true, // fil color under the graph
-            backgroundColor: 'rgba(0, 255, 0, 0.5)', // color of the graph under the line
-            borderColor: 'rgba(255, 99, 132, 1)', // graph line color
-            pointBackgroundColor: 'blue', // color of the graph line nodes
-            borderWidth: 1, // width of the graph line
+            fill: false, // fil color under the graph
+            backgroundColor: 'hsla(181, 53%, 45%, 0.7)', // color of the graph under the line
+            borderColor: 'hsla(181, 53%, 45%, 0.7)', // graph line color
+            // pointBackgroundColor: 'hsl(0, 1%, 21%)', // color of the graph line nodes
+            borderWidth: 1.5, // width of the graph line
             tension: 0.1, // roundness of the graph line
         },
           // second graph
         {
-            label: 'money', // legend
+            label: 'Totale incasso', // legend
             data: [...moneyValues],
             fill: false,
-            borderColor: 'rgba(0, 0, 255, 1)',
-            pointBackgroundColor: 'blue',
-            borderWidth: 1,
+            backgroundColor: 'orange', // color of the graph under the line
+            borderColor: 'orange',
+            // pointBackgroundColor: 'hsl(0, 1%, 21%)',
+            borderWidth: 1.5,
             tension: 0.1,
         }
 
@@ -104,8 +115,37 @@ var myChart = new Chart(ctx, {
     options: {
         scales: {
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                ticks: {
+                    // Include a dollar sign in the ticks
+                    callback: function(value, index, values) {
+                        return '€ ' + value;
+                    },
+                    // autoSkip: false,
+                    // maxRotation: 90,
+                    // minRotation: 45
+                },
+                // title: {
+                //     display: true,
+                //     text: 'Month',
+                //     color: '#911',
+                //     font: {
+                //         family: 'Comic Sans MS',
+                //         size: 20,
+                //         weight: 'bold',
+                //         lineHeight: 1.2,
+                //     },
+                //     padding: {top: 20, left: 0, right: 0, bottom: 0}
+                // }
+            },
+            x: {
+                beginAtZero: true,
+                ticks: {
+                    maxRotation: 90,
+                    minRotation: 45
+                },
             }
+
         }
     }
 });

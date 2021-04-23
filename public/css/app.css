@@ -10970,14 +10970,14 @@ a.text-dark:focus {
   z-index: 1;
   margin-bottom: 50px;
   letter-spacing: 1.5px;
-  color: #000;
+  color: #363535;
 }
 
 .section-title::after {
   content: "";
   display: block;
-  background-color: red;
-  width: 55%;
+  background-color: rgba(54, 174, 176, 0.7);
+  width: 100%;
   height: 100%;
   bottom: -10px;
   left: 50%;
@@ -11249,16 +11249,25 @@ a.text-dark:focus {
   position: relative;
 }
 
+@media (max-width: 992px) {
+  .public-menu .header {
+    padding-left: 0;
+    min-height: 200px;
+  }
+}
+
 .public-menu .header .mobile-restaurant-name {
   display: none;
   color: black;
   text-shadow: 2px 2px 2px grey;
   background-color: rgba(255, 255, 255, 0.7);
-  padding: 10px;
-  border-radius: 50px;
+  padding: 20px;
+  border-radius: 0 50px 50px 0;
   position: absolute;
   top: 10%;
-  left: 10%;
+  left: 0;
+  margin-left: 0;
+  margin-bottom: 0;
 }
 
 @media (max-width: 992px) {
@@ -11270,14 +11279,14 @@ a.text-dark:focus {
 .public-menu .header .mobile-restaurant-description {
   position: absolute;
   bottom: 0;
-  left: 0;
+  right: 0;
   display: none;
   font-size: 1em;
   color: black;
   text-shadow: 2px 2px 2px grey;
   background-color: rgba(255, 255, 255, 0.7);
   padding: 10px;
-  border-radius: 50px;
+  border-radius: 50px 0 0 50px;
 }
 
 @media (max-width: 992px) {
@@ -11359,7 +11368,7 @@ a.text-dark:focus {
 @media (max-width: 992px) {
   .public-menu .dishes-list-container {
     display: flex;
-    width: 95%;
+    width: 90%;
     margin: 0;
     justify-content: center;
   }
@@ -11372,11 +11381,17 @@ a.text-dark:focus {
   }
 
   .public-menu .dishes-list-container .button-wrapper-mobile button {
+    background-color: rgba(255, 193, 7, 0.8);
+  }
+
+  .public-menu .dishes-list-container .button-wrapper-mobile button:hover {
     background-color: #ffc107;
   }
 
   .public-menu .dishes-list-container .button-wrapper-mobile button a {
     color: #000;
+    text-decoration: none;
+    font-weight: bold;
   }
 }
 
@@ -11599,6 +11614,7 @@ a.text-dark:focus {
 
 .public-menu .wrapper .cart-bottom .button-wrapper button a {
   text-decoration: none;
+  font-weight: bold;
   color: black;
 }
 
@@ -11692,6 +11708,13 @@ nav .container .login a {
   padding: 5px;
   margin: 0 3px;
   border-radius: 10px;
+}
+
+@media (max-width: 992px) {
+  .crud-search-section button {
+    margin-bottom: 5px;
+    width: 150px;
+  }
 }
 
 .crud-search-section button:hover {
@@ -11801,11 +11824,26 @@ nav .container .login a {
 
 .main-container .boxes-container .box button {
   margin-top: 20px;
+  background-color: rgba(255, 193, 7, 0.8);
+  padding: 10px;
+  font-weight: bold;
+  width: 150px;
+}
+
+@media (max-width: 992px) {
+  .main-container .boxes-container .box button {
+    width: 120px;
+    padding: 5px;
+  }
+}
+
+.main-container .boxes-container .box button:hover {
+  background-color: #ffc107;
 }
 
 .main-container .boxes-container .box button a {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 @media (max-width: 992px) {
@@ -11838,11 +11876,12 @@ nav .container .login a {
 
 .receipt-container .receipt {
   box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5);
-  padding: 20px 40px;
-  margin: 0 auto;
+  padding: 80px 30px;
+  margin: 20px auto;
   width: 400px;
   background: #FFF;
   font-family: "VT323", monospace;
+  position: relative;
 }
 
 .receipt-container .receipt .logo {
@@ -11976,6 +12015,7 @@ nav .container .login a {
 .checkout-container #carrello .cart-bottom {
   min-height: 100px;
   width: 100%;
+  text-align: center;
 }
 
 .checkout-container #carrello .cart-bottom svg {
@@ -11996,6 +12036,15 @@ nav .container .login a {
 
 .checkout-container #carrello .cart-bottom #empty {
   text-align: center;
+}
+
+.checkout-container #carrello .cart-bottom button {
+  background-color: rgba(255, 193, 7, 0.8);
+  font-weight: bold;
+}
+
+.checkout-container #carrello .cart-bottom button:hover {
+  background-color: #ffc107;
 }
 
 .checkout-container #carrello .mobile-checkout-cart {
@@ -12050,6 +12099,15 @@ nav .container .login a {
   padding: 40px;
 }
 
+.checkout-container #carrello #payment-form button {
+  background-color: rgba(255, 193, 7, 0.8);
+  font-weight: bold;
+}
+
+.checkout-container #carrello #payment-form button:hover {
+  background-color: #ffc107;
+}
+
 .checkout-container #carrello #payment-form .form-group {
   margin-bottom: 40px;
 }
@@ -12069,6 +12127,43 @@ nav .container .login a {
   .checkout-container #carrello #payment-form button {
     font-size: 0.9em;
   }
+}
+
+.section.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.section.stats .title-container {
+  margin-bottom: 40px;
+}
+
+.section.stats .stats-year {
+  font-size: 22px;
+  align-self: flex-start;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  position: relative;
+  color: #000;
+}
+
+.section.stats .stats-year::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: rgba(54, 174, 176, 0.7);
+}
+
+.section.stats .chart-container {
+  height: 500px;
+  width: 100%;
 }
 
 main {

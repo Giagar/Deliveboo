@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.baseuser')
 
 @section('title','Dashboard')
 
@@ -32,7 +32,7 @@
 <div class="boxes-container">
     <div class="box">
         <img src="https://i.pinimg.com/originals/77/b1/db/77b1db46af01fe8737793239f848506a.png" alt="">
-        <button class="btn btn-secondary">
+        <button class="btn">
             <a href="{{route('dishes.index')}}">Vai ai piatti</a>
         </button>
         {{-- partendo dalla index --}}
@@ -40,14 +40,14 @@
 
     <div class="box">
         <img src="https://www.comune.somaglia.lo.it/wp-content/uploads/blocknotes.jpg" alt="">
-        <button class="btn btn-success">
+        <button class="btn">
             <a href="{{route('orders')}}">Vai agli ordini</a>
         </button>
     </div>
 
     <div class="box">
         <img src="https://www.en.regione.lombardia.it/wps/wcm/connect/51150327-6f92-4a42-9648-a093b9b0c4d6/imm-statistic.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-51150327-6f92-4a42-9648-a093b9b0c4d6-l-1zic2" alt="">
-        <button class="btn btn-primary">
+        <button class="btn">
             <a href="{{route('statistics')}}">Vai alle statistiche</a>
         </button>
     </div>
