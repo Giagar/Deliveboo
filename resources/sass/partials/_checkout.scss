@@ -184,6 +184,15 @@
             background-color: white;
             padding: 40px;
 
+            button {
+                background-color: rgba(#ffc107, 0.8);
+                font-weight: bold;
+
+                &:hover {
+                    background-color: #ffc107;
+                }
+            }
+
             .form-group {
                 margin-bottom: 40px;
 

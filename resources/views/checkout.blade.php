@@ -104,7 +104,7 @@
           </div>
           <div>
             <input id="nonce" name="payment_method_nonce" type="hidden" />
-            <button class="btn btn-warning" v-if="calculateTotal !==0">Procedi al pagamento</button>
+            <button class="btn btn-checkout" v-if="calculateTotal !==0">Procedi al pagamento</button>
           </div>
       </form>
       </div>
