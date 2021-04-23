@@ -8,7 +8,9 @@
 <div id="carrello" class="public-menu">
 
     <div class="header" style="background-image: url({{ asset($restaurant->img) }})">
-        <div class="restaurant-info">
+        <p class="mobile-restaurant-name">{{$restaurant->restaurant_name}}</p>
+        <p class="mobile-restaurant-description">{{$restaurant->restaurant_description}}</p>
+        <div class="restaurant-info" style="background-image: url({{asset('images-websites/forchetta.jpg')}})">
             <h1>{{ $restaurant->restaurant_name }}</h1>
             <ul>
                 <li>
@@ -18,13 +20,27 @@
                     <span class="info-icon"><i class="fas fa-map-marker-alt"></i></span><span class="info-detail">{{$restaurant->address}}</span>
                 </li>
                 <li>
-                   <span class="info-icon"><i class="fas fa-mobile-alt"></i></span><span class="info-detail">{{$restaurant->phone_number}}</span>
+                <span class="info-icon"><i class="fas fa-mobile-alt"></i></span><span class="info-detail">{{$restaurant->phone_number}}</span>
                 </li>
                 <li>
                     <span class="info-icon"><i class="fas fa-envelope-open-text"></i></span><span class="info-detail">{{$restaurant->email}}</span>
                 </li>
             </ul>
         </div>
+    </div>
+
+    <div class="mobile-restaurant-info">
+        <ul>
+            <li>
+                <span class="info-icon"><i class="fas fa-map-marker-alt"></i></span><span class="info-detail">{{$restaurant->address}}</span>
+            </li>
+            <li>
+               <span class="info-icon"><i class="fas fa-mobile-alt"></i></span><span class="info-detail">{{$restaurant->phone_number}}</span>
+            </li>
+            <li>
+                <span class="info-icon"><i class="fas fa-envelope-open-text"></i></span><span class="info-detail">{{$restaurant->email}}</span>
+            </li>
+        </ul>
     </div>
 
     <div class="main">
@@ -65,6 +81,7 @@
                             <span class="changeQuantity" @click='increaseQuantity(dish)'><i class="fas fa-plus"></i></span>
                         </div>
                     </div>
+                    <hr>
                     <p class="total-mobile"><b>Totale</b> € @{{ calculateTotal.toFixed(2) }}</p>
                 </div>
                 <div class="button-wrapper-mobile" v-if="calculateTotal !== 0">

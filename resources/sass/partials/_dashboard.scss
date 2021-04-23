@@ -24,11 +24,37 @@
         border-radius: 50px;
         box-shadow: 0 0 10px #000;
         padding: 40px;
+        background-color: white;
+
+        h3 {
+            padding: 5px 0;
+        }
+
+        ul {
+            li {
+                margin: 5px 0;
+            }
+        }
 
         img {
             width: 100%;
             border-radius: 10px;
             margin-bottom: 10px;
+        }
+
+        @media (max-width: $desktop) {
+            width: 40%;
+            padding: 20px;
+
+            h3 {
+                font-size: 1em;
+                font-weight: bold;
+                margin: 10px 0;
+            }
+
+            li {
+                font-size: 0.7em;
+            }
         }
     }
 
@@ -47,6 +73,7 @@
             flex-direction: column;
             align-items: center;
             padding: 20px;
+            background-color: white;
 
             img {
                 height: 150px;
@@ -55,17 +82,55 @@
 
             button {
                 margin-top: 20px;
-                background-color: $bg-primary-color;
+             // restyling da verificare
+             //   background-color: $bg-primary-color;
+
+            //    &:hover {
+                 //   background-color: $bg-footer-color;
+                 //   color: #fff;
+               // }
+
+
+                background-color: rgba(#ffc107, 0.8);
+                padding: 10px;
+                font-weight: bold;
+                width: 150px;
+
+                @media (max-width: $desktop) {
+                    width: 120px;
+                    padding: 5px;
+                }
 
                 &:hover {
-                    background-color: $bg-footer-color;
-                    color: #fff;
+                    background-color: #ffc107;
                 }
 
 
                 a {
                     text-decoration: none;
-                    color: white;
+                    color: black;
+                }
+            }
+        }
+
+        @media (max-width: $desktop) {
+            width: 60%;
+            flex-direction: column;
+            justify-content: space-around;
+            min-height: 450px;
+
+            .box {
+                width: 70%;
+                padding: 10px 0;
+
+                img {
+                    height: 50px;
+                }
+
+                button {
+                    a {
+                        font-size: 0.8em;
+                    }
                 }
             }
         }

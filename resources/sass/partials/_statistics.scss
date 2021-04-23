@@ -1,0 +1,44 @@
+
+.section.stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 750px;
+    margin: 0 auto;
+
+    .title-container {
+        margin-bottom: 40px ;
+
+        .section-title {
+
+        }
+    }
+
+    .stats-year {
+        font-size: 22px;
+        align-self: flex-start;
+        margin-top: 25px;
+        margin-bottom: 20px;
+        position: relative;
+        color: $primary-color;
+    }
+
+    .stats-year::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: hsla(181, 53%, 45%, 0.7);
+    }
+
+
+    .chart-container {
+        height: 500px;
+        width: 100%;
+
+    }
+
+}

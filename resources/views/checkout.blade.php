@@ -55,7 +55,7 @@
                         <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
                     </svg>
                     <h2 id="empty">Il carrello è vuoto</h2>
-                    <button class="btn btn-warning">Torna ai piatti</button>
+                    <button class="btn"><a href="javascript:history.back()">Torna ai piatti</a></button>
                 </div>
                 <div v-else class="total">
                     <h2>Totale</h2>
@@ -64,13 +64,36 @@
             </div>
         </section>
 
+        <div class="mobile-checkout-cart">
+            <section class="mobile-cart-section">
+                <div class="mobile-cart-wrapper">
+                    <div class="text-center">
+                        <h5>Controlla il tuo ordine</h5>
+                    </div>
+                    <div class="mobile-cart" v-for='dish in cart'>
+                        <p><b>@{{ dish.item.name }}</b></p>
+                        <div class="mobile-cart-right">
+                            <span class="changeQuantity" @click='decreaseQuantity(dish)'><i class="fas fa-minus"></i></span>
+                            <span>@{{ dish.quantity }}</span>
+                            <span class="changeQuantity" @click='increaseQuantity(dish)'><i class="fas fa-plus"></i></span>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="total-mobile"><b>Totale</b> € @{{ calculateTotal.toFixed(2) }}</p>
+                    <div class="checkout-bottom" v-if="calculateTotal == 0">
+                        <button class="btn"><a href="javascript:history.back()">Torna ai piatti</a></button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
     <form action="{{ route('pay', $restaurant->restaurant_name) }}" id="payment-form" method="POST">
         @method('POST')
         @csrf
         <div class="form-group">
          <input type="text" class="form-control" name="customer_name" placeholder="Inserisci nome">
          <input type="text" class="form-control" name="customer_surname" placeholder="Inserisci cognome">
-         <input type="email" class="form-control" name="customer_email" placeholder="Inserisci indirizzo email">
+         <input type="email" class="form-control" name="customer_email" placeholder="Inserisci email">
          <input type="text" class="form-control" name="customer_address" placeholder="Inserisci indirizzo">
          <input type = "hidden" name = "amount" :value = "calculateTotal" />
          {{-- per passare la quantità e il numero di piatti uso input di tipo hidden
@@ -84,7 +107,7 @@
           </div>
           <div>
             <input id="nonce" name="payment_method_nonce" type="hidden" />
-            <button  v-if="calculateTotal !==0">Procedi al pagamento</button>
+            <button class="btn btn-checkout" v-if="calculateTotal !==0">Procedi al pagamento</button>
           </div>
       </form>
       </div>

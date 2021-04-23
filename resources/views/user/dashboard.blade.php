@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.baseuser')
 
 @section('title','Dashboard')
 
@@ -21,7 +21,7 @@
         <li><b>Nome Ristorante:</b> {{Auth::user()->restaurant_name}}</li>
         <li><b>Descrizione Ristorante:</b> {{Auth::user()->restaurant_description}}</li>
         <li><b>Foto:</b> <img src="{{asset(Auth::user()->img)}}" alt="photo"></li>
-        <li><b>Indirizzo Email:</b> {{Auth::user()->email}}</li>
+        <li><b>Email:</b> {{Auth::user()->email}}</li>
         <li><b>Indirizzo:</b> {{Auth::user()->address}}</li>
         <li><b>Telefono:</b> {{Auth::user()->phone_number}}</li>
         <li><b>Partita iva:</b> {{Auth::user()->p_iva}}</li>

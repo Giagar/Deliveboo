@@ -10,8 +10,8 @@
     // background-color: yellow !important;
     // color: darkgrey !important;
     // outline: 2px solid $bg-secondary-color;
-    box-shadow: 0 0 5px 2px darkgrey;
-    border-radius: $border-radius-btn;
+    box-shadow: 0 0 7px 4px hsla(0, 0%, 66%, 0.5), 0 0 5px 5px $bg-secondary-color;
+    border-radius: 50% !important; // era $border-radius-btn
 }
 
 .section {
@@ -20,22 +20,28 @@
     // display: inline-block;
 }
 
+.section-title-container {
+    display: flex;
+    justify-content: center;
 
-
-.section-title {
-    font-size: 32px;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 50px;
-    letter-spacing: 1.5px;
-    color: $primary-color;
+    .section-title {
+        font-size: 36px;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 60px;
+        letter-spacing: 1.5px;
+        color: hsl(0, 1%, 21%); // era $primary-color
+        display: inline-block;
+    }
 }
+
+
 
 .section-title::after {
     content: "";
     display: block;
-    background-color: $bg-secondary-color;
-    width: 55%;
+    background-color: hsla(181, 53%, 45%, 0.7); //era $bg-secondary-color
+    width: 100%; // era 55%
     height: 100%;
     bottom: -10px;
     left: 50%;
@@ -49,6 +55,8 @@
     // font-family: 'Noto Sans JP', sans-serif;
     padding: 10px 0;
     // border-bottom: 1px solid $primary-color;
+    max-width: 900px;
+    margin: 0 auto;
 
     input {
         font-size: 1.5em;
@@ -110,11 +118,26 @@
 .advanced-search {
     display: flex;
     justify-content: center;
+
+    .reset-btn {
+        background-color: #1d1d1d;
+        color: $secondary-color;
+
+        @media screen and (max-width: 767px) {
+            margin-top: 10px;
+        }
+    }
+
 }
 
 .buttons-container {
     display: flex;
     justify-content: center;
+
+    .reset-btn {
+        background-color: #1d1d1d;
+        color: $secondary-color;
+    }
 }
 
 
@@ -189,9 +212,10 @@
             top: -5px;
             right: -10px;
             color: white;
-            background-color: $bg-primary-color;
+            background-color: $bg-secondary-color;
             z-index: 5;
             border-radius: 4px;
+            font-size: 25px;
         }
 
         .restaurant-categories {
@@ -216,7 +240,7 @@
     }
 
     .restaurants:hover {
-        box-shadow: 0 0 5px 4px hsl(0, 2%, 69%);
+        box-shadow: 0 5px 5px 4px hsl(0, 2%, 69%);
         transform: scale(1.05);
         transition: 0.25s;
     }
@@ -230,7 +254,7 @@
     }
 
     .search-indicator {
-        background-color: $bg-secondary-color;
+        background-color: $bg-primary-color;
         padding: 6px 10px;
         color: white;
         border-top-right-radius: 50px;
@@ -285,7 +309,7 @@
     }
 
     .no-restaurants-found.message {
-        font-size:15px;
+        font-size:25px;
         border-bottom: 2px solid $bg-secondary-color;
         padding-top: 50px;
     }

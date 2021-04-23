@@ -10,13 +10,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                @if (!Auth::check())
-                    <li class="nav-item active">
-                        {{-- <a class="nav-link" href="#">Link<span class="sr-only">(current)</span></a> --}}
-                    </li>
-                @else
+                @if (Auth::check())
+
                     <li class="nav-item">
+
                         <a class=" btn-bg-black btn-dark btn" href="{{ route('dashboard') }}">Dashboard</a>
+
+                        
+
                     </li>
                 @endif
             </ul>
@@ -27,6 +28,7 @@
             @else
                 <div aria-labelledby="navbarDropdown">
                     <a class="btn btn-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
+
                                   document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                     </a>
