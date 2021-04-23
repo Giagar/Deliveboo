@@ -12097,6 +12097,19 @@ nav .container .login a {
   border-radius: 20px;
 }
 
+.checkout-container #carrello .mobile-checkout-cart .mobile-cart-section .mobile-cart-wrapper .checkout-bottom {
+  text-align: center;
+}
+
+.checkout-container #carrello .mobile-checkout-cart .mobile-cart-section .mobile-cart-wrapper .checkout-bottom button {
+  background-color: rgba(255, 193, 7, 0.8);
+  font-weight: bold;
+}
+
+.checkout-container #carrello .mobile-checkout-cart .mobile-cart-section .mobile-cart-wrapper .checkout-bottom button:hover {
+  background-color: #ffc107;
+}
+
 .checkout-container #carrello .mobile-checkout-cart .mobile-cart-section .mobile-cart-wrapper .mobile-cart {
   display: flex;
   justify-content: space-between;
