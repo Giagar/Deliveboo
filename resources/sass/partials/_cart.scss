@@ -27,9 +27,11 @@ min-height:100vh;
 
     .main {
         padding: 9% 0;
-        background: #D1913C;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, rgba(#FFD194, 0.3), rgba(#D1913C, 0.3));  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, rgba(#FFD194, 0.3), rgba(#D1913C, 0.3)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        // background: #D1913C;  /* fallback for old browsers */
+        // background: -webkit-linear-gradient(to right, rgba(#FFD194, 0.3), rgba(#D1913C, 0.3));  /* Chrome 10-25, Safari 5.1-6 */
+        // background: linear-gradient(to right, rgba(#FFD194, 0.3), rgba(#D1913C, 0.3)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background-color: lightgrey;
+        position: relative;
 
         @media (max-width: $desktop) {
             @include flex;
@@ -89,15 +91,18 @@ min-height:100vh;
     }
 
     .restaurant-info {
-        background-color:white;
         width: 40%;
         padding: 1%;
-        border-radius: $border-radius-windows-large;
-        opacity: 0.8;
-        border: 1px solid $primary-color;
         position: absolute;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 50px;
         left:10%;
         top: 30%;
+        box-shadow: 0 0 10px #000;
+        z-index: 2;
+
 
         @media (max-width: $desktop) {
             // width: 90%;
@@ -127,7 +132,6 @@ min-height:100vh;
         .mobile-restaurant-name {
             display: none;
             color: black;
-            text-shadow: 2px 2px 2px grey;
             background-color: rgba(white, 0.7);
             padding: 20px;
             border-radius: 0 50px 50px 0;
@@ -147,11 +151,10 @@ min-height:100vh;
             bottom: 0;
             right: 0;
             display: none;
-            font-size: 1em;
+            font-size: 1.25em;
             color: black;
-            text-shadow: 2px 2px 2px grey;
             background-color: rgba(white, 0.7);
-            padding: 10px;
+            padding: 10px 15px;
             border-radius: 50px 0 0 50px;
 
             @media (max-width: $desktop) {
@@ -219,7 +222,7 @@ min-height:100vh;
     .dishes-list-container {
 
         width: 50%;
-        margin-left: 50px;
+        margin-left: 150px;
 
         @media (max-width: $desktop) {
             @include flex;
@@ -261,7 +264,8 @@ min-height:100vh;
 
             @media (max-width: $desktop) {
                margin: 10px 0;
-               min-height: 200px;
+               min-height: max-content;
+               height: 300px;
             }
 
             &-left {
@@ -312,8 +316,8 @@ min-height:100vh;
 
     .wrapper {
         position: absolute;
-        top: 75%;
-        right: 3%;
+        top: 20%;
+        right: 7%;
         display: block;
 
         @media (max-width: $desktop) {
