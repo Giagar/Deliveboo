@@ -9,6 +9,12 @@
           padding:5px;
           margin:0 3px;
           border-radius:10px;
+
+          @media (max-width: $desktop) {
+            margin-bottom: 5px;
+            width: 150px;
+        }
+
           &:hover{
             background-color:gold;
           }
