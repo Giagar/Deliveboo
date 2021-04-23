@@ -1,6 +1,6 @@
 {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> --}}
 
-@extends('layouts.base')
+@extends('layouts.baseuser')
 @section('title', 'Statistiche')
 @section('content')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.0/chart.min.js"></script>
