@@ -10955,8 +10955,8 @@ a.text-dark:focus {
 }
 
 .active-category {
-  box-shadow: 0 0 5px 2px darkgrey;
-  border-radius: 4px;
+  box-shadow: 0 0 7px 4px rgba(168, 168, 168, 0.5), 0 0 5px 5px #36aeb0;
+  border-radius: 50% !important;
 }
 
 .section {
@@ -10964,13 +10964,19 @@ a.text-dark:focus {
   padding-bottom: 100px;
 }
 
-.section-title {
+.section-title-container {
+  display: flex;
+  justify-content: center;
+}
+
+.section-title-container .section-title {
   font-size: 32px;
   position: relative;
   z-index: 1;
   margin-bottom: 50px;
   letter-spacing: 1.5px;
   color: #363535;
+  display: inline-block;
 }
 
 .section-title::after {
@@ -10988,6 +10994,8 @@ a.text-dark:focus {
 
 .categoriesSection {
   padding: 10px 0;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .categoriesSection input {
@@ -11036,9 +11044,25 @@ a.text-dark:focus {
   justify-content: center;
 }
 
+.advanced-search .reset-btn {
+  background-color: #1d1d1d;
+  color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .advanced-search .reset-btn {
+    margin-top: 10px;
+  }
+}
+
 .buttons-container {
   display: flex;
   justify-content: center;
+}
+
+.buttons-container .reset-btn {
+  background-color: #1d1d1d;
+  color: #fff;
 }
 
 .restaurantsSection {
@@ -11073,9 +11097,10 @@ a.text-dark:focus {
   top: -5px;
   right: -10px;
   color: white;
-  background-color: orange;
+  background-color: #36aeb0;
   z-index: 5;
   border-radius: 4px;
+  font-size: 25px;
 }
 
 .restaurantsSection .restaurants .restaurant-categories {
@@ -11095,7 +11120,7 @@ a.text-dark:focus {
 }
 
 .restaurantsSection .restaurants:hover {
-  box-shadow: 0 0 5px 4px #b2aeae;
+  box-shadow: 0 5px 5px 4px #b2aeae;
   transform: scale(1.05);
   transition: 0.25s;
 }
@@ -11109,7 +11134,7 @@ a.text-dark:focus {
 }
 
 .restaurantsSection .search-indicator {
-  background-color: red;
+  background-color: orange;
   padding: 6px 10px;
   color: white;
   border-top-right-radius: 50px;
@@ -11121,7 +11146,7 @@ a.text-dark:focus {
 
 .restaurantsSection .no-restaurants-found.message {
   font-size: 15px;
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid #36aeb0;
   padding-top: 50px;
 }
 
