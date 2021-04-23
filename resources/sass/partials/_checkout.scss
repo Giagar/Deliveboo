@@ -139,6 +139,11 @@
                     &:hover {
                         background-color: #ffc107;
                     }
+
+                    a {
+                        text-decoration: none;
+                        color: black;
+                    }
                 }
             }
         }
@@ -170,6 +175,11 @@
 
                             &:hover {
                                 background-color: #ffc107;
+                            }
+
+                            a {
+                                text-decoration: none;
+                                color: black;
                             }
                         }
                     }
