@@ -19,20 +19,20 @@
                     <div class="col-md-6 col-lg-7 text-center text-md-right">
 
                         <!-- Facebook -->
-                        <a class="fb-ic  mr-4">
-                            <i class="fab fa-facebook-f white-text"> </i>
+                        <a class="fb-ic mr-4">
+                            <i class="fab fa-facebook-f"> </i>
                         </a>
                         <!-- Twitter -->
-                        <a class="tw-ic">
-                            <i class="fab fa-twitter white-text mr-4"> </i>
+                        <a class="tw-ic mr-4">
+                            <i class="fab fa-twitter white-text"> </i>
                         </a>
                         <!-- Google +-->
-                        <a class="gplus-ic">
-                            <i class="fab fa-google-plus-g white-text mr-4"> </i>
+                        <a class="gplus-ic mr-4">
+                            <i class="fab fa-google-plus-g white-text"> </i>
                         </a>
                         <!--Linkedin -->
-                        <a class="li-ic">
-                            <i class="fab fa-linkedin-in white-text mr-4"> </i>
+                        <a class="li-ic mr-4">
+                            <i class="fab fa-linkedin-in white-text"> </i>
                         </a>
                         <!--Instagram-->
                         <a class="ins-ic">

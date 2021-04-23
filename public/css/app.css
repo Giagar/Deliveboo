@@ -11546,7 +11546,13 @@ footer .top div .grid-row div h6 {
 }
 
 footer .top div .grid-row div a {
+  height: 14px !important;
+  width: 14.41px !important;
   color: #1d1d1d;
+}
+
+footer .top div .grid-row div i:hover {
+  color: white;
 }
 
 footer .links {

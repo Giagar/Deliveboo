@@ -10,11 +10,19 @@ footer {
             .grid-row {
                 div {
                     h6 {
-                        color: #1d1d1d;
+                        color: $bg-footer-color;
                         font-weight: bold;
                     }
                     a {
-                        color: #1d1d1d;
+                        height: 14px !important;
+                        width: 14.41px !important;
+                        color: $bg-footer-color;
+                        
+                    }
+                    i{
+                        &:hover{
+                            color: white;
+                        }
                     }
                 }
             }
