@@ -17,9 +17,17 @@
 @import 'partials/dashboard';
 @import 'partials/orders';
 @import 'partials/checkout';
+@import 'partials/login';
+@import 'partials/register';
 
 
 main {
-  background-color: #EAE7DC;
+/*   background-color: #EAE7DC;
+ */  background-color: #EEEEEE;
+     /* background-color: #EBEBEB; */
 }
 
+.btn-bg-black{
+  background-color: $bg-footer-color !important;
+  color: $secondary-color;
+}

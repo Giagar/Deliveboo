@@ -1,69 +1,56 @@
-footer{
+footer {
     position: absolute;
     z-index: 2;
     width: 100%;
     background-color: #1d1d1d;
-/*  background: rgb(52,144,220);
-    background: linear-gradient(0deg, rgba(52,144,220,1) 65%, rgba(240,147,49,1) 80%); */
-/*     background: $bg-secondary-color;
-    background: linear-gradient(0deg, $bg-secondary-color 30%, $bg-primary-color 80%);
- */    .top{
+
+    .top {
         background-color: $bg-primary-color;
-        div{
-
-            .grid-row{
-
-                div{
-
-                    h6{
+        div {
+            .grid-row {
+                div {
+                    h6 {
                         color: #1d1d1d;
                         font-weight: bold;
                     }
-                    a{
+                    a {
                         color: #1d1d1d;
                     }
-
                 }
             }
         }
     }
 
-    .links{
+    .links {
         color: white;
 
-
-        div{
-            
-            div{
-
-
-                a{
+        div {
+            div {
+                a {
                     text-decoration: none;
                     color: $secondary-color;
                 }
-                hr{
-                    background-color:$secondary-color;
+                hr {
+                    background-color: $secondary-color;
                 }
-                h6{
+                h6 {
                     color: $secondary-color;
                 }
 
+                .contact-details {
+                    display: flex;
 
-                    .contact-details {
-                        display: flex;
-
-                        @media screen and (max-width: 762px) {
-                              justify-content: center;
-                          }
+                    @media screen and (max-width: 762px) {
+                        justify-content: center;
                     }
-
+                }
             }
         }
     }
 
-    div{
+    div {
         color: $secondary-color;
-        a{
+        a {
             color: $bg-primary-color;
         }
     }
