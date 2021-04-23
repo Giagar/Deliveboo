@@ -1,9 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light py-3">
 
     <div class="container">
         <a class="navbar-brand" href="{{ route('landing') }}">
             <img src="{{ asset('images-websites/logo.png') }}">
-
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,17 +13,22 @@
                 @if (Auth::check())
 
                     <li class="nav-item">
-                        <a class="btn" href="{{ route('dashboard') }}">Dashboard</a>
+
+                        <a class=" btn-bg-black btn-dark btn" href="{{ route('dashboard') }}">Dashboard</a>
+
+                        
+
                     </li>
                 @endif
             </ul>
 
             @if (!Auth::check())
-                <a class="btn btn-dark  mr-sm-1" href="/login">Login</a>
+                <a class="btn btn-dark btn-bg-black  mr-sm-1" href="/login">Login</a>
                 <a class="btn btn-light" href="/register">Register</a>
             @else
                 <div aria-labelledby="navbarDropdown">
-                    <a {{-- style="color:#fff;text-decoration:none;" --}}class="btn" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    <a class="btn btn-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
+
                                   document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                     </a>
