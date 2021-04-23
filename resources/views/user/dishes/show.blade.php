@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.baseuser')
 @section('content')
 
     <div class="product-container d-flex align-items-center flex-column">
