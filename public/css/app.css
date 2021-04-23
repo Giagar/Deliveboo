@@ -10968,14 +10968,14 @@ a.text-dark:focus {
   z-index: 1;
   margin-bottom: 50px;
   letter-spacing: 1.5px;
-  color: #000;
+  color: #363535;
 }
 
 .section-title::after {
   content: "";
   display: block;
-  background-color: red;
-  width: 55%;
+  background-color: rgba(54, 174, 176, 0.7);
+  width: 100%;
   height: 100%;
   bottom: -10px;
   left: 50%;
@@ -12036,6 +12036,7 @@ nav .container .login a {
   text-align: center;
 }
 
+
 .checkout-container #carrello .cart-bottom button {
   background-color: rgba(255, 193, 7, 0.8);
   font-weight: bold;
@@ -12044,6 +12045,7 @@ nav .container .login a {
 .checkout-container #carrello .cart-bottom button:hover {
   background-color: #ffc107;
 }
+
 
 .checkout-container #carrello .mobile-checkout-cart {
   display: none;
@@ -12125,6 +12127,44 @@ nav .container .login a {
   .checkout-container #carrello #payment-form button {
     font-size: 0.9em;
   }
+}
+
+
+.section.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.section.stats .title-container {
+  margin-bottom: 40px;
+}
+
+.section.stats .stats-year {
+  font-size: 22px;
+  align-self: flex-start;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  position: relative;
+  color: #000;
+}
+
+.section.stats .stats-year::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: rgba(54, 174, 176, 0.7);
+}
+
+.section.stats .chart-container {
+  height: 500px;
+  width: 100%;
 }
 
 main {
