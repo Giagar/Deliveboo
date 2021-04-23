@@ -28,14 +28,14 @@
     z-index: 1;
     margin-bottom: 50px;
     letter-spacing: 1.5px;
-    color: $primary-color;
+    color: hsl(0, 1%, 21%); // era $primary-color
 }
 
 .section-title::after {
     content: "";
     display: block;
-    background-color: $bg-secondary-color;
-    width: 55%;
+    background-color: hsla(181, 53%, 45%, 0.7); //era $bg-secondary-color
+    width: 100%; // era 55%
     height: 100%;
     bottom: -10px;
     left: 50%;
