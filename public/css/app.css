@@ -10970,10 +10970,10 @@ a.text-dark:focus {
 }
 
 .section-title-container .section-title {
-  font-size: 32px;
+  font-size: 36px;
   position: relative;
   z-index: 1;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   letter-spacing: 1.5px;
   color: #363535;
   display: inline-block;
@@ -11145,7 +11145,7 @@ a.text-dark:focus {
 }
 
 .restaurantsSection .no-restaurants-found.message {
-  font-size: 15px;
+  font-size: 25px;
   border-bottom: 2px solid #36aeb0;
   padding-top: 50px;
 }

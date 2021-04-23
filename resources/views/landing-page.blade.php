@@ -112,7 +112,7 @@
                             {{-- /prova --}}
 
                             <div class="no-restaurants-found message" v-if="restaurantsFound === 0 && selected !== 'All'">
-                                Mi dispiace, non ci sono ristoranti con le caratteristiche richieste
+                                Ci dispiace, non ci sono ristoranti con le caratteristiche richieste
                             </div>
                             {{-- /versione nuova --}}
 

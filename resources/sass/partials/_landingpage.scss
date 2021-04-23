@@ -25,10 +25,10 @@
     justify-content: center;
 
     .section-title {
-        font-size: 32px;
+        font-size: 36px;
         position: relative;
         z-index: 1;
-        margin-bottom: 50px;
+        margin-bottom: 60px;
         letter-spacing: 1.5px;
         color: hsl(0, 1%, 21%); // era $primary-color
         display: inline-block;
@@ -309,7 +309,7 @@
     }
 
     .no-restaurants-found.message {
-        font-size:15px;
+        font-size:25px;
         border-bottom: 2px solid $bg-secondary-color;
         padding-top: 50px;
     }
