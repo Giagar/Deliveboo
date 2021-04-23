@@ -20,7 +20,7 @@
             <input @keyup="filterByAddress()" class="form-control mr-sm-2" type="search" v-model="searchAddress" placeholder="Ricerca per indirizzo" aria-label="Search" id="searchByAdress" name="searchByAdress">
         </form>
         <div class="buttons-container">
-            <button class="btn btn-danger reset-btn" @click="showAll()">Reset</button>
+            <button class="btn btn-dark btn-bg-black reset-btn" @click="showAll()">Reset</button>
         </div>
     {{-- @endif --}}
     </section>

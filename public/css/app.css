@@ -11131,11 +11131,6 @@ a.text-dark:focus {
 
 .public-menu .main {
   padding: 9% 0;
-  background: #D1913C;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, rgba(255, 209, 148, 0.3), rgba(209, 145, 60, 0.3));
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 @media (max-width: 992px) {
@@ -11362,14 +11357,15 @@ a.text-dark:focus {
 }
 
 .public-menu .dishes-list-container .dish button {
-  background-color: rgba(255, 193, 7, 0.8);
+  background-color: orange;
   padding: 10px;
   font-weight: bold;
   margin-top: 10px;
 }
 
 .public-menu .dishes-list-container .dish button:hover {
-  background-color: #ffc107;
+  background-color: #1d1d1d;
+  color: #fff;
 }
 
 .public-menu .wrapper {
@@ -11698,6 +11694,12 @@ nav .container .login a {
 
 .main-container .boxes-container .box button {
   margin-top: 20px;
+  background-color: orange;
+}
+
+.main-container .boxes-container .box button:hover {
+  background-color: #1d1d1d;
+  color: #fff;
 }
 
 .main-container .boxes-container .box button a {
@@ -11892,20 +11894,17 @@ nav .container .login a {
   color: orange;
 }
 
-.container div div .card {
-  margin: 50px 0;
-}
-
 main {
-  /*   background-color: #EAE7DC;
-   */
   background-color: #EEEEEE;
-  /* background-color: #EBEBEB; */
 }
 
 .btn-bg-black {
   background-color: #1d1d1d !important;
   color: #fff;
+}
+
+.btn-bg-orange {
+  background-color: orange !important;
 }
 
 

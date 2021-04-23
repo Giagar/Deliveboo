@@ -55,6 +55,13 @@
 
             button {
                 margin-top: 20px;
+                background-color: $bg-primary-color;
+
+                &:hover {
+                    background-color: $bg-footer-color;
+                    color: #fff;
+                }
+
 
                 a {
                     text-decoration: none;

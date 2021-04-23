@@ -16,7 +16,7 @@
                     </li>
                 @else
                     <li class="nav-item">
-                        <a class=" btn-bg-black btn" href="{{ route('dashboard') }}">Dashboard</a>
+                        <a class=" btn-bg-black btn-dark btn" href="{{ route('dashboard') }}">Dashboard</a>
                     </li>
                 @endif
             </ul>
