@@ -74,7 +74,7 @@ let result = {
     <div class="stats-year">Anno 2021</div>
 
     <div class="chart-container">
-        <canvas id="myChart" width="100" height="100"></canvas>
+        <canvas id="myChart" width="100" height="75"></canvas>
     </div>
 
 </section>
