@@ -34,7 +34,50 @@ class DashboardController extends Controller
         $orders = Order::with(['dishes'])->whereHas('dishes', function($query) use($owner_id) {
             $query->where('user_id', $owner_id);
         })->get();
+        $processedOrders = [];
+        foreach ($orders as $order){
+            $processedOrders[$order->id]["info"] = $order;
+            $processedOrders[$order->id]["grandTotal"] = 0;
+            $dishes = $order->dishes()->get()->toArray();
+
+            // piatti aggregati per quantità e prezzo per unità
+            /*
+            ["nome_piatto" => ["quantita" => 2, "prezzo_unita" => 10 "subtotale" => 20]];
+
+
+            */
+
+            $result = array_reduce($dishes, function($acc,$dish){
+                if(!array_key_exists($dish['name'],$acc)) {
+                    $acc[$dish['name']] = ["quantita" => 1, "subtotale" => $dish['price']];
+                } else {
+                    $acc[$dish['name']]["quantita"] += 1;
+                    $acc[$dish['name']]["subtotale"] += $dish['price'];
+                    }
+
+                    return $acc;
+
+            },[]);
+            $processedOrders[$order->id]["items"] = $result;
+            $processedOrders[$order->id]["grandTotal"] = collect($order->dishes)->sum('price');
+        }
+        // dd($processedOrders);
+
+//  versione vecchia
+//    $dishPrices=[];
+// foreach ($orders as $order){
+// foreach ($order->dishes()->get()->unique()->toArray() as $dish) {
+// $dishesforOrder= (array_count_values(array_map(function($item) {
+//     return $item['name'] ;
+// }, $order->dishes()->get()->toArray())));
+// $dishPrices[]=$dish['price'];
+// }
+// foreach ($dishesforOrder as $dishName=>$dishQuantity){
+//     echo $dishName . $dishQuantity;
+// }
+// }
+
         // questa pagina che ritorno la gestiremo con blade
-        return view('user.orders',compact('orders'));
+        return view('user.orders',compact('processedOrders'));
     }
 }
