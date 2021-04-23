@@ -6,7 +6,9 @@
 <div id="app">
 <main class="container">
     <section class="section">
-        <h2 class="text-center section-title">Seleziona una categoria</h2>
+        <div class="section-title-container">
+            <h2 class="text-center section-title">Seleziona una categoria</h2>
+        </div>
         <div class="d-flex flex-wrap justify-content-center categoriesSection">
             <div @click="selectedCategory(category)" v-for="(category, indexCategory) in categories" :key="indexCategory" :class="'categories text-center' + (selected === category.name ? ' active-category ' : '')">
                 <img :src="category.img" alt="">
@@ -18,14 +20,15 @@
         <form class="form-inline my-3 advanced-search">
             <input @keyup="filterByName()" class="form-control mr-sm-2" type="search" v-model="searchName" placeholder="Ricerca per nome" aria-label="Search" id="searchByName" name="searchByName">
             <input @keyup="filterByAddress()" class="form-control mr-sm-2" type="search" v-model="searchAddress" placeholder="Ricerca per indirizzo" aria-label="Search" id="searchByAdress" name="searchByAdress">
+            <button class="btn reset-btn" @click="showAll()">Azzera la ricerca</button>
         </form>
         <div class="buttons-container">
-            <button class="btn btn-danger reset-btn" @click="showAll()">Reset</button>
         </div>
     {{-- @endif --}}
     </section>
-
-    <h2 class="text-center section-title" style="margin-top: 20px">@{{selected === 'All' ? 'I nostri suggerimenti' : 'La tua ricerca'}}</h2>
+    <div class="section-title-container">
+        <h2 class="text-center section-title" style="margin-top: 20px">@{{selected === 'All' ? 'I nostri suggerimenti' : 'La tua ricerca'}}</h2>
+    </div>
     <section class="section d-flex flex-wrap justify-content-center restaurantsSection">
         <div class="search-indicator" v-if="searchResultsTitle !== '' && selected !== 'All'">
             @{{searchResultsTitle}}
@@ -109,7 +112,7 @@
                             {{-- /prova --}}
 
                             <div class="no-restaurants-found message" v-if="restaurantsFound === 0 && selected !== 'All'">
-                                Mi dispiace, non ci sono ristoranti con le caratteristiche richieste
+                                Ci dispiace, non ci sono ristoranti con le caratteristiche richieste
                             </div>
                             {{-- /versione nuova --}}
 
