@@ -6,7 +6,7 @@ min-height:100vh;
         display: none;
 
         ul {
-            display: flex;
+            @include flex;
             list-style: none;
             align-items: center;
             justify-content: space-around;
@@ -66,7 +66,7 @@ min-height:100vh;
                         border-radius: 20px;
 
                         .mobile-cart {
-                            display: flex;
+                            @include flex;
                             justify-content: space-between;
                             align-items: center;
                             border-bottom: 1px solid $secondary-color;
@@ -89,12 +89,10 @@ min-height:100vh;
     }
 
     .restaurant-info {
+        @include background-style;
         width: 40%;
         padding: 1%;
         position: absolute;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
         border-radius: 50px;
         left:10%;
         top: 30%;
@@ -115,10 +113,8 @@ min-height:100vh;
     }
 
     .header {
+        @include background-style;
         padding-left: 50px;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
         height: 40vh;
         position: relative;
 
@@ -267,10 +263,8 @@ min-height:100vh;
             }
 
             &-left {
+                @include background-style;
                 width: 50%;
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
                 border-radius: 50px 0 0 50px;
             }
 
