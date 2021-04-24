@@ -44,8 +44,7 @@ min-height:100vh;
         }
 
         .dishes-list {
-
-            .mobile-cart-section {
+           .mobile-cart-section {
                 display: none;
             }
             @media (max-width: $desktop) {
