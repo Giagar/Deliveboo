@@ -9,7 +9,7 @@ if(isset($edit) && !empty($edit)){//edit
 @endphp
 
 @section('content')
-  <div class="container" style="padding-top: 25px; padding-bottom: 25px;">
+  <div class="container crud-form" style="padding-top: 25px; padding-bottom: 25px;">
     <form id="validateForm" action="{{$url}}" method="post" enctype="multipart/form-data">
       @csrf
       @method($method)
@@ -72,7 +72,7 @@ if(isset($edit) && !empty($edit)){//edit
         <input class="form-control"  type="file" name="image" >
       </div>
 
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between form-buttons">
         <input class="btn btn-light" type="submit" name="" value="Invia">
         <a href="{{route('dishes.index')}}" class="btn btn-light" role="button" aria-pressed="true">Torna alla lista piatti</a>
       </div>

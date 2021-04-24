@@ -3,7 +3,7 @@
 @section('title','Dashboard')
 
 @section('content')
-
+<div class="dashboard-wrapper">
 <div class="header">
     <h1>Benvenuto nella tua Dashboard, {{Auth::user()->name}}!</h1>
 </div>
@@ -53,7 +53,7 @@
     </div>
 </div>
 </div>
-
+</div>
 @endsection
 
 

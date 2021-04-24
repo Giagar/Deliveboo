@@ -1,0 +1,55 @@
+.login-wrapper {
+    div {
+        div {
+            .card {
+                .card-header {
+                    background-color: $bg-footer-color;
+                    color: $secondary-color;
+                    font-size:24px;
+                }
+                .card-body {
+                    form {
+                        input{
+                            font-size:18px;
+                        }
+                        .login {
+                            div{
+                                button{
+                                    font-size:20px;
+                                }
+                                a{
+                                    color: $bg-primary-color;
+                                    font-size:20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.register-wrapper {
+    div {
+        div {
+            .card {
+                .card-header {
+                    background-color: $bg-footer-color;
+                    color: $secondary-color;
+                    font-size:24px;
+                }
+                .card-body {
+                form{
+                 button{
+                   font-size:20px;
+                 }
+                 .form-control{
+                  font-size:18px;
+                 }
+                }
+            }
+            }
+        }
+    }
+}
