@@ -17,7 +17,7 @@ footer {
                         height: 14px !important;
                         width: 14.41px !important;
                         color: $bg-footer-color;
-                        
+
                     }
                     i{
                         &:hover{
@@ -46,7 +46,7 @@ footer {
                 }
 
                 .contact-details {
-                    display: flex;
+                    @include flex;
 
                     @media screen and (max-width: 762px) {
                         justify-content: center;

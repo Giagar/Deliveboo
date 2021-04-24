@@ -1,8 +1,7 @@
 @extends('layouts.baseuser')
 
 @section('content')
-
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-dark bg-dark">
  <div class="nav-left">
     <div class="crud-search-section">
     <button><a href="{{route('dishes.index')}}">Tutti i piatti</a></button>
@@ -15,13 +14,13 @@
     <form action="{{ route('dishes.index') }}" class="form-inline " method="GET">
     <button class="{{strpos(Request::fullUrl(),'price') !== false ? 'crud-btn-active' : '' }}" type="submit" name="search-price" value="on">Ordina per prezzo</button>
     </form>
-    <form action="{{ route('dishes.index') }}" method="GET" class="d-flex">
+    <form action="{{ route('dishes.index') }}" method="GET" class="d-flex align-items-center">
     <input type="search" placeholder="Cerca per tipo" name="search-type" aria-label="Search">
     <button type="submit">Cerca</button>
     </form>
     </div>
   </div>
-    <a class="btn btn-success" href="{{route('dishes.create')}}">Crea piatto</a>
+    <a class="btn btn-light" href="{{route('dishes.create')}}">Crea piatto</a>
 </nav>
 <div style="min-height:50vh;" class="table-responsive">
 <table class="table table-striped">

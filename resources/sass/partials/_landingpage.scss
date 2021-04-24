@@ -33,7 +33,7 @@
 
 //STYLE
 .section-title-container {
-    display: flex;
+    @include flex;
     justify-content: center;
 
     .section-title {
@@ -139,7 +139,7 @@
 }
 
 .advanced-search {
-    display: flex;
+    @include flex;
     justify-content: center;
 
     .reset-btn {
@@ -154,7 +154,7 @@
 }
 
 .buttons-container {
-    display: flex;
+    @include flex;
     justify-content: center;
 
     .reset-btn {
@@ -242,11 +242,9 @@
         }
 
         .restaurant-categories {
+            @include flex;
             position: absolute;
             height: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             min-width: 50px;
             padding: 4px 10px;
             bottom: -5px;
