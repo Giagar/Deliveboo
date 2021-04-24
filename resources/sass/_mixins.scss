@@ -9,7 +9,11 @@
     align-items:center;
     justify-content: center;
   }
-
+  @mixin background-style {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  }
   @mixin clearfix {
     content: '';
     display: table;

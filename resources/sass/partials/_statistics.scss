@@ -1,6 +1,6 @@
 
 .section.stats {
-    display: flex;
+    @include flex;
     flex-direction: column;
     align-items: center;
     max-width: 750px;
