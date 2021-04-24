@@ -227,10 +227,10 @@
 
         .restaurant-name {
             position: absolute;
-            height: 35px;
-            display: flex;
-            align-items: center;
-            padding: 4px 10px;
+            // height: 35px;
+            // display: flex;
+            // align-items: center;
+            padding: 2px 10px;
             // width: 150px;
             top: -5px;
             right: -10px;
@@ -242,11 +242,12 @@
         }
 
         .restaurant-categories {
-            @include flex;
+            // @include flex;
             position: absolute;
-            height: 35px;
+            // height: 35px;
             min-width: 50px;
-            padding: 4px 10px;
+            text-align: center;
+            padding: 2px 10px;
             bottom: -5px;
             left: -10px;
             color: white;

@@ -11089,10 +11089,7 @@ a.text-dark:focus {
 
 .restaurantsSection .restaurants .restaurant-name {
   position: absolute;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  padding: 4px 10px;
+  padding: 2px 10px;
   top: -5px;
   right: -10px;
   color: white;
@@ -11103,11 +11100,10 @@ a.text-dark:focus {
 }
 
 .restaurantsSection .restaurants .restaurant-categories {
-  display: flex;
   position: absolute;
-  height: 35px;
   min-width: 50px;
-  padding: 4px 10px;
+  text-align: center;
+  padding: 2px 10px;
   bottom: -5px;
   left: -10px;
   color: white;
