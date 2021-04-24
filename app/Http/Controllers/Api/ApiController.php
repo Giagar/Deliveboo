@@ -14,7 +14,7 @@ class ApiController extends Controller
             return response()->json($categories);
     }
     public function restaurants(){
-        $restaurants=User::with('categories')->get();
+        $restaurants=User::with('categories')->orderBy('rating','desc')->get();
         return response()->json($restaurants);
 }
 

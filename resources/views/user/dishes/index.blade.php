@@ -1,7 +1,7 @@
 @extends('layouts.baseuser')
 
 @section('content')
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar crud-navbar">
  <div class="nav-left">
     <div class="crud-search-section">
     <button><a href="{{route('dishes.index')}}">Tutti i piatti</a></button>

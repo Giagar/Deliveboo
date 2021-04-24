@@ -1,7 +1,13 @@
 .public-menu {
 min-height:100vh;
+.no-dishes{
+    margin-top:50px;
+    font-size:20px;
+}
     .mobile-restaurant-info {
         width: 100%;
+        color:white;
+        background-color:$bg-footer-color;
         display: none;
 
         ul {
@@ -278,7 +284,7 @@ min-height:100vh;
 
                 &-top {
                     p {
-                        font-size: 0.8em;
+                        font-size: 1em;
                     }
                 }
 
