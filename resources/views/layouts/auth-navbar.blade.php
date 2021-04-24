@@ -18,7 +18,9 @@
                 <a class="btn btn-light" href="/register">Register</a>
             @else
                 <div aria-labelledby="navbarDropdown">
-                    <a class=" btn-bg-black btn-dark btn" href="{{ route('dashboard') }}">Dashboard</a>
+                   @if(Request::route()->getName() !=='dashboard')
+                   <a class=" btn-bg-black btn-dark btn" href="{{ route('dashboard') }}">Dashboard</a>
+                   @endif
                     <a class="btn btn-light" href="{{ route('logout') }}" onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}

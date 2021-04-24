@@ -15,6 +15,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        $ratings = array(1,2,3,4,5);
         $newUser = new User;
         $newUser->name = "Mario";
         $newUser->surname = "Rossi";
@@ -25,6 +26,7 @@ class UserSeeder extends Seeder
         $newUser->phone_number = '3334514548';
         $newUser->address="Via Barbaria 3";
         $newUser->p_iva= '54963789512';
+        $newUser->rating=$ratings[array_rand($ratings, 1)];
         $newUser->password=Hash::make('password');
         $newUser->save();
         $newUser->categories()->attach(8);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
@@ -41,6 +43,7 @@ class UserSeeder extends Seeder
         $newUser->phone_number = '3338549634';
         $newUser->address="Via Miola";
         $newUser->p_iva= '10324579630';
+        $newUser->rating=$ratings[array_rand($ratings, 1)];
         $newUser->password=Hash::make('password');
         $newUser->save();
         $newUser->categories()->attach(2);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
@@ -57,6 +60,7 @@ class UserSeeder extends Seeder
         $newUser->phone_number = '3382549534';
         $newUser->address="Via Vinazzi";
         $newUser->p_iva= '78945874296';
+        $newUser->rating=$ratings[array_rand($ratings, 1)];
         $newUser->password=Hash::make('password');
         $newUser->save();
         $newUser->categories()->attach(8);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
@@ -73,6 +77,7 @@ class UserSeeder extends Seeder
         $newUser->phone_number = '3398559663';
         $newUser->address="Via Napoli";
         $newUser->p_iva= '63784591235';
+        $newUser->rating=$ratings[array_rand($ratings, 1)];
         $newUser->password=Hash::make('password');
         $newUser->save();
         $newUser->categories()->attach(12);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
@@ -89,6 +94,7 @@ class UserSeeder extends Seeder
         $newUser->phone_number = '3378565674';
         $newUser->address="Piazza Uccelli";
         $newUser->p_iva= '85479632145';
+        $newUser->rating=$ratings[array_rand($ratings, 1)];
         $newUser->password=Hash::make('password');
         $newUser->save();
         $newUser->categories()->attach(18);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
@@ -106,6 +112,7 @@ class UserSeeder extends Seeder
         $newUser->phone_number = '3374562784';
         $newUser->address="Via Santa";
         $newUser->p_iva= '14572396657';
+        $newUser->rating=$ratings[array_rand($ratings, 1)];
         $newUser->password=Hash::make('password');
         $newUser->save();
         $newUser->categories()->attach(18);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
@@ -122,6 +129,7 @@ class UserSeeder extends Seeder
         $newUser->phone_number = '3388574674';
         $newUser->address="Via Roma";
         $newUser->p_iva= '78465989744';
+        $newUser->rating=$ratings[array_rand($ratings, 1)];
         $newUser->password=Hash::make('password');
         $newUser->save();
         $newUser->categories()->attach(19);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
@@ -138,6 +146,7 @@ class UserSeeder extends Seeder
         $newUser->phone_number = '3378565674';
         $newUser->address="Via Orbaga";
         $newUser->p_iva= '78566554321';
+        $newUser->rating=$ratings[array_rand($ratings, 1)];
         $newUser->password=Hash::make('password');
         $newUser->save();
         $newUser->categories()->attach(15);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
@@ -154,6 +163,7 @@ class UserSeeder extends Seeder
         $newUser->phone_number = '3376483274';
         $newUser->address="Viale Pratello";
         $newUser->p_iva= '89602100230';
+        $newUser->rating=$ratings[array_rand($ratings, 1)];
         $newUser->password=Hash::make('password');
         $newUser->save();
         $newUser->categories()->attach(18);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
@@ -171,6 +181,7 @@ class UserSeeder extends Seeder
         $newUser->phone_number = '3389597674';
         $newUser->address="Via Rialto";
         $newUser->p_iva= '00102549965';
+        $newUser->rating=$ratings[array_rand($ratings, 1)];
         $newUser->password=Hash::make('password');
         $newUser->save();
         $newUser->categories()->attach(17);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca

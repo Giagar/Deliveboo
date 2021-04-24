@@ -1,7 +1,7 @@
 {{-- Questa è il Menu pubblico --}}
 @extends('layouts.base')
 
-@section('title','Home')
+@section('title',$restaurant->restaurant_name)
 
 @section('content')
 
@@ -42,10 +42,21 @@
             </li>
         </ul>
     </div>
+    @php
 
+$count=0;
+foreach ($restaurant->dishes as $dish) {
+        if ($dish->visible){
+          $count +=1;
+        }
+    }
+    @endphp
+
+    @if ($count>0)
     <div class="main">
     <section class="dishes-list-container">
         <div class="dishes-list">
+
             @foreach ($restaurant->dishes as $dish)
                 @if ($dish->visible)
                 @php
@@ -151,6 +162,9 @@
         </section>
     </div>
 </div>
+@else
+<p class="no-dishes">Il ristorante è chiuso.</p>
+@endif
 </div>
 
 

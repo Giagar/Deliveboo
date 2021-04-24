@@ -1,5 +1,6 @@
 //LO STILE
-
+.crud-navbar{
+background-color:$bg-footer-color;
 .crud-search-section{
     @include flex;
     align-items: center;
@@ -35,3 +36,4 @@
       background-color:$bg-primary-color;
       }
   }
+}

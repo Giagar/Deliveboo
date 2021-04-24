@@ -1,7 +1,7 @@
 {{-- questo sarà il checkout page --}}
 @extends('layouts.base')
 
-@section('title','Home')
+@section('title','Checkout')
 
 @section('content')
 

@@ -1,7 +1,7 @@
 {{-- questo sarà la pagina dopo l'effettivo pagamento per comunicare che è andato bene --}}
 @extends('layouts.base')
 
-@section('title','Home')
+@section('title','Success')
 
 @section('content')
 <div style="min-height:70vh;padding-top:50px;padding-left:30px;">
