@@ -11175,12 +11175,15 @@ a.text-dark:focus {
 
 .public-menu .main {
   padding: 9% 0;
+  max-height: 1600px;
+  overflow-y: auto;
   position: relative;
+  display: flex;
+  justify-content: space-around;
 }
 
 @media (max-width: 1300px) {
   .public-menu .main {
-    display: flex;
     justify-content: center;
     width: 100%;
     padding: 10% 0;
@@ -11377,8 +11380,7 @@ a.text-dark:focus {
 }
 
 .public-menu .dishes-list-container {
-  width: 50%;
-  margin-left: 150px;
+  width: 40%;
 }
 
 @media (max-width: 1300px) {
@@ -11415,7 +11417,7 @@ a.text-dark:focus {
   display: flex;
   border-radius: 50px;
   box-shadow: 0 0 10px #000;
-  margin: 50px 0;
+  margin-bottom: 50px;
   justify-content: space-between;
   min-height: 400px;
   width: 100%;
@@ -11476,29 +11478,28 @@ a.text-dark:focus {
   color: #fff;
 }
 
-.public-menu .wrapper {
-  position: absolute;
+.public-menu .wrapper-cart {
+  width: 40%;
   top: 20%;
   right: 7%;
-  display: block;
 }
 
 @media (max-width: 1300px) {
-  .public-menu .wrapper {
+  .public-menu .wrapper-cart {
     display: none;
   }
 }
 
-.public-menu .wrapper .cart {
+.public-menu .wrapper-cart .cart {
   min-height: 500px;
-  width: 430px;
+  width: 100%;
   border-radius: 50px;
   box-shadow: 0 0 10px #000;
   position: relative;
   background-color: white;
 }
 
-.public-menu .wrapper .cart .flex-wrapper {
+.public-menu .wrapper-cart .cart .flex-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11507,13 +11508,13 @@ a.text-dark:focus {
   margin-bottom: 5%;
 }
 
-.public-menu .wrapper .cart .list-container {
+.public-menu .wrapper-cart .cart .list-container {
   padding-top: 20px;
   height: 300px;
   overflow-y: auto;
 }
 
-.public-menu .wrapper .cart .header-wrapper {
+.public-menu .wrapper-cart .cart .header-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11522,17 +11523,17 @@ a.text-dark:focus {
   margin-bottom: 5%;
 }
 
-.public-menu .wrapper .cart .header-wrapper .header-cart {
+.public-menu .wrapper-cart .cart .header-wrapper .header-cart {
   font-size: 30px;
 }
 
-.public-menu .wrapper .cart-product {
+.public-menu .wrapper-cart .cart-product {
   display: inline-block;
   width: 90%;
   height: 100px;
 }
 
-.public-menu .wrapper .cart-product-stats {
+.public-menu .wrapper-cart .cart-product-stats {
   float: left;
   height: 100%;
   width: 49%;
@@ -11540,13 +11541,13 @@ a.text-dark:focus {
   border-radius: 10px 0 0 10px;
 }
 
-.public-menu .wrapper .cart-product-stats-content {
+.public-menu .wrapper-cart .cart-product-stats-content {
   margin-top: 5%;
   margin-left: 10%;
   font-size: 16px;
 }
 
-.public-menu .wrapper .cart-product-image {
+.public-menu .wrapper-cart .cart-product-image {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11560,7 +11561,7 @@ a.text-dark:focus {
   box-shadow: 0 0 8px #000;
 }
 
-.public-menu .wrapper .cart .cart-buttons {
+.public-menu .wrapper-cart .cart .cart-buttons {
   display: flex;
   justify-content: space-evenly;
   position: absolute;
@@ -11570,7 +11571,7 @@ a.text-dark:focus {
   height: 30%;
 }
 
-.public-menu .wrapper .cart .cart-buttons span {
+.public-menu .wrapper-cart .cart .cart-buttons span {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11581,29 +11582,29 @@ a.text-dark:focus {
   background-color: #ff6e54;
 }
 
-.public-menu .wrapper .cart .cart-buttons .changeQuantity {
+.public-menu .wrapper-cart .cart .cart-buttons .changeQuantity {
   cursor: pointer;
   background-color: #ff6e54;
 }
 
-.public-menu .wrapper .cart .cart-buttons .changeQuantity:hover {
+.public-menu .wrapper-cart .cart .cart-buttons .changeQuantity:hover {
   background-color: #ff6e54;
   transition: 0.3s;
 }
 
-.public-menu .wrapper .cart-bottom {
+.public-menu .wrapper-cart .cart-bottom {
   min-height: 100px;
   width: 100%;
 }
 
-.public-menu .wrapper .cart-bottom svg {
+.public-menu .wrapper-cart .cart-bottom svg {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.public-menu .wrapper .cart-bottom .total {
+.public-menu .wrapper-cart .cart-bottom .total {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11612,11 +11613,11 @@ a.text-dark:focus {
   padding: 20px 30px;
 }
 
-.public-menu .wrapper .cart-bottom #empty {
+.public-menu .wrapper-cart .cart-bottom #empty {
   text-align: center;
 }
 
-.public-menu .wrapper .cart-bottom .button-wrapper {
+.public-menu .wrapper-cart .cart-bottom .button-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11625,15 +11626,15 @@ a.text-dark:focus {
   padding: 20px;
 }
 
-.public-menu .wrapper .cart-bottom .button-wrapper button {
+.public-menu .wrapper-cart .cart-bottom .button-wrapper button {
   background-color: rgba(255, 110, 84, 0.8);
 }
 
-.public-menu .wrapper .cart-bottom .button-wrapper button:hover {
+.public-menu .wrapper-cart .cart-bottom .button-wrapper button:hover {
   background-color: #ff6e54;
 }
 
-.public-menu .wrapper .cart-bottom .button-wrapper button a {
+.public-menu .wrapper-cart .cart-bottom .button-wrapper button a {
   text-decoration: none;
   font-weight: bold;
   color: black;

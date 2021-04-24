@@ -104,7 +104,7 @@ foreach ($restaurant->dishes as $dish) {
         </div>
     </section>
 
-    <div class="wrapper">
+    <div class="wrapper-cart">
         <section class="cart">
 
             <div class="top-container">

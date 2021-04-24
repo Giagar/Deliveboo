@@ -32,12 +32,13 @@ min-height:100vh;
 
     .main {
         padding: 9% 0;
+        max-height:1600px;
+        overflow-y:auto;
         position: relative;
-
-
+        @include flex;
+        justify-content: space-around;
         @media (max-width: $desktop) {
-            @include flex;
-            justify-content: center;
+        justify-content: center;
             width: 100%;
             padding: 10% 0;
         }
@@ -218,11 +219,8 @@ min-height:100vh;
     }
 
     .dishes-list-container {
-
-        width: 50%;
-        margin-left: 150px;
-
-        @media (max-width: $desktop) {
+      width: 40%;
+       @media (max-width: $desktop) {
             @include flex;
             width: 90%;
             margin: 0;
@@ -255,7 +253,7 @@ min-height:100vh;
             @include flex;
             border-radius: 50px;
             box-shadow: 0 0 10px #000;
-            margin: 50px 0;
+            margin-bottom:50px;
             justify-content: space-between;
             min-height: 400px;
             width: 100%;
@@ -311,19 +309,17 @@ min-height:100vh;
         }
     }
 
-    .wrapper {
-        position: absolute;
+    .wrapper-cart {
+        width:40%;
         top: 20%;
         right: 7%;
-        display: block;
-
         @media (max-width: $desktop) {
             display: none;
         }
 
         .cart {
             min-height: 500px;
-            width: 430px;
+            width: 100%;
             border-radius: 50px;
             box-shadow: 0 0 10px #000;
             position: relative;
