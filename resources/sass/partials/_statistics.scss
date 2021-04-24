@@ -6,12 +6,9 @@
     max-width: 750px;
     margin: 0 auto;
 
-    .title-container {
+    .section-title-container {
         margin-bottom: 40px ;
 
-        .section-title {
-
-        }
     }
 
     .stats-year {
@@ -38,6 +35,10 @@
     .chart-container {
         height: 500px;
         width: 100%;
+        // background-color: white !important;
+
+        #mychart {
+        }
 
     }
 

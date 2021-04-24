@@ -3,8 +3,18 @@
 // magari nella vista metteremo un wrapper con id=landingpage
 // e da li con le graffe racchiudiamo tutto lo stile dei div figli
 
+// COMMONS & UTILITIES
 * {box-sizing: border-box; margin: 0; padding: 0;}
 
+#app {
+    min-width: 360px;
+    background-color: #D7EAF0;
+
+    main {
+        background-color: #D7EAF0;
+        font-family: 'Teko', sans-serif;
+    }
+}
 
 .active-category {
     // background-color: yellow !important;
@@ -20,36 +30,48 @@
     // display: inline-block;
 }
 
+
+//STYLE
 .section-title-container {
     @include flex;
     justify-content: center;
 
     .section-title {
-        font-size: 36px;
+        font-size: 50px;
         position: relative;
         z-index: 1;
         margin-bottom: 60px;
         letter-spacing: 1.5px;
-        color: hsl(0, 1%, 21%); // era $primary-color
+        // color: hsl(0, 1%, 21%); // era $primary-color
+        color: $bg-secondary-color; // era $primary-color
         display: inline-block;
+        text-transform: uppercase;
     }
 }
 
 
+// .section-title::after {
+//     content: "";
+//     display: block;
+//     background-color: $bg-secondary-color; //era $bg-secondary-color
+//     opacity: 0.7;
+//     width: 100%; // era 55%
+//     height: 100%;
+//     bottom: -10px;
+//     left: 50%;
+//     position: absolute;
+//     z-index: -1;
+//     transform: skewX(35deg) translateX(-50%);
 
-.section-title::after {
-    content: "";
-    display: block;
-    background-color: hsla(181, 53%, 45%, 0.7); //era $bg-secondary-color
-    width: 100%; // era 55%
-    height: 100%;
-    bottom: -10px;
-    left: 50%;
-    position: absolute;
-    z-index: -1;
-    transform: skewX(35deg) translateX(-50%);
+//     @media screen and (max-width: 500px) {
+//         width: 90%;
+//     }
 
-}
+//     @media screen and (max-width: 400px) {
+//         width: 75%;
+//     }
+
+// }
 
 .categoriesSection {
     // font-family: 'Noto Sans JP', sans-serif;
@@ -71,8 +93,8 @@
         border-radius: $border-radius-windows;
 
         img {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             text-align: center;
             position: relative; // per .active-category
@@ -92,6 +114,7 @@
             transform: translateX(-50%);
             left: 50%;
             z-index: 2; // per .active-category
+            letter-spacing: 1.5px;
         }
     }
 
@@ -310,6 +333,7 @@
         font-size:25px;
         border-bottom: 2px solid $bg-secondary-color;
         padding-top: 50px;
+        text-align: center;
     }
 
 }
