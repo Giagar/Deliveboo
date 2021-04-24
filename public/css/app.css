@@ -12048,16 +12048,16 @@ nav .container .login a {
   width: 33%;
   font-size: 30px;
   border-radius: 5px;
-  background-color: #ffc107;
+  background-color: #ff6e54;
 }
 
 .checkout-container #carrello .cart .cart-buttons .changeQuantity {
   cursor: pointer;
-  background-color: rgba(255, 193, 7, 0.8);
+  background-color: #ff6e54;
 }
 
 .checkout-container #carrello .cart .cart-buttons .changeQuantity:hover {
-  background-color: #ffc107;
+  background-color: #ff6e54;
   transition: 0.3s;
 }
 
@@ -12088,12 +12088,12 @@ nav .container .login a {
 }
 
 .checkout-container #carrello .cart-bottom button {
-  background-color: rgba(255, 193, 7, 0.8);
+  background-color: rgba(255, 110, 84, 0.8);
   font-weight: bold;
 }
 
 .checkout-container #carrello .cart-bottom button:hover {
-  background-color: #ffc107;
+  background-color: #ff6e54;
 }
 
 .checkout-container #carrello .cart-bottom button a {
@@ -12127,12 +12127,12 @@ nav .container .login a {
 }
 
 .checkout-container #carrello .mobile-checkout-cart .mobile-cart-section .mobile-cart-wrapper .checkout-bottom button {
-  background-color: rgba(255, 193, 7, 0.8);
+  background-color: rgba(255, 110, 84, 0.8);
   font-weight: bold;
 }
 
 .checkout-container #carrello .mobile-checkout-cart .mobile-cart-section .mobile-cart-wrapper .checkout-bottom button:hover {
-  background-color: #ffc107;
+  background-color: #ff6e54;
 }
 
 .checkout-container #carrello .mobile-checkout-cart .mobile-cart-section .mobile-cart-wrapper .checkout-bottom button a {
@@ -12172,12 +12172,12 @@ nav .container .login a {
 }
 
 .checkout-container #carrello #payment-form button {
-  background-color: rgba(255, 193, 7, 0.8);
+  background-color: rgba(255, 110, 84, 0.8);
   font-weight: bold;
 }
 
 .checkout-container #carrello #payment-form button:hover {
-  background-color: #ffc107;
+  background-color: #ff6e54;
 }
 
 .checkout-container #carrello #payment-form .form-group {
