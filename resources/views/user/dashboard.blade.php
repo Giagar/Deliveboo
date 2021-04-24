@@ -3,7 +3,6 @@
 @section('title','Dashboard')
 
 @section('content')
-<div class="dashboard-wrapper">
 <div class="header">
     <h1>Benvenuto nella tua Dashboard, {{Auth::user()->name}}!</h1>
 </div>
@@ -51,7 +50,6 @@
             <a href="{{route('statistics')}}">Vai alle statistiche</a>
         </button>
     </div>
-</div>
 </div>
 </div>
 @endsection

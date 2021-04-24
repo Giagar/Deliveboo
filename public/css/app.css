@@ -11620,8 +11620,9 @@ a.text-dark:focus {
 }
 
 .flip-card {
-  top: 70%;
+  top: 65%;
   z-index: 2;
+  left: 5%;
   position: absolute;
   background-color: transparent;
   min-width: -webkit-max-content;
@@ -11848,7 +11849,11 @@ nav .container #navbarSupportedContent .my-btn-logout {
   font-size: 20px;
 }
 
-.dashboard-wrapper .header {
+.modal-footer button {
+  font-size: 20px;
+}
+
+.header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11857,20 +11862,20 @@ nav .container #navbarSupportedContent .my-btn-logout {
   background-position: 50% 60%;
 }
 
-.dashboard-wrapper .header h1 {
+.header h1 {
   font-size: 3.5em;
   color: white;
   text-shadow: 5px 5px 10px black;
 }
 
-.dashboard-wrapper .header .main-container {
+.main-container {
   display: flex;
   justify-content: space-between;
   margin-left: 10px;
   padding: 30px 0;
 }
 
-.dashboard-wrapper .header .main-container .info-container {
+.main-container .info-container {
   width: 300px;
   border-radius: 50px;
   box-shadow: 0 0 10px #000;
@@ -11878,46 +11883,46 @@ nav .container #navbarSupportedContent .my-btn-logout {
   background-color: white;
 }
 
-.dashboard-wrapper .header .main-container .info-container h3 {
+.main-container .info-container h3 {
   padding: 5px 0;
 }
 
-.dashboard-wrapper .header .main-container .info-container ul {
+.main-container .info-container ul {
   list-style: none;
 }
 
-.dashboard-wrapper .header .main-container .info-container ul span {
+.main-container .info-container ul span {
   font-weight: bold;
 }
 
-.dashboard-wrapper .header .main-container .info-container ul li {
+.main-container .info-container ul li {
   margin: 5px 0;
 }
 
-.dashboard-wrapper .header .main-container .info-container img {
+.main-container .info-container img {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 10px;
 }
 
 @media (max-width: 1300px) {
-  .dashboard-wrapper .header .main-container .info-container {
+  .main-container .info-container {
     width: 40%;
     padding: 20px;
   }
 
-  .dashboard-wrapper .header .main-container .info-container h3 {
+  .main-container .info-container h3 {
     font-size: 1em;
     font-weight: bold;
     margin: 10px 0;
   }
 
-  .dashboard-wrapper .header .main-container .info-container li {
+  .main-container .info-container li {
     font-size: 0.8em;
   }
 }
 
-.dashboard-wrapper .header .main-container .boxes-container {
+.main-container .boxes-container {
   display: flex;
   width: 800px;
   margin: 0 auto;
@@ -11925,7 +11930,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
   align-items: center;
 }
 
-.dashboard-wrapper .header .main-container .boxes-container .box {
+.main-container .boxes-container .box {
   display: flex;
   border-radius: 50px;
   box-shadow: 0 0 10px #000;
@@ -11936,12 +11941,12 @@ nav .container #navbarSupportedContent .my-btn-logout {
   background-color: white;
 }
 
-.dashboard-wrapper .header .main-container .boxes-container .box img {
+.main-container .boxes-container .box img {
   height: 150px;
   border-radius: 20px;
 }
 
-.dashboard-wrapper .header .main-container .boxes-container .box button {
+.main-container .boxes-container .box button {
   margin-top: 20px;
   font-weight: bold;
   font-size: 18px;
@@ -11949,35 +11954,35 @@ nav .container #navbarSupportedContent .my-btn-logout {
 }
 
 @media (max-width: 1300px) {
-  .dashboard-wrapper .header .main-container .boxes-container .box button {
+  .main-container .boxes-container .box button {
     width: 120px;
     padding: 5px;
   }
 }
 
-.dashboard-wrapper .header .main-container .boxes-container .box button a {
+.main-container .boxes-container .box button a {
   text-decoration: none;
   color: #fff;
 }
 
 @media (max-width: 1300px) {
-  .dashboard-wrapper .header .main-container .boxes-container {
+  .main-container .boxes-container {
     width: 60%;
     flex-direction: column;
     justify-content: space-around;
     min-height: 450px;
   }
 
-  .dashboard-wrapper .header .main-container .boxes-container .box {
+  .main-container .boxes-container .box {
     width: 70%;
     padding: 10px 0;
   }
 
-  .dashboard-wrapper .header .main-container .boxes-container .box img {
+  .main-container .boxes-container .box img {
     height: 50px;
   }
 
-  .dashboard-wrapper .header .main-container .boxes-container .box button a {
+  .main-container .boxes-container .box button a {
     font-size: 0.8em;
   }
 }

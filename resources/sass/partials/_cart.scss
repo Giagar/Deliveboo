@@ -466,8 +466,9 @@ min-height:100vh;
     @media (max-width: $desktop){
         display:none;
     }
-    top:70%;
+    top:65%;
     z-index:2;
+    left:5%;
     position:absolute;
     background-color: transparent;
     min-width:max-content;
