@@ -6,7 +6,7 @@
     h1 {
         font-size: 3.5em;
         color: white;
-        text-shadow: 5px 5px 5px black;
+        // text-shadow: 5px 5px 5px black;
     }
 }
 
@@ -28,6 +28,10 @@
         }
 
         ul {
+            list-style:none;
+            span{
+               font-weight: bold;
+            }
             li {
                 margin: 5px 0;
             }
@@ -88,7 +92,7 @@
                // }
 
 
-                background-color: rgba(#ffc107, 0.8);
+                // background-color: rgba(#ffc107, 0.8);
                 padding: 10px;
                 font-weight: bold;
                 width: 150px;
@@ -99,13 +103,13 @@
                 }
 
                 &:hover {
-                    background-color: #ffc107;
+                    // background-color: #ffc107;
                 }
 
 
                 a {
                     text-decoration: none;
-                    color: black;
+                    color: #fff;
                 }
             }
         }

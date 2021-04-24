@@ -73,8 +73,8 @@ if(isset($edit) && !empty($edit)){//edit
       </div>
 
       <div class="d-flex justify-content-between">
-        <input class="btn btn-bg-orange" type="submit" name="" value="Invia">
-        <a href="{{route('dishes.index')}}" class="btn btn-bg-orange" role="button" aria-pressed="true">Torna alla lista piatti</a>
+        <input class="btn btn-light" type="submit" name="" value="Invia">
+        <a href="{{route('dishes.index')}}" class="btn btn-light" role="button" aria-pressed="true">Torna alla lista piatti</a>
       </div>
 
     </form>

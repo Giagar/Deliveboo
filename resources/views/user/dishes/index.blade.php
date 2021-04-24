@@ -51,9 +51,9 @@
             <td>{{$dish->gluten ? 'Si' : 'No'}}</td>
             <td>{{$dish->type}}</td>
             <td><img style="width:80px;height:auto;" src="{{asset($dish->img)}}" alt=""></td>
-           <td><a class="btn btn-dark btn-bg-black" href="{{route('dishes.show',compact('dish'))}}">Mostra piatto</a>
-           <a class="btn btn-bg-orange" href="{{route('dishes.edit',compact('dish'))}}">Modifica piatto</a>
-           <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{$dish->id}}">Cancella<i class="fas fa-trash"></i>
+           <td><a class="btn btn-bg-salmon" href="{{route('dishes.show',compact('dish'))}}">Mostra piatto</a>
+           <a class="btn btn-bg-salmon" href="{{route('dishes.edit',compact('dish'))}}">Modifica piatto</a>
+           <button type="button" class="btn btn-bg-black btn-dark" data-toggle="modal" data-target="#exampleModal{{$dish->id}}">Cancella<i class="fas fa-trash"></i>
            </button>
            @include('layouts.modal')
             </td>

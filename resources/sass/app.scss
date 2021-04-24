@@ -1,5 +1,6 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+// @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 // Variables
@@ -21,7 +22,9 @@
 @import 'partials/statistics';
 
 
-
+body{
+    font-family: 'Teko', sans-serif;
+}
 main {
   background-color: #D7EAF0;
 }
@@ -31,6 +34,6 @@ main {
   color: $secondary-color;
 }
 
-.btn-bg-orange {
+.btn-bg-salmon {
   background-color: $bg-primary-color !important;
 }

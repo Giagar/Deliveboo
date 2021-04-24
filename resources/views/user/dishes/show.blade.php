@@ -1,7 +1,7 @@
 @extends('layouts.baseuser')
 @section('content')
 
-    <div class="product-container d-flex align-items-center flex-column" style="margin-top: 25px; margin-bottom: 25px;">
+    <div class="product-container d-flex align-items-center flex-column" style="padding-top: 25px; padding-bottom: 25px;">
         <div class="card" style="width: 20rem;">
             <img class="card-img-top" src="{{asset($dish->img)}}" >
             <div class="card-body">
@@ -13,16 +13,16 @@
             <p class="card-text"><strong>Glutine:</strong> {{$dish->gluten ? 'Sì' : 'No'}}</p>
             <p class="card-text"><strong>Tipo:</strong> {{$dish->type}}</p>
             <div class="card-buttons d-flex justify-content-between align-items-center">
-            <a href="{{route('dishes.edit',['dish'=>$dish->id])}}" class="btn btn-dark btn-bg-black">Modifica</a>
-              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{$dish->id}}">Cancella<i class="fas fa-trash"></i>
+            <a href="{{route('dishes.edit',['dish'=>$dish->id])}}" class="btn btn-bg-salmon">Modifica</a>
+              <button type="button" class="btn btn-dark btn-bg-black" data-toggle="modal" data-target="#exampleModal{{$dish->id}}">Cancella<i class="fas fa-trash"></i>
               </button>
               @include('layouts.modal')
             </div>
             </div>
         </div>
         <div class="buttons" style="margin-top: 15px;">
-          <a href="{{route('dishes.index')}}" class="btn btn-bg-orange btn-lg active" role="button" aria-pressed="true">Torna alla lista piatti</a>
-          <a href="{{route('dishes.create')}}" class="btn btn-bg-orange btn-lg active" role="button" aria-pressed="true">Inserisci nuovo piatto </a>
+          <a href="{{route('dishes.index')}}" class="btn btn-light" role="button" aria-pressed="true">Torna alla lista piatti</a>
+          <a href="{{route('dishes.create')}}" class="btn btn-light " role="button" aria-pressed="true">Inserisci nuovo piatto </a>
         </div>
     </div>
 
