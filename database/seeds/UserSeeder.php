@@ -111,8 +111,8 @@ class UserSeeder extends Seeder
         $newUser->img = "https://wips.plug.it/cips/paginegialle.it/magazine/cms/2018/10/98367409_s-1.jpg?w=744&h=418&a=c";
         $newUser->phone_number = '3374562784';
         $newUser->address="Via Santa";
-        $newUser->p_iva= '14572396657';
         $newUser->rating=$ratings[array_rand($ratings, 1)];
+        $newUser->p_iva= '14572396657';
         $newUser->password=Hash::make('password');
         $newUser->save();
         $newUser->categories()->attach(18);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
@@ -128,8 +128,8 @@ class UserSeeder extends Seeder
         $newUser->img = "https://www.romatoday.it/~media/horizontal-hi/21276864781105/sushi-2853382_640-2.jpg";
         $newUser->phone_number = '3388574674';
         $newUser->address="Via Roma";
-        $newUser->p_iva= '78465989744';
         $newUser->rating=$ratings[array_rand($ratings, 1)];
+        $newUser->p_iva= '78465989744';
         $newUser->password=Hash::make('password');
         $newUser->save();
         $newUser->categories()->attach(19);  //vedendo che categoria è quella con id 19 e associarla al ristorante se c'azzecca
