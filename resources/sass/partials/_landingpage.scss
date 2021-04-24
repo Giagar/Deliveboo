@@ -81,10 +81,6 @@
         max-width: 900px;
         margin: 0 auto;
 
-        input {
-            font-size: 1.5em;
-            margin: 20px 0;
-        }
 
         .categories {
             cursor: pointer;
@@ -143,9 +139,14 @@
         @include flex;
         justify-content: center;
 
+        input {
+            font-size: 17px;
+        }
+
         .reset-btn {
             background-color: #1d1d1d;
             color: $secondary-color;
+            font-size: 17px;
 
             @media screen and (max-width: 767px) {
                 margin-top: 10px;
@@ -255,6 +256,7 @@
                 background-color: $bg-primary-color;
                 z-index: 5;
                 border-radius: 4px;
+                font-size: 17px;
             }
 
             div {
