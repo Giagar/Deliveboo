@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('address',200);
             $table->string('phone_number',11);
             $table->string('p_iva',11);
-            $table->enum('rating',[0,1,2,3,4,5])->default(0);
+            $table->float('rating',3,2)->default(0);
             $table->string('img',2048);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
