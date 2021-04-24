@@ -41,28 +41,28 @@ const app = new Vue({
             restaurantsFound: 0, // flag per messaggio errore ricerca ristoranti
             searchResultsTitle: "", // titolo mostrato a seconda della ricerca fatta
 
-            categoryIcons: {
-                Americano: 'Am',
-                Cinese: 'Ci',
-                Coreano: 'Co',
-                Giapponese: 'Gi',
-                Indiano: 'In',
-                Italiano: 'It',
-                Messicano: 'Mes',
-                Mediterraneo: 'Med',
-                Street_food: 'SF',
-                Sushi: 'Su',
-                Thailandese: 'Th',
-                Pasta: 'Pa',
-                Pizza: 'Pi',
-                Insalate: 'In',
-                Kebab: 'Ke',
-                Healthy: 'He',
-                Hamburger: 'Ha',
-                Dessert: 'De',
-                Gelato: 'Ge',
-                Caffetteria: 'Ca',
-            }
+            // categoryIcons: {
+            //     Americano: 'Am',
+            //     Cinese: 'Ci',
+            //     Coreano: 'Co',
+            //     Giapponese: 'Gi',
+            //     Indiano: 'In',
+            //     Italiano: 'It',
+            //     Messicano: 'Mes',
+            //     Mediterraneo: 'Med',
+            //     Street_food: 'SF',
+            //     Sushi: 'Su',
+            //     Thailandese: 'Th',
+            //     Pasta: 'Pa',
+            //     Pizza: 'Pi',
+            //     Insalate: 'In',
+            //     Kebab: 'Ke',
+            //     Healthy: 'He',
+            //     Hamburger: 'Ha',
+            //     Dessert: 'De',
+            //     Gelato: 'Ge',
+            //     Caffetteria: 'Ca',
+            // }
         }
     },
     mounted: function() {
