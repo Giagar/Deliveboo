@@ -19,7 +19,7 @@
             @else
                 <div aria-labelledby="navbarDropdown">
                     <a class=" btn-bg-black btn-dark btn" href="{{ route('dashboard') }}">Dashboard</a>
-                    <a class="btn btn-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    <a class="btn btn-light" href="{{ route('logout') }}" onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                     </a>
