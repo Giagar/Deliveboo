@@ -1,6 +1,5 @@
 .public-menu {
 min-height:100vh;
-
     .mobile-restaurant-info {
         width: 100%;
         display: none;
@@ -27,7 +26,6 @@ min-height:100vh;
 
     .main {
         padding: 9% 0;
-        background-color: lightgrey;
         position: relative;
 
 
@@ -232,10 +230,10 @@ min-height:100vh;
                 padding: 20px;
 
                 button {
-                    background-color: rgba(#ffc107, 0.8);
+                    background-color: rgba($bg-primary-color, 0.8);
 
                     &:hover {
-                        background-color: #ffc107;
+                        background-color: $bg-primary-color;
                     }
 
                     a {
@@ -392,17 +390,18 @@ min-height:100vh;
                 span {
                     @include flexCenter;
                     width: 33%;
+                    margin:0 0.15%;
                     font-size: 30px;
                     border-radius: 5px;
-                    background-color: #ffc107;
+                    background-color: $bg-primary-color;
                 }
 
                 .changeQuantity {
                     cursor: pointer;
-                    background-color: rgba(#ffc107, 0.8);
+                    background-color: $bg-primary-color;
 
                     &:hover{
-                        background-color: #ffc107;
+                        background-color:$bg-primary-color;
                         transition: 0.3s;
                     }
                 }
@@ -439,10 +438,10 @@ min-height:100vh;
                     padding: 20px;
 
                     button {
-                        background-color: rgba(#ffc107, 0.8);
+                        background-color: rgba($bg-primary-color, 0.8);
 
                         &:hover {
-                            background-color: #ffc107;
+                            background-color: $bg-primary-color;
                         }
 
                         a {

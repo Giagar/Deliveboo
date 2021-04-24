@@ -14,17 +14,17 @@
 
 <div class="main-container">
 <div class="info-container">
-    <h3>Le tue informazioni:</h3>
+    <h3>Le tue informazioni</h3>
     <ul>
-        <li><b>Nome:</b> {{Auth::user()->name}}</li>
-        <li><b>Cognome:</b> {{Auth::user()->surname}}</li>
-        <li><b>Nome Ristorante:</b> {{Auth::user()->restaurant_name}}</li>
-        <li><b>Descrizione Ristorante:</b> {{Auth::user()->restaurant_description}}</li>
-        <li><b>Foto:</b> <img src="{{asset(Auth::user()->img)}}" alt="photo"></li>
-        <li><b>Email:</b> {{Auth::user()->email}}</li>
-        <li><b>Indirizzo:</b> {{Auth::user()->address}}</li>
-        <li><b>Telefono:</b> {{Auth::user()->phone_number}}</li>
-        <li><b>Partita iva:</b> {{Auth::user()->p_iva}}</li>
+        <li><span>Nome</span> {{Auth::user()->name}}</li>
+        <li><span>Cognome</span> {{Auth::user()->surname}}</li>
+        <li><span>Nome Ristorante</span> {{Auth::user()->restaurant_name}}</li>
+        <li><span>Descrizione Ristorante</span> {{Auth::user()->restaurant_description}}</li>
+        <li><span>Foto</span> <img src="{{asset(Auth::user()->img)}}" alt="photo"></li>
+        <li><span>Email</span> {{Auth::user()->email}}</li>
+        <li><span>Indirizzo</span> {{Auth::user()->address}}</li>
+        <li><span>Telefono</span> {{Auth::user()->phone_number}}</li>
+        <li><span>Partita iva</span> {{Auth::user()->p_iva}}</li>
 
     </ul>
 </div>
@@ -32,7 +32,7 @@
 <div class="boxes-container">
     <div class="box">
         <img src="https://i.pinimg.com/originals/77/b1/db/77b1db46af01fe8737793239f848506a.png" alt="">
-        <button class="btn">
+        <button class="btn btn-bg-black btn-dark">
             <a href="{{route('dishes.index')}}">Vai ai piatti</a>
         </button>
         {{-- partendo dalla index --}}
@@ -40,14 +40,14 @@
 
     <div class="box">
         <img src="https://www.comune.somaglia.lo.it/wp-content/uploads/blocknotes.jpg" alt="">
-        <button class="btn">
+        <button class="btn btn-bg-black btn-dark">
             <a href="{{route('orders')}}">Vai agli ordini</a>
         </button>
     </div>
 
     <div class="box">
         <img src="https://www.en.regione.lombardia.it/wps/wcm/connect/51150327-6f92-4a42-9648-a093b9b0c4d6/imm-statistic.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-51150327-6f92-4a42-9648-a093b9b0c4d6-l-1zic2" alt="">
-        <button class="btn">
+        <button class="btn btn-bg-black btn-dark">
             <a href="{{route('statistics')}}">Vai alle statistiche</a>
         </button>
     </div>

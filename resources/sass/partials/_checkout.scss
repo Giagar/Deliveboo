@@ -83,15 +83,15 @@
                     width: 33%;
                     font-size: 30px;
                     border-radius: 5px;
-                    background-color: #ffc107;
+                    background-color: $bg-primary-color;
                 }
 
                 .changeQuantity {
                     cursor: pointer;
-                    background-color: rgba(#ffc107, 0.8);
+                    background-color: $bg-primary-color;
 
                     &:hover{
-                        background-color: #ffc107;
+                        background-color: $bg-primary-color;
                         transition: 0.3s;
                     }
                 }
@@ -123,11 +123,11 @@
                 }
 
                 button {
-                    background-color: rgba(#ffc107, 0.8);
+                    background-color: rgba($bg-primary-color, 0.8);
                     font-weight: bold;
 
                     &:hover {
-                        background-color: #ffc107;
+                        background-color: $bg-primary-color;
                     }
 
                     a {
@@ -160,11 +160,11 @@
                         text-align: center;
 
                         button {
-                            background-color: rgba(#ffc107, 0.8);
+                            background-color: rgba($bg-primary-color, 0.8);
                             font-weight: bold;
 
                             &:hover {
-                                background-color: #ffc107;
+                                background-color: $bg-primary-color;
                             }
 
                             a {
@@ -210,11 +210,11 @@
             padding: 40px;
 
             button {
-                background-color: rgba(#ffc107, 0.8);
+                background-color: rgba($bg-primary-color, 0.8);
                 font-weight: bold;
 
                 &:hover {
-                    background-color: #ffc107;
+                    background-color: $bg-primary-color;
                 }
             }
 

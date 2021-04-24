@@ -22,8 +22,8 @@
             margin:2px 3px;
         }
 
-          &:hover{
-            background-color: rgba(orange,0.9);
+        &:hover{
+            background-color: rgba($bg-primary-color,0.9);
           }
       }
     input{
@@ -32,6 +32,6 @@
         padding:5px 0 5px 5px;
     }
   .crud-btn-active{
-      background-color:orange;
+      background-color:$bg-primary-color;
       }
   }

@@ -11,11 +11,11 @@
          Se continui il piatto "{{$dish->name}}" sarà cancellato: l'azione non è reversibile.
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+          <button type="button" class="btn btn-bg-salmon" data-dismiss="modal">Chiudi</button>
           <form method="POST" action="{{route('dishes.destroy', ['dish' => $dish->id])}}">
             @csrf
             @method('DELETE')
-            <button type="submit" name="button" data-toggle="modal" data-target="#exampleModal{{$dish->id}}" class="btn btn-danger">
+            <button type="submit" name="button" data-toggle="modal" data-target="#exampleModal{{$dish->id}}" class="btn btn-dark btn-bg-black">
               Cancella<i class="fas fa-trash"></i>
             </button>
           </form>
