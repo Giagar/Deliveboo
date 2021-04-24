@@ -6,7 +6,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 {{-- <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet"> --}}
 <div id="app">
-<main class="container">
+<main class="container landing-page">
     <section class="section">
         <div class="section-title-container">
             <h2 class="text-center section-title">Seleziona una categoria</h2>
@@ -77,7 +77,8 @@
                         <a :href="'/restaurants/' + restaurant.restaurant_name"></a>
                         <div class="restaurant-name">@{{restaurant.restaurant_name}}</div>
                         <div class="restaurant-categories">
-                            <span v-for="category in restaurant.categories">@{{categoryIcons[category.name]}}</span>
+                            {{-- <span v-for="category in restaurant.categories">@{{categoryIcons[category.name]}}</span> --}}
+                            <span v-for="category in restaurant.categories">#@{{category.name}}</span>
                         </div>
 
                         {{-- <div v-for="category in restaurant.categories">
@@ -90,7 +91,8 @@
                         <a :href="'/restaurants/' + restaurant.restaurant_name"></a>
                         <div class="restaurant-name">@{{restaurant.restaurant_name}}</div>
                         <div class="restaurant-categories">
-                            <span v-for="category in restaurant.categories">@{{categoryIcons[category.name]}}&nbsp;</span>
+                            {{-- <span v-for="category in restaurant.categories">@{{categoryIcons[category.name]}}&nbsp;</span> --}}
+                            <span v-for="category in restaurant.categories">#@{{category.name}}&nbsp;</span>
                         </div>
 
                         {{-- <div v-for="category in restaurant.categories">
