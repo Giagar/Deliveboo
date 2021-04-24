@@ -1,5 +1,3 @@
-{{-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> --}}
-
 @extends('layouts.baseuser')
 @section('title', 'Statistiche')
 @section('content')
@@ -8,10 +6,6 @@
 
 <script>
 const orders ={!! $orders !!};
-console.log(orders);
-
-// amount
-// created_at
 
 let result = {
     "01": {
@@ -52,17 +46,10 @@ let result = {
     const monthValues = []; // months
 
     for (let key in result) {
-        // console.log(key)
         orderValues.push(result[key].totalOrders);
         moneyValues.push(result[key].money);
         monthValues.push(result[key].monthName);
     }
-
-
-
-    // console.table("orders", orderValues, "money", moneyValues, "months", monthValues);
-    // console.table(result);
-
 
 </script>
 
@@ -92,20 +79,18 @@ var myChart = new Chart(ctx, {
             label: 'Numero ordini', // legend
             data: [...orderValues], // the y value adapt automatically to contain all the values in the array
             fill: false, // fil color under the graph
-            backgroundColor: 'hsla(181, 53%, 45%, 0.7)', // color of the graph under the line
-            borderColor: 'hsla(181, 53%, 45%, 0.7)', // graph line color
-            // pointBackgroundColor: 'hsl(0, 1%, 21%)', // color of the graph line nodes
+            backgroundColor: '#71bed1', // color of the graph under the line
+            borderColor: '#71bed1', // graph line color
             borderWidth: 1.5, // width of the graph line
             tension: 0.1, // roundness of the graph line
         },
           // second graph
         {
-            label: 'Totale incasso', // legend
+            label: 'Totale incasso in euro', // legend
             data: [...moneyValues],
             fill: false,
-            backgroundColor: 'orange', // color of the graph under the line
-            borderColor: 'orange',
-            // pointBackgroundColor: 'hsl(0, 1%, 21%)',
+            backgroundColor: '#ff6e54', // color of the graph under the line
+            borderColor: '#ff6e54',
             borderWidth: 1.5,
             tension: 0.1,
         }
@@ -114,30 +99,6 @@ var myChart = new Chart(ctx, {
     },
     options: {
         scales: {
-            y: {
-                beginAtZero: true,
-                ticks: {
-                    // Include a dollar sign in the ticks
-                    callback: function(value, index, values) {
-                        return '€ ' + value;
-                    },
-                    // autoSkip: false,
-                    // maxRotation: 90,
-                    // minRotation: 45
-                },
-                // title: {
-                //     display: true,
-                //     text: 'Month',
-                //     color: '#911',
-                //     font: {
-                //         family: 'Comic Sans MS',
-                //         size: 20,
-                //         weight: 'bold',
-                //         lineHeight: 1.2,
-                //     },
-                //     padding: {top: 20, left: 0, right: 0, bottom: 0}
-                // }
-            },
             x: {
                 beginAtZero: true,
                 ticks: {
