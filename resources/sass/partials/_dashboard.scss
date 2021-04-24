@@ -6,8 +6,8 @@
     h1 {
         font-size: 3.5em;
         color: white;
-        // text-shadow: 5px 5px 5px black;
-    }
+        text-shadow: 5px 5px 10px black;
+}
 }
 
 .main-container {
@@ -54,7 +54,7 @@
             }
 
             li {
-                font-size: 0.7em;
+                font-size: 0.8em;
             }
         }
     }
@@ -93,19 +93,14 @@
 
 
                 // background-color: rgba(#ffc107, 0.8);
-                padding: 10px;
                 font-weight: bold;
-                width: 150px;
+                font-size:18px;
+                width: 160px;
 
                 @media (max-width: $desktop) {
                     width: 120px;
                     padding: 5px;
                 }
-
-                &:hover {
-                    // background-color: #ffc107;
-                }
-
 
                 a {
                     text-decoration: none;
@@ -137,7 +132,5 @@
         }
     }
 }
-
-
 
 

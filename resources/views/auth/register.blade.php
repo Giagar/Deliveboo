@@ -1,6 +1,6 @@
 @extends('layouts.base')
 @section('content')
-<div class="container">
+<div class="container register-wrapper">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card" style="margin:50px 0;">

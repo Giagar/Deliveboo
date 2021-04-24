@@ -10,7 +10,7 @@
     <div class="header" style="background-image: url({{ asset($restaurant->img) }})">
         <p class="mobile-restaurant-name">{{$restaurant->restaurant_name}}</p>
         <p class="mobile-restaurant-description">{{$restaurant->restaurant_description}}</p>
-        <div class="restaurant-info" style="background-image: url({{asset('images-websites/forchetta.jpg')}})">
+        {{-- <div class="restaurant-info" style="background-image: url({{asset('images-websites/forchetta.jpg')}})">
             <h1>{{ $restaurant->restaurant_name }}</h1>
             <ul>
                 <li>
@@ -26,7 +26,27 @@
                     <span class="info-icon"><i class="fas fa-envelope-open-text"></i></span><span class="info-detail">{{$restaurant->email}}</span>
                 </li>
             </ul>
-        </div>
+        </div> --}}
+        <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <h1>{{ $restaurant->restaurant_name }}</h1>
+              </div>
+              <div class="flip-card-back">
+                <ul>
+                    <li>
+                        <span class="info-icon"><i class="fas fa-map-marker-alt"></i></span><span class="info-detail">{{$restaurant->address}}</span>
+                    </li>
+                    <li>
+                    <span class="info-icon"><i class="fas fa-mobile-alt"></i></span><span class="info-detail">{{$restaurant->phone_number}}</span>
+                    </li>
+                    <li>
+                        <span class="info-icon"><i class="fas fa-envelope-open-text"></i></span><span class="info-detail">{{$restaurant->email}}</span>
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </div>
     </div>
 
     <div class="mobile-restaurant-info">
@@ -104,7 +124,7 @@ foreach ($restaurant->dishes as $dish) {
         </div>
     </section>
 
-    <div class="wrapper">
+    <div class="wrapper-cart">
         <section class="cart">
 
             <div class="top-container">
