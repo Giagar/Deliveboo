@@ -1,5 +1,5 @@
 .receipt-container {
-    display: flex;
+    @include flex;
     justify-content: space-around;
     flex-wrap: wrap;
 

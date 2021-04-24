@@ -3,6 +3,9 @@
 @section('title','Home')
 
 @section('content')
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <div id="app">
 <main class="container">
     <section class="section">
@@ -12,6 +15,7 @@
         <div class="d-flex flex-wrap justify-content-center categoriesSection">
             <div @click="selectedCategory(category)" v-for="(category, indexCategory) in categories" :key="indexCategory" :class="'categories text-center' + (selected === category.name ? ' active-category ' : '')">
                 <img :src="category.img" alt="">
+                {{-- <div :style="background-image: url(category.img)"></div> --}}
                 <h4>@{{category.name}}</h4>
             </div>
 

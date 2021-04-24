@@ -67,7 +67,7 @@ let result = {
 </script>
 
 <section class="section stats wrapper">
-    <div class="title-container">
+    <div class="section-title-container">
         <h1 class="section-title">Statistiche</h1>
     </div>
 
