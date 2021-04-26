@@ -14,12 +14,14 @@
                     </li>
             </ul>
             @if (!Auth::check())
-                <a class="btn btn-dark btn-bg-black  mr-sm-1" href="/login">Login</a>
-                <a class="btn btn-light" href="/register">Register</a>
+                <a class="btn btn-dark btn-bg-black  mr-sm-1 my-btn-login" href="/login">Login</a>
+                <a class="btn btn-light my-btn-register" href="/register">Register</a>
             @else
                 <div aria-labelledby="navbarDropdown">
-                    <a class=" btn-bg-black btn-dark btn" href="{{ route('dashboard') }}">Dashboard</a>
-                    <a class="btn btn-light" href="{{ route('logout') }}" onclick="event.preventDefault();
+                   @if(Request::route()->getName() !=='dashboard')
+                   <a class=" btn-bg-black btn-dark btn my-btn-dashboard" href="{{ route('dashboard') }}">Dashboard</a>
+                   @endif
+                    <a class="btn btn-light my-btn-login" href="{{ route('logout') }}" onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                     </a>

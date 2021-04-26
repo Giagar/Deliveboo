@@ -18,12 +18,13 @@
 @import 'partials/dashboard';
 @import 'partials/orders';
 @import 'partials/checkout';
-@import 'partials/login';
+@import 'partials/login&register';
 @import 'partials/statistics';
 
 
 body{
     font-family: 'Teko', sans-serif;
+    font-size: 17px;
 }
 main {
   background-color: #D7EAF0;

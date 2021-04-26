@@ -2,7 +2,10 @@
     @include flex;
     justify-content: space-around;
     flex-wrap: wrap;
-
+    .no-orders{
+        margin-top:50px;
+        font-size:20px;
+    }
     .receipt {
         padding: 80px 30px;
         margin: 20px auto;

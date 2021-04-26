@@ -1,10 +1,11 @@
 @extends('layouts.baseuser')
 
-@section('title','Dashboard')
+@section('title','Ordini')
 
 @section('content')
-{{-- @dd($processedOrders) --}}
-<div class="receipt-container">
+
+<div class="receipt-container" style="min-height:70vh;">
+@if(count($processedOrders)>0)
 @foreach ($processedOrders as $order)
 
 <div class="receipt">
@@ -71,6 +72,9 @@
         </div>
 </div>
 @endforeach
+@else
+<p class="no-orders">Non hai ancora ordini.</p>
+@endif
 </div>
 
 @endsection

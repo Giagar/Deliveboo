@@ -17,7 +17,7 @@ class RestaurantController extends Controller
         return view('public-menu', compact('restaurant'));
     }
 
-    //qui riporto al checkout
+    //qui riportiamo al checkout
     public function checkout($name)
     {
         $gateway = new \Braintree\Gateway([
@@ -47,13 +47,12 @@ class RestaurantController extends Controller
             'privateKey' => '7f6c22d8dffcccc4eb93413fecff9d4e'
         ]);
         $newOrder->save();
-        //    devo associare gli ordini ai piatti
-        // col count dell'array della quantità che ho passato con input hidden
+        //    dobbiamo associare gli ordini ai piatti
+        // col count dell'array della quantità che abbiamo passato con input hidden
         $count = 0;
         for ($j=0; $j < count($data['quantity']) ; $j++)
         {
-            $quantity = $data['quantity'][$j];
-            for ($i=0; $i < $quantity ; $i++) {
+            for ($i=0; $i < $data['quantity'][$j] ; $i++) {
                 $newOrder->dishes()->attach($data['dishes'][$count]);
             }
             $count++;
@@ -68,10 +67,10 @@ class RestaurantController extends Controller
                 'submitForSettlement' => true
             ]
         ]);
-        //    se la transazione ha successo mando email al cliente dell'ordine
+        //    se la transazione ha successo mandiamo email al cliente dell'ordine
             if ($result->success) {
                 $transaction = $result->transaction;
-                // Mail::to($newOrder->customer_email)->send(new PayMail($newOrder));
+                Mail::to($newOrder->customer_email)->send(new PayMail($newOrder));
                 return redirect()->route('purchase-made', ['transaction'=>$transaction,'newOrder'=>$newOrder]);
             } else {
                 $errorString = "";
@@ -83,11 +82,7 @@ class RestaurantController extends Controller
                 return back()->withErrors('An error occurred with the message: '.$result->message);
             }
         }
-        // public function $formValidation = [
-        //     'customer_name' => 'required | max: 60',
-        //     'customer_address' => 'required | max: 80',
-        //     'customer_phone' => 'required | max: 15',
-        // ];
+
         protected function validateForm(Request $request){
             $request->validate([
             'customer_name' => 'required | max: 100',

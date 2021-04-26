@@ -1,7 +1,7 @@
 @extends('layouts.baseuser')
 
 @section('content')
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar crud-navbar">
  <div class="nav-left">
     <div class="crud-search-section">
     <button><a href="{{route('dishes.index')}}">Tutti i piatti</a></button>
@@ -20,10 +20,10 @@
     </form>
     </div>
   </div>
-    <a class="btn btn-light" href="{{route('dishes.create')}}">Crea piatto</a>
+    <a class="btn btn-light my-btn-create" href="{{route('dishes.create')}}">Crea piatto</a>
 </nav>
 <div style="min-height:50vh;" class="table-responsive">
-<table class="table table-striped">
+<table class="table table-striped crud-table">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -51,9 +51,9 @@
             <td>{{$dish->gluten ? 'Si' : 'No'}}</td>
             <td>{{$dish->type}}</td>
             <td><img style="width:80px;height:auto;" src="{{asset($dish->img)}}" alt=""></td>
-           <td><a class="btn btn-bg-salmon" href="{{route('dishes.show',compact('dish'))}}">Mostra piatto</a>
-           <a class="btn btn-bg-salmon" href="{{route('dishes.edit',compact('dish'))}}">Modifica piatto</a>
-           <button type="button" class="btn btn-bg-black btn-dark" data-toggle="modal" data-target="#exampleModal{{$dish->id}}">Cancella<i class="fas fa-trash"></i>
+           <td><a class="btn btn-bg-salmon my-btn-show" href="{{route('dishes.show',compact('dish'))}}">Mostra piatto<i class="fa fa-eye"></i></a>
+           <a class="btn btn-bg-salmon my-btn-edit" href="{{route('dishes.edit',compact('dish'))}}">Modifica piatto<i class="fas fa-edit"></i></a>
+           <button type="button" class="btn btn-bg-black btn-dark my-btn-delete" data-toggle="modal" data-target="#exampleModal{{$dish->id}}">Cancella<i class="fas fa-trash"></i>
            </button>
            @include('layouts.modal')
             </td>

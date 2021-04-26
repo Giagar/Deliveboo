@@ -1,7 +1,13 @@
 .public-menu {
 min-height:100vh;
+.no-dishes{
+    margin-top:50px;
+    font-size:20px;
+}
     .mobile-restaurant-info {
         width: 100%;
+        color:white;
+        background-color:$bg-footer-color;
         display: none;
 
         ul {
@@ -26,19 +32,19 @@ min-height:100vh;
 
     .main {
         padding: 9% 0;
+        max-height:1600px;
+        overflow-y:auto;
         position: relative;
-
-
+        @include flex;
+        justify-content: space-around;
         @media (max-width: $desktop) {
-            @include flex;
-            justify-content: center;
+        justify-content: center;
             width: 100%;
             padding: 10% 0;
         }
 
         .dishes-list {
-
-            .mobile-cart-section {
+           .mobile-cart-section {
                 display: none;
             }
             @media (max-width: $desktop) {
@@ -86,29 +92,29 @@ min-height:100vh;
         }
     }
 
-    .restaurant-info {
-        @include background-style;
-        width: 40%;
-        padding: 1%;
-        position: absolute;
-        border-radius: 50px;
-        left:10%;
-        top: 30%;
-        box-shadow: 0 0 10px #000;
-        z-index: 2;
+    // .restaurant-info {
+    //     @include background-style;
+    //     width: 40%;
+    //     padding: 1%;
+    //     position: absolute;
+    //     border-radius: 50px;
+    //     left:10%;
+    //     top: 30%;
+    //     box-shadow: 0 0 10px #000;
+    //     z-index: 2;
 
 
-        @media (max-width: $desktop) {
-            // width: 90%;
-            // padding: 5px;
-            // opacity: 0.9;
-            // border: 1px solid $primary-color;
-            // position: absolute;
-            // top: 50%;
-            // left: 1%;
-            display: none;
-        }
-    }
+    //     @media (max-width: $desktop) {
+    //         // width: 90%;
+    //         // padding: 5px;
+    //         // opacity: 0.9;
+    //         // border: 1px solid $primary-color;
+    //         // position: absolute;
+    //         // top: 50%;
+    //         // left: 1%;
+    //         display: none;
+    //     }
+    // }
 
     .header {
         @include background-style;
@@ -195,7 +201,7 @@ min-height:100vh;
             }
         }
         h1 {
-            color: $primary-color;
+            // color: $primary-color;
             font-size: 4em;
 
             @media (max-width: $desktop) {
@@ -212,11 +218,8 @@ min-height:100vh;
     }
 
     .dishes-list-container {
-
-        width: 50%;
-        margin-left: 150px;
-
-        @media (max-width: $desktop) {
+      width: 40%;
+       @media (max-width: $desktop) {
             @include flex;
             width: 90%;
             margin: 0;
@@ -249,7 +252,7 @@ min-height:100vh;
             @include flex;
             border-radius: 50px;
             box-shadow: 0 0 10px #000;
-            margin: 50px 0;
+            margin-bottom:50px;
             justify-content: space-between;
             min-height: 400px;
             width: 100%;
@@ -278,7 +281,7 @@ min-height:100vh;
 
                 &-top {
                     p {
-                        font-size: 0.8em;
+                        font-size: 1em;
                     }
                 }
 
@@ -305,19 +308,17 @@ min-height:100vh;
         }
     }
 
-    .wrapper {
-        position: absolute;
+    .wrapper-cart {
+        width:40%;
         top: 20%;
         right: 7%;
-        display: block;
-
         @media (max-width: $desktop) {
             display: none;
         }
 
         .cart {
             min-height: 500px;
-            width: 430px;
+            width: 100%;
             border-radius: 50px;
             box-shadow: 0 0 10px #000;
             position: relative;
@@ -456,4 +457,52 @@ min-height:100vh;
 
     }
 }
+
+.flip-card {
+    h1{
+        color:$secondary-color;
+    }
+    @media (max-width: $desktop){
+        display:none;
+    }
+    top:55%;
+    z-index:2;
+    left:5%;
+    position:absolute;
+    background-color: transparent;
+    min-width:max-content;
+    width: 450px;
+    height: 200px;
+    perspective: 1000px; //per l'effetto 3d
+
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    padding:10px 15px;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  .flip-card-front {
+    background-color:#71bed1;
+  }
+  .flip-card-back {
+    background-color: $bg-footer-color;
+    color: white;
+    transform: rotateY(180deg);
+  }
 

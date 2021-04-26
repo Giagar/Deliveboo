@@ -13,5 +13,22 @@ nav {
                 color: $secondary-color;
             }
         }
+
+        #navbarSupportedContent {
+
+            .my-btn-login {
+                font-size: 22px;
+            }
+
+            .my-btn-register {
+                font-size: 22px;
+            }
+            .my-btn-dashboard {
+                font-size: 22px;
+            }
+            .my-btn-logout {
+                font-size: 22px;
+            }
+        }
     }
 }
