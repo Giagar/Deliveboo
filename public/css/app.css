@@ -12384,14 +12384,11 @@ nav .container #navbarSupportedContent .my-btn-logout {
   align-items: center;
   max-width: 750px;
   margin: 0 auto;
-}
-
-.section.stats .section-title-container {
-  margin-bottom: 40px;
+  padding-bottom: 180px !important;
 }
 
 .section.stats .stats-year {
-  font-size: 22px;
+  font-size: 1.5rem;
   align-self: flex-start;
   margin-top: 25px;
   margin-bottom: 20px;
@@ -12437,7 +12434,7 @@ main {
 }
 
 .section-title {
-  font-size: 50px;
+  font-size: 3rem;
   position: relative;
   z-index: 1;
   margin-bottom: 60px;
