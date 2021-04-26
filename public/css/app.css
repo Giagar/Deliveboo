@@ -10968,6 +10968,10 @@ a.text-dark:focus {
   padding-bottom: 100px;
 }
 
+.section:last-child {
+  padding-bottom: 100px !important;
+}
+
 .landing-page .section-title-container {
   display: flex;
   justify-content: center;
@@ -11094,7 +11098,7 @@ a.text-dark:focus {
   background-color: #ff6e54;
   z-index: 5;
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .landing-page .restaurantsSection .restaurants:hover {
