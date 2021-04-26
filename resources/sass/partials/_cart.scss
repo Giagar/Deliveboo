@@ -32,8 +32,6 @@ min-height:100vh;
 
     .main {
         padding: 9% 0;
-        max-height:1600px;
-        overflow-y:auto;
         position: relative;
         @include flex;
         justify-content: space-around;
@@ -217,7 +215,19 @@ min-height:100vh;
 
     }
 
+    .dishes-list-container::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .dishes-list-container {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
     .dishes-list-container {
+     max-height:1500px;
+     overflow-y:auto;
+     padding:10px;
         h3 {
             @media (max-width: $desktop) {
             font-size:1.2rem !important;
@@ -227,6 +237,8 @@ min-height:100vh;
       width: 40%;
        @media (max-width: $desktop) {
             @include flex;
+            height:max-content;
+            overflow-y:none;
             width: 90%;
             margin: 0;
             justify-content: center;
@@ -479,7 +491,7 @@ min-height:100vh;
     @media (max-width: $desktop){
         display:none;
     }
-    top:55%;
+    top:65%;
     z-index:2;
     left:5%;
     position:absolute;
