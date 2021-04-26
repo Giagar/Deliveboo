@@ -2,13 +2,18 @@
 if(isset($edit) && !empty($edit)){//edit
     $method = 'PUT';
     $url = route('dishes.update',compact('dish'));
+    $title = 'Modifica il tuo piatto';
 } else {//create
   $method = 'POST';
   $url = route('dishes.store');
+  $title = 'Crea il tuo piatto';
 }
 @endphp
 
 @section('content')
+    <div class="crud-title">
+        <h1 class="section-title text-center">{{$title}}</h1>
+    </div>
   <div class="container crud-form" style="padding-top: 25px; padding-bottom: 25px;">
     <form id="validateForm" action="{{$url}}" method="post" enctype="multipart/form-data">
       @csrf
