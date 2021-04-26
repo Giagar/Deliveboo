@@ -21,10 +21,12 @@
 @import 'partials/login&register';
 @import 'partials/statistics';
 
+html {
+    font-size: 20px;
+}
 
 body{
     font-family: 'Teko', sans-serif;
-    font-size: 17px;
 }
 main {
   background-color: #D7EAF0;
