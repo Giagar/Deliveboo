@@ -10974,7 +10974,7 @@ a.text-dark:focus {
 }
 
 .landing-page .section-title-container .section-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   position: relative;
   z-index: 1;
   margin-bottom: 60px;
@@ -11011,7 +11011,7 @@ a.text-dark:focus {
   border-radius: 5px;
   padding: 3px 5px;
   position: absolute;
-  font-size: 15px;
+  font-size: 1.1rem;
   background: #ff6e54;
   color: white;
   border-radius: 4px;
@@ -11033,29 +11033,19 @@ a.text-dark:focus {
 }
 
 .landing-page .advanced-search input {
-  font-size: 17px;
+  font-size: 1.1rem;
 }
 
 .landing-page .advanced-search .reset-btn {
   background-color: #1d1d1d;
   color: #fff;
-  font-size: 17px;
+  font-size: 1.1rem;
 }
 
 @media screen and (max-width: 767px) {
   .landing-page .advanced-search .reset-btn {
     margin-top: 10px;
   }
-}
-
-.landing-page .buttons-container {
-  display: flex;
-  justify-content: center;
-}
-
-.landing-page .buttons-container .reset-btn {
-  background-color: #1d1d1d;
-  color: #fff;
 }
 
 .landing-page .restaurantsSection {
@@ -11090,7 +11080,7 @@ a.text-dark:focus {
   background-color: #71bed1;
   z-index: 5;
   border-radius: 4px;
-  font-size: 25px;
+  font-size: 1.6rem;
 }
 
 .landing-page .restaurantsSection .restaurants .restaurant-categories {
@@ -11104,7 +11094,7 @@ a.text-dark:focus {
   background-color: #ff6e54;
   z-index: 5;
   border-radius: 4px;
-  font-size: 17px;
+  font-size: 0.9rem;
 }
 
 .landing-page .restaurantsSection .restaurants:hover {
@@ -11130,10 +11120,12 @@ a.text-dark:focus {
   position: absolute;
   left: 0;
   top: 0;
+  font-size: 1.1rem;
+  letter-spacing: 1.5px;
 }
 
 .landing-page .restaurantsSection .no-restaurants-found.message {
-  font-size: 25px;
+  font-size: 1.6rem;
   border-bottom: 2px solid #71bed1;
   padding-top: 50px;
   text-align: center;
@@ -11716,11 +11708,13 @@ nav .container .login a {
 }
 
 nav .container #navbarSupportedContent .my-btn-login {
-  font-size: 22px;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
 }
 
 nav .container #navbarSupportedContent .my-btn-register {
-  font-size: 22px;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
 }
 
 .crud-navbar {

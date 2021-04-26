@@ -25,8 +25,6 @@
             <input @keyup="filterByAddress()" class="form-control mr-sm-2" type="search" v-model="searchAddress" placeholder="Ricerca per indirizzo" aria-label="Search" id="searchByAdress" name="searchByAdress">
             <button class="btn reset-btn" @click="showAll()">Azzera la ricerca</button>
         </form>
-        <div class="buttons-container">
-        </div>
     {{-- @endif --}}
     </section>
     <div class="section-title-container">
