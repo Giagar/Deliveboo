@@ -79,6 +79,7 @@ font-size:22px;
 
 .crud-form{
     font-size:22px;
+    padding-bottom: 100px !important;
     .form-control{
         font-size:22px;
     }
@@ -103,3 +104,14 @@ font-size:22px;
     font-size:22px;
 }
 }
+
+.crud-title {
+    display: flex;
+    justify-content: center;
+    h1 {
+        margin-bottom: 0 !important;
+        margin-top: 100px;
+    }
+}
+
+
