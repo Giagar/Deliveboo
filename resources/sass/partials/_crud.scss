@@ -43,6 +43,21 @@ font-size:22px;
 }
 .crud-table{
     font-size:18px;
+
+    td:last-child {
+        min-width: 400px;
+
+        @media (max-width: $desktop) {
+            min-width: 170px;
+            text-align: center;
+
+            a, button {
+                margin: 2px 0;
+            }
+        }
+    }
+
+
 }
 
 .my-btn-delete,.my-btn-edit,.my-btn-show{

@@ -251,7 +251,7 @@ min-height:100vh;
         .dish {
             @include flex;
             border-radius: 50px;
-            box-shadow: 0 0 10px #000;
+            box-shadow: $box-shadow-light;
             margin-bottom:50px;
             justify-content: space-between;
             min-height: 400px;
@@ -320,7 +320,7 @@ min-height:100vh;
             min-height: 500px;
             width: 100%;
             border-radius: 50px;
-            box-shadow: 0 0 10px #000;
+            box-shadow: $box-shadow-light;
             position: relative;
             background-color: white;
 
@@ -357,7 +357,7 @@ min-height:100vh;
                     float: left;
                     height: 100%;
                     width: 49%;
-                    box-shadow: 0 0 8px #000;
+                    box-shadow: $box-shadow-light;
                     border-radius: 10px 0 0 10px;
 
                     &-content {
@@ -375,7 +375,7 @@ min-height:100vh;
                     background-size: cover;
                     background-repeat: no-repeat;
                     border-radius: 0 10px 10px 0;
-                    box-shadow: 0 0 8px #000;
+                    box-shadow: $box-shadow-light;
                 }
             }
 
