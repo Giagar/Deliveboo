@@ -11865,6 +11865,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
 
 .crud-form {
   font-size: 22px;
+  padding-bottom: 100px !important;
 }
 
 .crud-form .form-control {
@@ -11886,6 +11887,16 @@ nav .container #navbarSupportedContent .my-btn-logout {
 
 .modal .modal-footer button {
   font-size: 22px;
+}
+
+.crud-title {
+  display: flex;
+  justify-content: center;
+}
+
+.crud-title h1 {
+  margin-bottom: 0 !important;
+  margin-top: 100px;
 }
 
 .header {
