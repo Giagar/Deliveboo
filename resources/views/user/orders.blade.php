@@ -3,7 +3,7 @@
 @section('title','Ordini')
 
 @section('content')
-
+<div class="order-container">
 <header class="text-center">
     <h1 class="section-title">Ordini</h1>
 </header>
@@ -79,5 +79,5 @@
 <p class="no-orders">Non hai ancora ordini.</p>
 @endif
 </div>
-
+</div>
 @endsection

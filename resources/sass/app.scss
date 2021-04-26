@@ -40,3 +40,14 @@ main {
 .btn-bg-salmon {
   background-color: $bg-primary-color !important;
 }
+
+.section-title {
+    font-size: 50px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 60px;
+    letter-spacing: 1.5px;
+    color: #71bed1;
+    display: inline-block;
+    text-transform: uppercase;
+}

@@ -1,10 +1,11 @@
+.order-container{
+    padding:100px 0;
 .receipt-container {
     @include flex;
     justify-content: space-around;
     flex-wrap: wrap;
     .no-orders{
-        margin-top:50px;
-        font-size:20px;
+        font-size:22px;
     }
     .receipt {
         padding: 80px 30px;
@@ -62,5 +63,6 @@
     background-color: rgba(grey, 0.2);
 }
 
+}
 
 
