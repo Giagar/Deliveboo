@@ -10968,6 +10968,10 @@ a.text-dark:focus {
   padding-bottom: 100px;
 }
 
+.section:last-child {
+  padding-bottom: 100px !important;
+}
+
 .landing-page .section-title-container {
   display: flex;
   justify-content: center;
@@ -11080,7 +11084,7 @@ a.text-dark:focus {
   background-color: #71bed1;
   z-index: 5;
   border-radius: 4px;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 
 .landing-page .restaurantsSection .restaurants .restaurant-categories {
@@ -11094,7 +11098,7 @@ a.text-dark:focus {
   background-color: #ff6e54;
   z-index: 5;
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .landing-page .restaurantsSection .restaurants:hover {
@@ -11125,7 +11129,7 @@ a.text-dark:focus {
 }
 
 .landing-page .restaurantsSection .no-restaurants-found.message {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   border-bottom: 2px solid #71bed1;
   padding-top: 50px;
   text-align: center;
@@ -12391,14 +12395,11 @@ nav .container #navbarSupportedContent .my-btn-logout {
   align-items: center;
   max-width: 750px;
   margin: 0 auto;
-}
-
-.section.stats .section-title-container {
-  margin-bottom: 40px;
+  padding-bottom: 180px !important;
 }
 
 .section.stats .stats-year {
-  font-size: 22px;
+  font-size: 1.5rem;
   align-self: flex-start;
   margin-top: 25px;
   margin-bottom: 20px;
@@ -12444,7 +12445,7 @@ main {
 }
 
 .section-title {
-  font-size: 50px;
+  font-size: 3rem;
   position: relative;
   z-index: 1;
   margin-bottom: 60px;
