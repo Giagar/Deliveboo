@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="buttons" style="margin-top: 15px;">
-            <a href="{{route('dishes.index')}}" class="btn btn-light" role="button" aria-pressed="true">Torna alla lista piatti</a>
+            <a href="{{route('dishes.index')}}" class="btn btn-dark btn-bg-black" role="button" aria-pressed="true">Torna alla lista piatti</a>
             <a href="{{route('dishes.create')}}" class="btn btn-bg-salmon " role="button" aria-pressed="true">Inserisci nuovo piatto </a>
         </div>
     </div>
