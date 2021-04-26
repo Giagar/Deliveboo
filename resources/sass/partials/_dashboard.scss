@@ -1,7 +1,8 @@
 .header {
     @include flexCenter;
     height: 200px;
-    background-image: url('https://images.adsttc.com/media/images/5e4c/1025/6ee6/7e0b/9d00/0877/large_jpg/feature_-_Main_hall_1.jpg?1582043123');
+    background-image: radial-gradient(rgba(0,2,17,0.16) 0%,rgba(0,2,17,0.4) 100%),url('https://images.adsttc.com/media/images/5e4c/1025/6ee6/7e0b/9d00/0877/large_jpg/feature_-_Main_hall_1.jpg?1582043123');
+
     background-position: 50% 60%;
     h1 {
         font-size: 3.5em;
