@@ -218,6 +218,12 @@ min-height:100vh;
     }
 
     .dishes-list-container {
+        h3 {
+            @media (max-width: $desktop) {
+            font-size:1.2rem !important;
+            }
+
+        }
       width: 40%;
        @media (max-width: $desktop) {
             @include flex;
@@ -299,6 +305,11 @@ min-height:100vh;
                 padding: 10px;
                 font-weight: bold;
                 margin-top: 10px;
+                @media (max-width: $desktop) {
+                 padding:6px;
+                 margin-top:1px;
+                 font-size:16px;
+                }
 
                 &:hover {
                     background-color: $bg-footer-color;
