@@ -1,8 +1,9 @@
 //LO STILE
 .crud-navbar{
 background-color:$bg-footer-color;
+font-size:22px;
 .my-btn-create{
-    font-size:18px;
+    font-size:22px;
 }
 .crud-search-section{
     @include flex;
@@ -51,17 +52,24 @@ background-color:$bg-footer-color;
     }
 }
 
-
+.my-btn-delete{
+    color:$bg-primary-color;
+    background-color: $bg-footer-color;
+    &:hover{
+         color:$bg-primary-color;
+    }
+}
 
 
 
 .crud-form{
+    font-size:22px;
     .form-control{
-        font-size:20px;
+        font-size:22px;
     }
     .form-buttons{
         input,a{
-        font-size:20px;
+        font-size:22px;
     }
     }
 }
@@ -70,11 +78,13 @@ background-color:$bg-footer-color;
 .crud-show{
  .buttons{
      a{
-         font-size:20px;
+         font-size:22px;
      }
  }
 }
-
+.modal{
+    font-size:22px;
 .modal-footer button{
-    font-size:20px;
+    font-size:22px;
+}
 }

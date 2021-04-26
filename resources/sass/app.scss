@@ -21,10 +21,12 @@
 @import 'partials/login&register';
 @import 'partials/statistics';
 
+html {
+    font-size: 20px;
+}
 
 body{
     font-family: 'Teko', sans-serif;
-    font-size: 17px;
 }
 main {
   background-color: #D7EAF0;
@@ -37,4 +39,15 @@ main {
 
 .btn-bg-salmon {
   background-color: $bg-primary-color !important;
+}
+
+.section-title {
+    font-size: 50px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 60px;
+    letter-spacing: 1.5px;
+    color: #71bed1;
+    display: inline-block;
+    text-transform: uppercase;
 }

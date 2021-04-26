@@ -38,11 +38,11 @@
         justify-content: center;
 
         .section-title {
-            font-size: 50px;
+            font-size: $font-extralarge;
             position: relative;
             z-index: 1;
             margin-bottom: 60px;
-            letter-spacing: 1.5px;
+            letter-spacing: $letterspacing-small;
             // color: hsl(0, 1%, 21%); // era $primary-color
             color: $bg-secondary-color; // era $primary-color
             display: inline-block;
@@ -103,7 +103,7 @@
                 border-radius: 5px;
                 padding: 3px 5px;
                 position: absolute;
-                font-size: 15px;
+                font-size: $font-small;
                 background: $bg-primary-color;
                 color: white;
                 border-radius: 4px;
@@ -111,7 +111,7 @@
                 transform: translateX(-50%);
                 left: 50%;
                 z-index: 2; // per .active-category
-                letter-spacing: 1.5px;
+                letter-spacing: $letterspacing-small;
             }
         }
 
@@ -140,13 +140,13 @@
         justify-content: center;
 
         input {
-            font-size: 17px;
+            font-size: $font-small;
         }
 
         .reset-btn {
             background-color: #1d1d1d;
             color: $secondary-color;
-            font-size: 17px;
+            font-size: $font-small;
 
             @media screen and (max-width: 767px) {
                 margin-top: 10px;
@@ -154,17 +154,6 @@
         }
 
     }
-
-    .buttons-container {
-        @include flex;
-        justify-content: center;
-
-        .reset-btn {
-            background-color: #1d1d1d;
-            color: $secondary-color;
-        }
-    }
-
 
 
     // .restaurantsSection {
@@ -240,7 +229,7 @@
                 background-color: $bg-secondary-color;
                 z-index: 5;
                 border-radius: 4px;
-                font-size: 25px;
+                font-size: $font-medium;
             }
 
             .restaurant-categories {
@@ -256,7 +245,7 @@
                 background-color: $bg-primary-color;
                 z-index: 5;
                 border-radius: 4px;
-                font-size: 17px;
+                font-size: $font-extrasmall;
             }
 
             div {
@@ -287,6 +276,8 @@
             position: absolute;
             left: 0;
             top: 0;
+            font-size: $font-small;
+            letter-spacing: $letterspacing-small;
 
             // .triangle-pointer {
             //     position: absolute;
@@ -334,7 +325,7 @@
         }
 
         .no-restaurants-found.message {
-            font-size:25px;
+            font-size: $font-medium;
             border-bottom: 2px solid $bg-secondary-color;
             padding-top: 50px;
             text-align: center;

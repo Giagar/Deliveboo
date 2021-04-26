@@ -68,14 +68,18 @@ if(isset($edit) && !empty($edit)){//edit
         </div>
       </div>
       <div class="form-group">
-        <label for="img">Immagine</label>
-        <input class="form-control"  type="file" name="image" >
-      </div>
+        <label for="image">Immagine
+        @if (isset($dish)) <img src="{{asset($dish->img )}}" style="height:80px;width:auto;" alt="">@endif</label>
+        <input class="form-control {{ $errors->has('image') ? 'is-invalid' : ''}}"  type="file" name="image">
+        <div class="invalid-feedback">
+            {{$errors->first('image')}}
+          </div>
+    </div>
 
       <div class="d-flex justify-content-between form-buttons">
-        <input class="btn btn-light" type="submit" name="" value="Invia">
-        <a href="{{route('dishes.index')}}" class="btn btn-light" role="button" aria-pressed="true">Torna alla lista piatti</a>
-      </div>
+        <a href="{{route('dishes.index')}}" class="btn btn-dark btn-bg-black" role="button" aria-pressed="true">Torna alla lista piatti</a>
+        <input class="btn btn-bg-salmon" type="submit" name="" value="Invia">
+         </div>
 
     </form>
   </div>
