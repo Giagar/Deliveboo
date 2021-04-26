@@ -54,6 +54,10 @@ font-size:22px;
 
 .my-btn-delete{
     color:$bg-primary-color;
+    background-color: $bg-footer-color;
+    &:hover{
+         color:$bg-primary-color;
+    }
 }
 
 
