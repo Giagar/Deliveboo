@@ -11836,6 +11836,10 @@ nav .container #navbarSupportedContent .my-btn-logout {
   padding-left: 3px;
 }
 
+.my-btn-delete {
+  color: #ff6e54;
+}
+
 .crud-form .form-control {
   font-size: 20px;
 }
@@ -11880,6 +11884,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
   border-radius: 50px;
   box-shadow: 0 0 10px #000;
   padding: 40px;
+  margin-left: 10%;
   background-color: white;
 }
 
