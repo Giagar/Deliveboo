@@ -19,7 +19,7 @@
     .info-container {
         width: 300px;
         border-radius: 50px;
-        box-shadow: 0 0 10px #000;
+        box-shadow: $box-shadow-light;
         padding: 40px;
         margin-left:10%;
         background-color: white;
@@ -70,7 +70,7 @@
         .box {
             @include flex;
             border-radius: 50px;
-            box-shadow: 0 0 10px #000;
+            box-shadow: $box-shadow-light;
             width: 30%;
             flex-direction: column;
             align-items: center;
@@ -96,7 +96,7 @@
                 // background-color: rgba(#ffc107, 0.8);
                 font-weight: bold;
                 font-size:18px;
-                width: 160px;
+                width: 165px;
 
                 @media (max-width: $desktop) {
                     width: 120px;
