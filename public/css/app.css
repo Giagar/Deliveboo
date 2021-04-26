@@ -11834,6 +11834,11 @@ nav .container #navbarSupportedContent .my-btn-logout {
 
 .my-btn-delete {
   color: #ff6e54;
+  background-color: #1d1d1d;
+}
+
+.my-btn-delete:hover {
+  color: #ff6e54;
 }
 
 .crud-form {

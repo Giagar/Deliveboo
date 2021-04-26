@@ -20,7 +20,7 @@
     </form>
     </div>
   </div>
-    <a class="btn btn-bg-salmon my-btn-create" href="{{route('dishes.create')}}">Crea piatto</a>
+    <a style="display:flex;align-items:center;" class="btn btn-bg-salmon my-btn-create" href="{{route('dishes.create')}}">Crea piatto <i style="padding-left:2px;" class="fas fa-plus-circle"></i></a>
 </nav>
 <div style="min-height:50vh;" class="table-responsive">
 <table class="table table-striped crud-table">
@@ -53,7 +53,7 @@
             <td><img style="width:80px;height:auto;" src="{{asset($dish->img)}}" alt=""></td>
            <td><a class="btn btn-bg-salmon my-btn-show" href="{{route('dishes.show',compact('dish'))}}">Mostra piatto<i class="fa fa-eye"></i></a>
            <a class="btn btn-bg-salmon my-btn-edit" href="{{route('dishes.edit',compact('dish'))}}">Modifica piatto<i class="fas fa-edit"></i></a>
-           <button type="button" class="btn btn-light my-btn-delete" data-toggle="modal" data-target="#exampleModal{{$dish->id}}">Cancella<i class="fas fa-trash"></i>
+           <button type="button" class="btn my-btn-delete" data-toggle="modal" data-target="#exampleModal{{$dish->id}}">Cancella<i class="fas fa-trash"></i>
            </button>
            @include('layouts.modal')
             </td>
