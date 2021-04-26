@@ -11388,7 +11388,7 @@ a.text-dark:focus {
 .public-menu .dishes-list-container .dish {
   display: flex;
   border-radius: 50px;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
   margin-bottom: 50px;
   justify-content: space-between;
   min-height: 400px;
@@ -11466,7 +11466,7 @@ a.text-dark:focus {
   min-height: 500px;
   width: 100%;
   border-radius: 50px;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
   position: relative;
   background-color: white;
 }
@@ -11509,7 +11509,7 @@ a.text-dark:focus {
   float: left;
   height: 100%;
   width: 49%;
-  box-shadow: 0 0 8px #000;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
   border-radius: 10px 0 0 10px;
 }
 
@@ -11530,7 +11530,7 @@ a.text-dark:focus {
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 0 10px 10px 0;
-  box-shadow: 0 0 8px #000;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
 }
 
 .public-menu .wrapper-cart .cart .cart-buttons {
@@ -11757,6 +11757,7 @@ nav .container #navbarSupportedContent .my-btn-register {
 
 nav .container #navbarSupportedContent .my-btn-dashboard {
   font-size: 22px;
+  letter-spacing: 2px;
 }
 
 nav .container #navbarSupportedContent .my-btn-logout {
@@ -11819,6 +11820,22 @@ nav .container #navbarSupportedContent .my-btn-logout {
 
 .crud-table {
   font-size: 18px;
+}
+
+.crud-table td:last-child {
+  min-width: 400px;
+}
+
+@media (max-width: 992px) {
+  .crud-table td:last-child {
+    min-width: 170px;
+    text-align: center;
+  }
+
+  .crud-table td:last-child a,
+  .crud-table td:last-child button {
+    margin: 2px 0;
+  }
 }
 
 .my-btn-delete,
@@ -11892,7 +11909,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
 .main-container .info-container {
   width: 300px;
   border-radius: 50px;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
   padding: 40px;
   margin-left: 10%;
   background-color: white;
@@ -11948,7 +11965,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
 .main-container .boxes-container .box {
   display: flex;
   border-radius: 50px;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
   width: 30%;
   flex-direction: column;
   align-items: center;
@@ -11965,7 +11982,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
   margin-top: 20px;
   font-weight: bold;
   font-size: 18px;
-  width: 160px;
+  width: 165px;
 }
 
 @media (max-width: 992px) {
@@ -12080,7 +12097,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
   min-height: 500px;
   width: 35%;
   border-radius: 50px;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
   position: relative;
   background-color: white;
 }
@@ -12129,7 +12146,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
   float: left;
   height: 100%;
   width: 49%;
-  box-shadow: 0 0 8px #000;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
   border-radius: 10px 0 0 10px;
 }
 
@@ -12150,7 +12167,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
   height: 100%;
   width: 49%;
   border-radius: 0 10px 10px 0;
-  box-shadow: 0 0 8px #000;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
 }
 
 .checkout-container #carrello .cart .cart-buttons {
@@ -12288,7 +12305,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
 .checkout-container #carrello #payment-form {
   width: 55%;
   border-radius: 50px;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
   background-color: white;
   padding: 40px;
 }
@@ -12308,7 +12325,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
 
 .checkout-container #carrello #payment-form .form-group input {
   margin: 5px 0;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 @media (max-width: 992px) {
