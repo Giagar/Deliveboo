@@ -14,8 +14,8 @@
                     </li>
             </ul>
             @if (!Auth::check())
-                <a class="btn btn-dark btn-bg-black  mr-sm-1 my-btn-login" href="/login">Login</a>
-                <a class="btn btn-light my-btn-register" href="/register">Register</a>
+                <a class="btn btn-dark btn-bg-black  mr-sm-1 my-btn-login" href="/login">Accedi</a>
+                <a class="btn btn-light my-btn-register" href="/register">Registrati</a>
             @else
                 <div aria-labelledby="navbarDropdown">
                    @if(Request::route()->getName() !=='dashboard')
@@ -23,7 +23,7 @@
                    @endif
                     <a class="btn btn-light my-btn-login" href="{{ route('logout') }}" onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
+                        {{ __('Esci') }}
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
