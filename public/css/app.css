@@ -11678,6 +11678,7 @@ a.text-dark:focus {
 
 footer {
   position: absolute;
+  font-size: 22px;
   z-index: 2;
   width: 100%;
   background-color: #1d1d1d;
@@ -11769,10 +11770,11 @@ nav .container #navbarSupportedContent .my-btn-logout {
 
 .crud-navbar {
   background-color: #1d1d1d;
+  font-size: 22px;
 }
 
 .crud-navbar .my-btn-create {
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .crud-navbar .crud-search-section {
@@ -11840,21 +11842,29 @@ nav .container #navbarSupportedContent .my-btn-logout {
   color: #ff6e54;
 }
 
+.crud-form {
+  font-size: 22px;
+}
+
 .crud-form .form-control {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .crud-form .form-buttons input,
 .crud-form .form-buttons a {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .crud-show .buttons a {
-  font-size: 20px;
+  font-size: 22px;
 }
 
-.modal-footer button {
-  font-size: 20px;
+.modal {
+  font-size: 22px;
+}
+
+.modal .modal-footer button {
+  font-size: 22px;
 }
 
 .header {
@@ -11992,18 +12002,21 @@ nav .container #navbarSupportedContent .my-btn-logout {
   }
 }
 
-.receipt-container {
+.order-container {
+  padding: 100px 0;
+}
+
+.order-container .receipt-container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
-.receipt-container .no-orders {
-  margin-top: 50px;
-  font-size: 20px;
+.order-container .receipt-container .no-orders {
+  font-size: 22px;
 }
 
-.receipt-container .receipt {
+.order-container .receipt-container .receipt {
   padding: 80px 30px;
   margin: 20px auto;
   width: 400px;
@@ -12013,7 +12026,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
   position: relative;
 }
 
-.receipt-container .receipt::before {
+.order-container .receipt-container .receipt::before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -12025,7 +12038,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
   background-size: 10px 20px;
 }
 
-.receipt-container .receipt::after {
+.order-container .receipt-container .receipt::after {
   content: '';
   position: absolute;
   top: 0;
@@ -12038,19 +12051,19 @@ nav .container #navbarSupportedContent .my-btn-logout {
   transform: rotate(180deg);
 }
 
-.receipt-container .receipt .logo {
+.order-container .receipt-container .receipt .logo {
   text-align: center;
 }
 
-.receipt-container .receipt .logo img {
+.order-container .receipt-container .receipt .logo img {
   filter: grayscale(100%);
 }
 
-.receipt-container .receipt .info p {
+.order-container .receipt-container .receipt .info p {
   color: grey;
 }
 
-.header-table {
+.order-container .header-table {
   background-color: rgba(128, 128, 128, 0.2);
 }
 
@@ -12397,6 +12410,17 @@ main {
 
 .btn-bg-salmon {
   background-color: #ff6e54 !important;
+}
+
+.section-title {
+  font-size: 50px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 60px;
+  letter-spacing: 1.5px;
+  color: #71bed1;
+  display: inline-block;
+  text-transform: uppercase;
 }
 
 
