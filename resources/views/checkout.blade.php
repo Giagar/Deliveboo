@@ -5,6 +5,16 @@
 
 @section('content')
 
+<div class="errors-container">
+    @if ($errors->any())
+    <div class="alert bg-dark text-white">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
 <div class="checkout-container">
     <div id="carrello" class="checkout" style="margin:10vh 0;"> {{-- Qui forse c'è un problema nell'usare due volte id carrello su due pagine diverse --}}
         <section class="cart">

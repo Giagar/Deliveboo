@@ -1,7 +1,7 @@
 @extends('layouts.baseuser')
 @section('content')
 
-    <div class="product-container d-flex align-items-center flex-column" style="padding-top: 25px; padding-bottom: 25px;">
+    <div class="product-container d-flex align-items-center flex-column crud-show" style="padding-top: 25px; padding-bottom: 25px;">
         <div class="card" style="width: 20rem;">
             <img class="card-img-top" src="{{asset($dish->img)}}" >
             <div class="card-body">
@@ -13,8 +13,8 @@
             <p class="card-text"><strong>Glutine:</strong> {{$dish->gluten ? 'Sì' : 'No'}}</p>
             <p class="card-text"><strong>Tipo:</strong> {{$dish->type}}</p>
             <div class="card-buttons d-flex justify-content-between align-items-center">
-            <a href="{{route('dishes.edit',['dish'=>$dish->id])}}" class="btn btn-bg-salmon">Modifica</a>
-              <button type="button" class="btn btn-dark btn-bg-black" data-toggle="modal" data-target="#exampleModal{{$dish->id}}">Cancella<i class="fas fa-trash"></i>
+            <a href="{{route('dishes.edit',['dish'=>$dish->id])}}" class="btn btn-bg-salmon my-btn-edit">Modifica</a>
+              <button type="button" class="btn btn-dark btn-bg-black my-btn-delete" data-toggle="modal" data-target="#exampleModal{{$dish->id}}">Cancella<i class="fas fa-trash"></i>
               </button>
               @include('layouts.modal')
             </div>

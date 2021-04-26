@@ -1,6 +1,9 @@
 //LO STILE
 .crud-navbar{
 background-color:$bg-footer-color;
+.my-btn-create{
+    font-size:18px;
+}
 .crud-search-section{
     @include flex;
     align-items: center;
@@ -36,4 +39,42 @@ background-color:$bg-footer-color;
       background-color:$bg-primary-color;
       }
   }
+}
+.crud-table{
+    font-size:18px;
+}
+
+.my-btn-delete,.my-btn-edit,.my-btn-show{
+    font-size:18px;
+    i{
+        padding-left:3px;
+    }
+}
+
+
+
+
+
+.crud-form{
+    .form-control{
+        font-size:20px;
+    }
+    .form-buttons{
+        input,a{
+        font-size:20px;
+    }
+    }
+}
+
+
+.crud-show{
+ .buttons{
+     a{
+         font-size:20px;
+     }
+ }
+}
+
+.modal-footer button{
+    font-size:20px;
 }
