@@ -51,7 +51,7 @@
 
                         <div class="cart-buttons">
                             <span class="changeQuantity" @click='decreaseQuantity(dish)'><i class="fas fa-minus"></i></span>
-                            <span>@{{ dish.quantity }}</span>
+                            <span class="dish-quantity">@{{ dish.quantity }}</span>
                             <span class="changeQuantity" @click='increaseQuantity(dish)'><i class="fas fa-plus"></i></span>
                         </div>
 

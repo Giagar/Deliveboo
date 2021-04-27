@@ -18,9 +18,12 @@ footer {
                         height: 14px !important;
                         width: 14.41px !important;
                         color: $bg-footer-color;
-
+                        &:hover{
+                            color: $bg-primary-color;
+                        }
                     }
                     i{
+                        cursor: pointer;
                         &:hover{
                             color: white;
                         }
@@ -56,11 +59,36 @@ footer {
             }
         }
     }
-
-    div {
+    div{
+        color: #fff;
+        margin-bottom: 15px;
+    }
+    .names {
         color: $secondary-color;
-        a {
-            color: $bg-primary-color;
+        margin-bottom: 15px;
+        ul{
+            display: flex;
+            padding: 0px 350px;
+            justify-content: space-around;
+            
+            @media screen and (max-width: 762px) {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                padding: 0px;
+            }
+            li{
+                display: inline-block;
+                margin: 0px 15px;
+                line-height: 1;
+                @media screen and (max-width: 762px) {
+                    line-height: 2;
+                }
+    
+                a {
+                    color: $bg-primary-color;
+                }
+            }
         }
     }
 }

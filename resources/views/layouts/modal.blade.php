@@ -15,7 +15,7 @@
           <form method="POST" action="{{route('dishes.destroy', ['dish' => $dish->id])}}">
             @csrf
             @method('DELETE')
-            <button type="submit" name="button" data-toggle="modal" data-target="#exampleModal{{$dish->id}}" class="btn btn-light my-btn-delete">
+            <button type="submit" name="button" data-toggle="modal" data-target="#exampleModal{{$dish->id}}" class="btn my-btn-delete">
               Cancella<i class="fas fa-trash"></i>
             </button>
           </form>

@@ -16,7 +16,7 @@
     </form>
     <form action="{{ route('dishes.index') }}" method="GET" class="d-flex align-items-center">
     <input type="search" placeholder="Cerca per tipo" name="search-type" aria-label="Search">
-    <button type="submit">Cerca</button>
+    <button class="search" type="submit">Cerca</button>
     </form>
     </div>
   </div>

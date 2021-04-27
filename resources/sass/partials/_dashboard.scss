@@ -3,10 +3,15 @@
     height: 200px;
     background-image: url('https://images.adsttc.com/media/images/5e4c/1025/6ee6/7e0b/9d00/0877/large_jpg/feature_-_Main_hall_1.jpg?1582043123');
     background-position: 50% 60%;
+    text-align: center;
+    padding: 0px 4px;
     h1 {
         font-size: 3.5em;
         color: white;
         text-shadow: 5px 5px 10px black;
+        @media screen and (max-width: 762px) {
+            font-size: 2.3em;
+        }
 }
 }
 
@@ -56,6 +61,8 @@
 
             li {
                 font-size: 0.8em;
+                //overflow-wrap: break-word; 
+                word-wrap: break-word;
             }
         }
     }
@@ -82,8 +89,8 @@
                 border-radius: 20px;
             }
 
-            button {
-                margin-top: 20px;
+            a {
+                
              // restyling da verificare
              //   background-color: $bg-primary-color;
 
@@ -94,18 +101,15 @@
 
 
                 // background-color: rgba(#ffc107, 0.8);
-                font-weight: bold;
-                font-size:18px;
-                width: 160px;
+                margin-top: 20px;
+                font-size:20px;
+                width: 165px;
 
                 @media (max-width: $desktop) {
-                    width: 120px;
+                    width: 60%;
                     padding: 5px;
-                }
-
-                a {
-                    text-decoration: none;
-                    color: #fff;
+                    line-height: 1;
+                    font-size:16px;
                 }
             }
         }
