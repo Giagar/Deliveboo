@@ -7,11 +7,11 @@
     text-align: center;
     padding: 0px 4px;
     h1 {
-        font-size: 3.5em;
+        font-size: $font-extralarge;
         color: white;
         text-shadow: 5px 5px 10px black;
         @media screen and (max-width: 762px) {
-            font-size: 2.3em;
+            font-size: $font-large;
         }
 }
 }
@@ -32,10 +32,12 @@
 
         h3 {
             padding: 5px 0;
+            font-size: 1.7rem;
         }
 
         ul {
             list-style:none;
+            font-size: $font-small;
             span{
                font-weight: bold;
             }
@@ -55,14 +57,14 @@
             padding: 20px;
 
             h3 {
-                font-size: 1em;
+                font-size: $font-small;
                 font-weight: bold;
                 margin: 10px 0;
             }
 
             li {
-                font-size: 0.8em;
-                //overflow-wrap: break-word; 
+                font-size: $font-extrasmall;
+                //overflow-wrap: break-word;
                 word-wrap: break-word;
             }
         }
@@ -91,7 +93,7 @@
             }
 
             a {
-                
+
              // restyling da verificare
              //   background-color: $bg-primary-color;
 
@@ -103,14 +105,14 @@
 
                 // background-color: rgba(#ffc107, 0.8);
                 margin-top: 20px;
-                font-size:20px;
+                font-size: $font-small;
                 width: 165px;
 
                 @media (max-width: $desktop) {
                     width: 60%;
                     padding: 5px;
                     line-height: 1;
-                    font-size:16px;
+                    font-size: $font-extrasmall;
                 }
             }
         }
@@ -131,7 +133,7 @@
 
                 button {
                     a {
-                        font-size: 0.8em;
+                        font-size: $font-extrasmall;
                     }
                 }
             }
