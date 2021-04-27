@@ -11086,7 +11086,7 @@ a.text-dark:focus {
   background-color: #71bed1;
   z-index: 5;
   border-radius: 4px;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 
 .landing-page .restaurantsSection .restaurants .restaurant-categories {
@@ -11131,7 +11131,7 @@ a.text-dark:focus {
 }
 
 .landing-page .restaurantsSection .no-restaurants-found.message {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   border-bottom: 2px solid #71bed1;
   padding-top: 50px;
   text-align: center;
@@ -12441,7 +12441,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
 }
 
 .section.stats .stats-year {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   align-self: flex-start;
   margin-top: 25px;
   margin-bottom: 20px;
@@ -12466,7 +12466,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
 }
 
 :root {
-  font-size: 22px;
+  font-size: 20px;
 }
 
 body {
