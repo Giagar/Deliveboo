@@ -4,9 +4,9 @@
 
 @section('content')
 <link rel="preconnect" href="https://fonts.gstatic.com">
-{{-- <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet"> --}}
 <div id="app">
 <main class="container landing-page">
+
     <section class="section">
         <div class="section-title-container">
             <h2 class="text-center section-title">Seleziona una categoria</h2>
@@ -14,7 +14,6 @@
         <div class="d-flex flex-wrap justify-content-center categoriesSection">
             <div @click="selectedCategory(category)" v-for="(category, indexCategory) in categories" :key="indexCategory" :class="'categories text-center' + (selected === category.name ? ' active-category ' : '')">
                 <img :src="category.img" alt="">
-                {{-- <div :style="background-image: url(category.img)"></div> --}}
                 <h4>@{{category.name}}</h4>
             </div>
 
@@ -25,7 +24,7 @@
             <input @keyup="filterByAddress()" class="form-control mr-sm-2" type="search" v-model="searchAddress" placeholder="Ricerca per indirizzo" aria-label="Search" id="searchByAdress" name="searchByAdress">
             <button class="btn reset-btn" @click="showAll()">Azzera la ricerca</button>
         </form>
-    {{-- @endif --}}
+        {{-- @endif --}}
     </section>
     <div class="section-title-container">
         <h2 class="text-center section-title" style="margin-top: 20px">@{{selected === 'All' ? 'I nostri suggerimenti' : 'La tua ricerca'}}</h2>
@@ -33,97 +32,29 @@
     <section class="section d-flex flex-wrap justify-content-center restaurantsSection">
         <div class="search-indicator" v-if="searchResultsTitle !== '' && selected !== 'All'">
             @{{searchResultsTitle}}
-            {{-- <div class="triangle-pointer">
-                <div class="arrow-up"></div>
-                <div class="arrow-down"></div>
-                <div class="arrow-left"></div>
-                <div class="arrow-right"></div>
-            </div> --}}
         </div>
 
-        {{-- versione vecchia --}}
-        {{-- <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-for="restaurant in restaurants" v-if="selected === 'All' || onSearch">
-            <a :href="'/restaurants/' + restaurant.restaurant_name">
-                <span>@{{restaurant.restaurant_name}}</span>
-            </a>
-            <div v-for="category in restaurant.categories">
-                <h5>@{{category.name}}</h5>
+        <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-for="(restaurant, index) in restaurants" v-if="(selected !== 'All')">
+            <a :href="'/restaurants/' + restaurant.restaurant_name"></a>
+            <div class="restaurant-name">@{{restaurant.restaurant_name}}</div>
+            <div class="restaurant-categories">
+                <span v-for="category in restaurant.categories">#@{{category.name}}</span>
             </div>
-        </div> --}}
-        {{-- /versione vecchia --}}
+        </div>
 
-        {{-- versione nuova --}}
-        {{-- <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-for="(restaurant, index) in restaurants" v-if="(selected === 'All') && index < maxRestaurantShown">
-            <a :href="'/restaurants/' + restaurant.restaurant_name">
-                <span>@{{restaurant.restaurant_name}}</span>
-            </a> --}}
-            {{-- <div v-for="category in restaurant.categories">
-                <h5>@{{category.name}}</h5>
-            </div> --}}
-            {{-- </div>
-                <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-for="(restaurant, index) in restaurants" v-if="(selected !== 'All')">
-                    <a :href="'/restaurants/' + restaurant.restaurant_name">
-                        <span>@{{restaurant.restaurant_name}}</span>
-                    </a> --}}
-                    {{-- <div v-for="category in restaurant.categories">
-                        <h5>@{{category.name}}</h5>
-                    </div> --}}
-                    {{-- </div> --}}
+        <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-for="(restaurant, index) in restaurants" v-if="(selected === 'All') && index < maxRestaurantShown">
+            <a :href="'/restaurants/' + restaurant.restaurant_name"></a>
+            <div class="restaurant-name">@{{restaurant.restaurant_name}}</div>
+            <div class="restaurant-categories">
+                <span v-for="category in restaurant.categories">#@{{category.name}}&nbsp;</span>
+            </div>
+        </div>
 
-                    {{-- prova --}}
-                    <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-for="(restaurant, index) in restaurants" v-if="(selected !== 'All')">
-                        <a :href="'/restaurants/' + restaurant.restaurant_name"></a>
-                        <div class="restaurant-name">@{{restaurant.restaurant_name}}</div>
-                        <div class="restaurant-categories">
-                            {{-- <span v-for="category in restaurant.categories">@{{categoryIcons[category.name]}}</span> --}}
-                            <span v-for="category in restaurant.categories">#@{{category.name}}</span>
-                        </div>
-
-                        {{-- <div v-for="category in restaurant.categories">
-                            <h5>@{{category.name}}</h5>
-                        </div> --}}
-                    </div>
-
-
-                    <div class="restaurants d-flex" :style="{'background-image':'url('+restaurant.img+')'}" v-for="(restaurant, index) in restaurants" v-if="(selected === 'All') && index < maxRestaurantShown">
-                        <a :href="'/restaurants/' + restaurant.restaurant_name"></a>
-                        <div class="restaurant-name">@{{restaurant.restaurant_name}}</div>
-                        <div class="restaurant-categories">
-                            {{-- <span v-for="category in restaurant.categories">@{{categoryIcons[category.name]}}&nbsp;</span> --}}
-                            <span v-for="category in restaurant.categories">#@{{category.name}}&nbsp;</span>
-                        </div>
-
-                        {{-- <div v-for="category in restaurant.categories">
-                            <h5>@{{category.name}}</h5>
-                        </div> --}}
-                    </div>
-
-                    {{-- <div class="restaurants d-flex"  v-for="(restaurant, index) in restaurants" v-if="(selected === 'All') && index < maxRestaurantShown">
-                        <a :href="'/restaurants/' + restaurant.restaurant_name">
-                            <div class="restaurant-name">
-                                <span>@{{restaurant.restaurant_name}}</span>
-                            </div>
-                            <div class="restaurant-img" :style="{'background-image':'url('+restaurant.img+')'}"></div>
-                            <div class="restaurant-categories">categories</div>
-                            {{-- <div v-for="category in restaurant.categories">
-                                <h5>@{{category.name}}</h5>
-                            </div> --}}
-                            {{-- </a>
-                            </div> --}}
-
-
-                            {{-- /prova --}}
-
-                            <div class="no-restaurants-found message" v-if="restaurantsFound === 0 && selected !== 'All'">
-                                Ci dispiace, non ci sono ristoranti con le caratteristiche richieste
-                            </div>
-                            {{-- /versione nuova --}}
-
-
+        <div class="no-restaurants-found message" v-if="restaurantsFound === 0 && selected !== 'All'">
+            Ci dispiace, non ci sono ristoranti con le caratteristiche richieste
+        </div>
     </section>
-    {{-- <section class="section inspire">
-        <h2 class="text-center" style="margin-top: 20px">Lasciati ispirare, ordina e ricevi comodamente a casa tua!</h2>
-    </section> --}}
+
 </main>
 </div>
 <script src="{{ asset('js/app.js') }}"></script>
