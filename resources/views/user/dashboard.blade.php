@@ -31,24 +31,18 @@
 <div class="boxes-container">
     <div class="box">
         <img src="https://i.pinimg.com/originals/77/b1/db/77b1db46af01fe8737793239f848506a.png" alt="">
-        <button class="btn btn-bg-black btn-dark">
-            <a href="{{route('dishes.index')}}">Vai ai piatti</a>
-        </button>
+            <a class="btn btn-bg-black btn-dark" href="{{route('dishes.index')}}">Vai ai piatti</a>
         {{-- partendo dalla index --}}
     </div>
 
     <div class="box">
         <img src="https://www.comune.somaglia.lo.it/wp-content/uploads/blocknotes.jpg" alt="">
-        <button class="btn btn-bg-black btn-dark">
-            <a href="{{route('orders')}}">Vai agli ordini</a>
-        </button>
+        <a class="btn btn-bg-black btn-dark" href="{{route('orders')}}">Vai agli ordini</a>
     </div>
 
     <div class="box">
         <img src="https://www.giuseppefava.com/wp-content/uploads/2017/09/statistiche_per_wordpress.jpg" alt="">
-        <button class="btn btn-bg-black btn-dark">
-            <a href="{{route('statistics')}}">Vai alle statistiche</a>
-        </button>
+            <a class="btn btn-bg-black btn-dark" href="{{route('statistics')}}">Vai alle statistiche</a>
     </div>
 </div>
 </div>

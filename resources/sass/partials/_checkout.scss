@@ -56,8 +56,9 @@
                         margin-top: 5%;
                         margin-left: 10%;
                         font-size: 16px;
-                        p{
-                            margin-bottom:0.5em;
+
+                        p:last-child{
+                            margin-top: -6%;
                         }
                     }
                 }
@@ -88,15 +89,18 @@
                     border-radius: 5px;
                     background-color: $bg-primary-color;
                 }
+                .dish-quantity{
+                    margin: 0px 2px;
+                }
 
                 .changeQuantity {
                     cursor: pointer;
                     background-color: $bg-primary-color;
 
                     &:hover{
-                        background-color: $bg-primary-color;
-                        transition: 0.3s;
-                    }
+                        background-color: rgba($bg-primary-color,0.9);
+                        color: #fff;
+                      }
                 }
             }
 

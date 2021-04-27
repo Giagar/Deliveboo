@@ -22,7 +22,7 @@
         <form class="form-inline my-3 advanced-search">
             <input @keyup="filterByName()" class="form-control mr-sm-2" type="search" v-model="searchName" placeholder="Ricerca per nome" aria-label="Search" id="searchByName" name="searchByName">
             <input @keyup="filterByAddress()" class="form-control mr-sm-2" type="search" v-model="searchAddress" placeholder="Ricerca per indirizzo" aria-label="Search" id="searchByAdress" name="searchByAdress">
-            <button class="btn reset-btn" @click="showAll()">Azzera la ricerca</button>
+            <button class="btn reset-btn btn-bg-black" @click="showAll()">Azzera la ricerca</button>
         </form>
         {{-- @endif --}}
     </section>

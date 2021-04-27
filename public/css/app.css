@@ -10954,6 +10954,7 @@ a.text-dark:focus {
 }
 
 #app main {
+  background-color: #D7EAF0;
   background-color: #d7eaf0;
   font-family: "Teko", sans-serif;
 }
@@ -11041,8 +11042,9 @@ a.text-dark:focus {
 }
 
 .landing-page .advanced-search .reset-btn {
-  background-color: #1d1d1d;
-  color: #fff;
+  /*             background-color: #1d1d1d;
+              color: $secondary-color;
+   */
   font-size: 1.1rem;
 }
 
@@ -11554,6 +11556,8 @@ a.text-dark:focus {
   font-size: 16px;
 }
 
+.public-menu .wrapper-cart .cart-product-stats-content p:last-child {
+  margin-top: -6%;
 .public-menu .wrapper-cart .cart-product-stats-content p {
   margin-bottom: 0.5em;
 }
@@ -11587,10 +11591,13 @@ a.text-dark:focus {
   align-items: center;
   justify-content: center;
   width: 33%;
-  margin: 0 0.15%;
   font-size: 30px;
   border-radius: 5px;
   background-color: #ff6e54;
+}
+
+.public-menu .wrapper-cart .cart .cart-buttons .dish-quantity {
+  margin: 0px 2px;
 }
 
 .public-menu .wrapper-cart .cart .cart-buttons .changeQuantity {
@@ -11599,8 +11606,8 @@ a.text-dark:focus {
 }
 
 .public-menu .wrapper-cart .cart .cart-buttons .changeQuantity:hover {
-  background-color: #ff6e54;
-  transition: 0.3s;
+  background-color: rgba(255, 110, 84, 0.9);
+  color: #fff;
 }
 
 .public-menu .wrapper-cart .cart-bottom {
@@ -11700,6 +11707,13 @@ a.text-dark:focus {
 
 .flip-card-front {
   background-color: #71bed1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front h1 {
+  line-height: 1;
 }
 
 .flip-card-back {
@@ -11729,6 +11743,14 @@ footer .top div .grid-row div a {
   height: 14px !important;
   width: 14.41px !important;
   color: #1d1d1d;
+}
+
+footer .top div .grid-row div a:hover {
+  color: #ff6e54;
+}
+
+footer .top div .grid-row div i {
+  cursor: pointer;
 }
 
 footer .top div .grid-row div i:hover {
@@ -11764,9 +11786,42 @@ footer .links div div .contact-details {
 
 footer div {
   color: #fff;
+  margin-bottom: 15px;
 }
 
-footer div a {
+footer .names {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+footer .names ul {
+  display: flex;
+  padding: 0px 350px;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 762px) {
+  footer .names ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px;
+  }
+}
+
+footer .names ul li {
+  display: inline-block;
+  margin: 0px 15px;
+  line-height: 1;
+}
+
+@media screen and (max-width: 762px) {
+  footer .names ul li {
+    line-height: 2;
+  }
+}
+
+footer .names ul li a {
   color: #ff6e54;
 }
 
@@ -11775,9 +11830,13 @@ nav {
 }
 
 nav .container a img {
-  height: 69.3px;
-  width: 90.3px;
-  margin-right: 15px;
+  width: 99.33px;
+  transition: 0.3s;
+}
+
+nav .container a img:hover {
+  filter: invert(100%);
+  transition: 0.3s;
 }
 
 nav .container .login a {
@@ -11812,6 +11871,12 @@ nav .container #navbarSupportedContent .my-btn-logout {
   font-size: 22px;
 }
 
+@media (max-width: 992px) {
+  .crud-navbar .my-btn-create {
+    margin-top: 2px;
+  }
+}
+
 .crud-navbar .crud-search-section {
   display: flex;
   align-items: center;
@@ -11839,7 +11904,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
 @media (max-width: 992px) {
   .crud-navbar .crud-search-section button {
     width: 150px;
-    margin: 2px 3px;
+    margin: 2px 0px;
   }
 }
 
@@ -11847,10 +11912,17 @@ nav .container #navbarSupportedContent .my-btn-logout {
   background-color: rgba(255, 110, 84, 0.9);
 }
 
+@media (max-width: 992px) {
+  .crud-navbar .crud-search-section .search {
+    margin: 0px 4px;
+  }
+}
+
 .crud-navbar .crud-search-section input {
   border: none;
   border-radius: 3px;
   padding: 5px 0 5px 5px;
+  margin: 2px 0px 2px 0px;
 }
 
 .crud-navbar .crud-search-section .crud-btn-active {
@@ -11895,7 +11967,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
 }
 
 .my-btn-delete:hover {
-  color: #ff6e54;
+  color: #fff;
 }
 
 .crud-form {
@@ -11942,12 +12014,20 @@ nav .container #navbarSupportedContent .my-btn-logout {
   height: 200px;
   background-image: radial-gradient(rgba(0, 2, 17, 0.16) 0%, rgba(0, 2, 17, 0.4) 100%), url("https://images.adsttc.com/media/images/5e4c/1025/6ee6/7e0b/9d00/0877/large_jpg/feature_-_Main_hall_1.jpg?1582043123");
   background-position: 50% 60%;
+  text-align: center;
+  padding: 0px 4px;
 }
 
 .header h1 {
   font-size: 3.5em;
   color: white;
   text-shadow: 5px 5px 10px black;
+}
+
+@media screen and (max-width: 762px) {
+  .header h1 {
+    font-size: 2.3em;
+  }
 }
 
 .main-container {
@@ -12002,6 +12082,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
 
   .main-container .info-container li {
     font-size: 0.8em;
+    word-wrap: break-word;
   }
 }
 
@@ -12029,23 +12110,21 @@ nav .container #navbarSupportedContent .my-btn-logout {
   border-radius: 20px;
 }
 
-.main-container .boxes-container .box button {
+.main-container .boxes-container .box a {
   margin-top: 20px;
+  font-size: 20px;
   font-weight: bold;
   font-size: 18px;
   width: 165px;
 }
 
 @media (max-width: 992px) {
-  .main-container .boxes-container .box button {
-    width: 120px;
+  .main-container .boxes-container .box a {
+    width: 60%;
     padding: 5px;
+    line-height: 1;
+    font-size: 16px;
   }
-}
-
-.main-container .boxes-container .box button a {
-  text-decoration: none;
-  color: #fff;
 }
 
 @media (max-width: 992px) {
@@ -12207,6 +12286,8 @@ nav .container #navbarSupportedContent .my-btn-logout {
   font-size: 16px;
 }
 
+.checkout-container #carrello .cart-product-stats-content p:last-child {
+  margin-top: -6%;
 .checkout-container #carrello .cart-product-stats-content p {
   margin-bottom: 0.5em;
 }
@@ -12245,14 +12326,18 @@ nav .container #navbarSupportedContent .my-btn-logout {
   background-color: #ff6e54;
 }
 
+.checkout-container #carrello .cart .cart-buttons .dish-quantity {
+  margin: 0px 2px;
+}
+
 .checkout-container #carrello .cart .cart-buttons .changeQuantity {
   cursor: pointer;
   background-color: #ff6e54;
 }
 
 .checkout-container #carrello .cart .cart-buttons .changeQuantity:hover {
-  background-color: #ff6e54;
-  transition: 0.3s;
+  background-color: rgba(255, 110, 84, 0.9);
+  color: #fff;
 }
 
 .checkout-container #carrello .cart-bottom {
@@ -12480,8 +12565,18 @@ main {
   color: #fff;
 }
 
+.btn-bg-black:hover {
+  color: #ff6e54;
+}
+
 .btn-bg-salmon {
   background-color: #ff6e54 !important;
+}
+
+.btn-bg-salmon:hover {
+  background-color: #b8432e !important;
+  color: #fff;
+  transition: 0 linear !important;
 }
 
 .section-title {

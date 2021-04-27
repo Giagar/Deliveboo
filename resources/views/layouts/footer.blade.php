@@ -152,8 +152,17 @@
         <!-- Footer Links -->
 
         <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2021 Copyright:
-            <a href="#"> Deliveboo.com</a>
+        <div class="text-center">
+            Realizzato da
+        </div>
+        <div class="names text-center">
+            <ul>
+                <li><a href="">Gianpaolo Garbarino</a></li>
+                <li><a href="">Fabio Petrone</a></li>
+                <li><a href="">Diego Scano</a></li>
+                <li><a href="">Antonio Fiorentino</a></li>
+                <li><a href="">Giosué Santoro</a></li>
+            </ul>
         </div>
         <!-- Copyright -->
 

@@ -387,9 +387,11 @@ min-height:100vh;
                         margin-top: 5%;
                         margin-left: 10%;
                         font-size: 16px;
-                        p{
-                            margin-bottom:0.5em;
+
+                        p:last-child{
+                            margin-top: -6%;
                         }
+
                     }
                 }
                 &-image {
@@ -417,10 +419,12 @@ min-height:100vh;
                 span {
                     @include flexCenter;
                     width: 33%;
-                    margin:0 0.15%;
                     font-size: 30px;
                     border-radius: 5px;
                     background-color: $bg-primary-color;
+                }
+                .dish-quantity{
+                    margin: 0px 2px;
                 }
 
                 .changeQuantity {
@@ -428,10 +432,11 @@ min-height:100vh;
                     background-color: $bg-primary-color;
 
                     &:hover{
-                        background-color:$bg-primary-color;
-                        transition: 0.3s;
+                        background-color: rgba($bg-primary-color,0.9);
+                        color: #fff;
+                      }
+
                     }
-                }
             }
 
             &-bottom {
@@ -525,6 +530,13 @@ min-height:100vh;
   }
   .flip-card-front {
     background-color:#71bed1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+        line-height: 1;
+    }
   }
   .flip-card-back {
     background-color: $bg-footer-color;
