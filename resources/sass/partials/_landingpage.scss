@@ -1,39 +1,34 @@
-// qui lavoreremo allo stile della landing page
-// in sass
-// magari nella vista metteremo un wrapper con id=landingpage
-// e da li con le graffe racchiudiamo tutto lo stile dei div figli
-
 // COMMONS & UTILITIES
-* {box-sizing: border-box; margin: 0; padding: 0;}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 #app {
     min-width: 360px;
-    background-color: #D7EAF0;
+    background-color: #d7eaf0;
 
     main {
-        background-color: #D7EAF0;
-        font-family: 'Teko', sans-serif;
+        background-color: #d7eaf0;
+        font-family: "Teko", sans-serif;
     }
 }
 
 .active-category {
-    // background-color: yellow !important;
-    // color: darkgrey !important;
-    // outline: 2px solid $bg-secondary-color;
-    box-shadow: 0 0 7px 4px hsla(0, 0%, 66%, 0.5), 0 0 5px 5px $bg-secondary-color;
-    border-radius: 50% !important; // era $border-radius-btn
+    box-shadow: 0 0 7px 4px hsla(0, 0%, 66%, 0.5),
+        0 0 5px 5px $bg-secondary-color;
+    border-radius: 50% !important;
 }
 
 .section {
     padding-top: 100px;
     padding-bottom: 100px;
-    // display: inline-block;
 }
 
 .section:last-child {
     padding-bottom: 100px !important;
 }
-
 
 //STYLE
 .landing-page {
@@ -47,44 +42,16 @@
             z-index: 1;
             margin-bottom: 60px;
             letter-spacing: $letterspacing-small;
-            // color: hsl(0, 1%, 21%); // era $primary-color
-            color: $bg-secondary-color; // era $primary-color
+            color: $bg-secondary-color;
             display: inline-block;
             text-transform: uppercase;
         }
     }
 
-
-    // .section-title::after {
-    //     content: "";
-    //     display: block;
-    //     background-color: $bg-secondary-color; //era $bg-secondary-color
-    //     opacity: 0.7;
-    //     width: 100%; // era 55%
-    //     height: 100%;
-    //     bottom: -10px;
-    //     left: 50%;
-    //     position: absolute;
-    //     z-index: -1;
-    //     transform: skewX(35deg) translateX(-50%);
-
-    //     @media screen and (max-width: 500px) {
-    //         width: 90%;
-    //     }
-
-    //     @media screen and (max-width: 400px) {
-    //         width: 75%;
-    //     }
-
-    // }
-
     .categoriesSection {
-        // font-family: 'Noto Sans JP', sans-serif;
         padding: 10px 0;
-        // border-bottom: 1px solid $primary-color;
         max-width: 900px;
         margin: 0 auto;
-
 
         .categories {
             cursor: pointer;
@@ -103,7 +70,6 @@
             }
 
             h4 {
-                // background-color: yellow;
                 border-radius: 5px;
                 padding: 3px 5px;
                 position: absolute;
@@ -123,20 +89,6 @@
             transform: scale(1.05);
             transition: 0.15s;
         }
-
-        // .active-category::after {
-        //     content: "";
-        //     display: block;
-        //     background-color: lightblue;
-        //     z-index: 1;
-        //     width: 100%;
-        //     height: 100%;
-        //     position: absolute;
-        //     bottom: 0;
-        //     left: 0;
-        //     opacity: 0.5;
-        //     border-radius: $border-radius-windows
-        // }
     }
 
     .advanced-search {
@@ -156,38 +108,7 @@
                 margin-top: 10px;
             }
         }
-
     }
-
-
-    // .restaurantsSection {
-    //     padding: 20px 0;
-
-    //     .restaurants {
-    //         width: 250px;
-    //         height: 150px;
-    //         border-radius: 10px;
-    //         margin: 20px 50px;
-    //         background-size: cover;
-    //         justify-content: center;
-    //         align-items: center;
-
-    //         a {
-    //             color: $primary-color;
-
-    //             span {
-    //                 background-color: rgba(255,255,255, 0.3);
-    //                 border-radius: 5px;
-    //                 font-size: 1.5rem;
-    //                 padding: 5px;
-    //             }
-    //         }
-
-    //         div {
-    //             align-self: flex-end;
-    //         }
-    //     }
-    // }
 
     .restaurantsSection {
         padding: 20px 0;
@@ -199,8 +120,6 @@
             border-radius: 10px;
             margin: 20px 50px;
             background-size: cover;
-            // justify-content: center;
-            // align-items: center;
             position: relative;
 
             a {
@@ -210,23 +129,11 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-
-                // span {
-                //     background-color: rgba(255,255,255, 0.3);
-                //     border-radius: 5px;
-                //     font-size: 1.5rem;
-                //     padding: 5px;
-                // }
-
             }
 
             .restaurant-name {
                 position: absolute;
-                // height: 35px;
-                // display: flex;
-                // align-items: center;
                 padding: 2px 10px;
-                // width: 150px;
                 top: -5px;
                 right: -10px;
                 color: white;
@@ -237,9 +144,7 @@
             }
 
             .restaurant-categories {
-                // @include flex;
                 position: absolute;
-                // height: 35px;
                 min-width: 50px;
                 text-align: center;
                 padding: 2px 10px;
@@ -250,10 +155,6 @@
                 z-index: 5;
                 border-radius: 4px;
                 font-size: $font-extrasmall;
-            }
-
-            div {
-                // align-self: flex-end;
             }
         }
 
@@ -282,50 +183,6 @@
             top: 0;
             font-size: $font-small;
             letter-spacing: $letterspacing-small;
-
-            // .triangle-pointer {
-            //     position: absolute;
-            //     right:-10px;
-            //     bottom: 0;
-            //     background-color: green;
-
-            //     .arrow-up {
-            //         width: 0;
-            //         height: 0;
-            //         border-left: 5px solid transparent;
-            //         border-right: 5px solid transparent;
-
-            //         border-bottom: 5px solid black;
-            //     }
-
-            //     .arrow-down {
-            //     width: 0;
-            //     height: 0;
-            //     border-left: 20px solid transparent;
-            //     border-right: 20px solid transparent;
-
-            //     border-top: 20px solid #f00;
-            //     }
-
-            //     .arrow-right {
-            //     width: 0;
-            //     height: 0;
-            //     border-top: 60px solid transparent;
-            //     border-bottom: 60px solid transparent;
-
-            //     border-left: 60px solid green;
-            //     }
-
-            //     .arrow-left {
-            //     width: 0;
-            //     height: 0;
-            //     border-top: 10px solid transparent;
-            //     border-bottom: 10px solid transparent;
-
-            //     border-right:10px solid blue;
-            //     }
-
-            // }
         }
 
         .no-restaurants-found.message {
@@ -334,12 +191,5 @@
             padding-top: 50px;
             text-align: center;
         }
-
     }
 }
-
-
-
-
-
-
