@@ -74,6 +74,7 @@
                 padding: 3px 5px;
                 position: absolute;
                 font-size: $font-small;
+                font-weight: 400;
                 background: $bg-primary-color;
                 color: white;
                 border-radius: 4px;
@@ -113,10 +114,11 @@
     .restaurantsSection {
         padding: 20px 0;
         position: relative;
+        padding-bottom: 150px !important;
 
         .restaurants {
-            width: 250px;
-            height: 150px;
+            width: 270px;
+            height: 170px;
             border-radius: 10px;
             margin: 20px 50px;
             background-size: cover;
@@ -154,7 +156,7 @@
                 background-color: $bg-primary-color;
                 z-index: 5;
                 border-radius: 4px;
-                font-size: $font-extrasmall;
+                font-size: $font-small;
             }
         }
 
@@ -180,7 +182,7 @@
             border-bottom-right-radius: 50px;
             position: absolute;
             left: 0;
-            top: 0;
+            top: -25px;
             font-size: $font-small;
             letter-spacing: $letterspacing-small;
         }

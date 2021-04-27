@@ -10954,7 +10954,6 @@ a.text-dark:focus {
 }
 
 #app main {
-  background-color: #D7EAF0;
   background-color: #d7eaf0;
   font-family: "Teko", sans-serif;
 }
@@ -10983,7 +10982,7 @@ a.text-dark:focus {
   position: relative;
   z-index: 1;
   margin-bottom: 60px;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.3px;
   color: #71bed1;
   display: inline-block;
   text-transform: uppercase;
@@ -11016,7 +11015,8 @@ a.text-dark:focus {
   border-radius: 5px;
   padding: 3px 5px;
   position: absolute;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  font-weight: 400;
   background: #ff6e54;
   color: white;
   border-radius: 4px;
@@ -11024,7 +11024,7 @@ a.text-dark:focus {
   transform: translateX(-50%);
   left: 50%;
   z-index: 2;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.3px;
 }
 
 .landing-page .categoriesSection .categories:hover {
@@ -11038,14 +11038,14 @@ a.text-dark:focus {
 }
 
 .landing-page .advanced-search input {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .landing-page .advanced-search .reset-btn {
   /*             background-color: #1d1d1d;
               color: $secondary-color;
    */
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 @media screen and (max-width: 767px) {
@@ -11057,11 +11057,12 @@ a.text-dark:focus {
 .landing-page .restaurantsSection {
   padding: 20px 0;
   position: relative;
+  padding-bottom: 150px !important;
 }
 
 .landing-page .restaurantsSection .restaurants {
-  width: 250px;
-  height: 150px;
+  width: 270px;
+  height: 170px;
   border-radius: 10px;
   margin: 20px 50px;
   background-size: cover;
@@ -11086,7 +11087,7 @@ a.text-dark:focus {
   background-color: #71bed1;
   z-index: 5;
   border-radius: 4px;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .landing-page .restaurantsSection .restaurants .restaurant-categories {
@@ -11100,7 +11101,7 @@ a.text-dark:focus {
   background-color: #ff6e54;
   z-index: 5;
   border-radius: 4px;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .landing-page .restaurantsSection .restaurants:hover {
@@ -11125,13 +11126,13 @@ a.text-dark:focus {
   border-bottom-right-radius: 50px;
   position: absolute;
   left: 0;
-  top: 0;
-  font-size: 1.1rem;
-  letter-spacing: 1.5px;
+  top: -25px;
+  font-size: 1rem;
+  letter-spacing: 1.3px;
 }
 
 .landing-page .restaurantsSection .no-restaurants-found.message {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   border-bottom: 2px solid #71bed1;
   padding-top: 50px;
   text-align: center;
@@ -11558,8 +11559,6 @@ a.text-dark:focus {
 
 .public-menu .wrapper-cart .cart-product-stats-content p:last-child {
   margin-top: -6%;
-.public-menu .wrapper-cart .cart-product-stats-content p {
-  margin-bottom: 0.5em;
 }
 
 .public-menu .wrapper-cart .cart-product-image {
@@ -11844,18 +11843,18 @@ nav .container .login a {
 }
 
 nav .container #navbarSupportedContent .my-btn-login {
-  font-size: 1.1rem;
-  letter-spacing: 2px;
+  font-size: 1rem;
+  letter-spacing: 1.7px;
 }
 
 nav .container #navbarSupportedContent .my-btn-register {
-  font-size: 1.1rem;
-  letter-spacing: 2px;
+  font-size: 1rem;
+  letter-spacing: 1.7px;
 }
 
 nav .container #navbarSupportedContent .my-btn-dashboard {
   font-size: 22px;
-  letter-spacing: 2px;
+  letter-spacing: 1.7px;
 }
 
 nav .container #navbarSupportedContent .my-btn-logout {
@@ -12113,8 +12112,6 @@ nav .container #navbarSupportedContent .my-btn-logout {
 .main-container .boxes-container .box a {
   margin-top: 20px;
   font-size: 20px;
-  font-weight: bold;
-  font-size: 18px;
   width: 165px;
 }
 
@@ -12288,8 +12285,6 @@ nav .container #navbarSupportedContent .my-btn-logout {
 
 .checkout-container #carrello .cart-product-stats-content p:last-child {
   margin-top: -6%;
-.checkout-container #carrello .cart-product-stats-content p {
-  margin-bottom: 0.5em;
 }
 
 .checkout-container #carrello .cart-product-image {
@@ -12524,7 +12519,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
 }
 
 .section.stats .stats-year {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   align-self: flex-start;
   margin-top: 25px;
   margin-bottom: 20px;
@@ -12548,7 +12543,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
   width: 100%;
 }
 
-html {
+:root {
   font-size: 20px;
 }
 
