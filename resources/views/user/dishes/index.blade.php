@@ -22,6 +22,9 @@
   </div>
     <a style="display:flex;align-items:center;" class="btn btn-bg-salmon my-btn-create" href="{{route('dishes.create')}}">Crea piatto <i style="padding-left:2px;" class="fas fa-plus-circle"></i></a>
 </nav>
+<div class="crud-title">
+    <h1 class="section-title text-center">I miei piatti</h1>
+</div>
 <div style="min-height:50vh;" class="table-responsive">
 <table class="table table-striped crud-table">
     <thead>
