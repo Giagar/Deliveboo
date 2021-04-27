@@ -10950,11 +10950,12 @@ a.text-dark:focus {
 
 #app {
   min-width: 360px;
-  background-color: #D7EAF0;
+  background-color: #d7eaf0;
 }
 
 #app main {
   background-color: #D7EAF0;
+  background-color: #d7eaf0;
   font-family: "Teko", sans-serif;
 }
 
@@ -10966,6 +10967,10 @@ a.text-dark:focus {
 .section {
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+.section:last-child {
+  padding-bottom: 100px !important;
 }
 
 .landing-page .section-title-container {
@@ -11081,7 +11086,7 @@ a.text-dark:focus {
   background-color: #71bed1;
   z-index: 5;
   border-radius: 4px;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 
 .landing-page .restaurantsSection .restaurants .restaurant-categories {
@@ -11095,7 +11100,7 @@ a.text-dark:focus {
   background-color: #ff6e54;
   z-index: 5;
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .landing-page .restaurantsSection .restaurants:hover {
@@ -11126,7 +11131,7 @@ a.text-dark:focus {
 }
 
 .landing-page .restaurantsSection .no-restaurants-found.message {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   border-bottom: 2px solid #71bed1;
   padding-top: 50px;
   text-align: center;
@@ -11134,6 +11139,7 @@ a.text-dark:focus {
 
 .public-menu {
   min-height: 100vh;
+  /* Hide scrollbar for IE, Edge and Firefox */
 }
 
 .public-menu .no-dishes {
@@ -11169,8 +11175,6 @@ a.text-dark:focus {
 
 .public-menu .main {
   padding: 9% 0;
-  max-height: 1600px;
-  overflow-y: auto;
   position: relative;
   display: flex;
   justify-content: space-around;
@@ -11352,13 +11356,37 @@ a.text-dark:focus {
   margin-left: 100px;
 }
 
+.public-menu .dishes-list-container::-webkit-scrollbar {
+  display: none;
+}
+
 .public-menu .dishes-list-container {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.public-menu .dishes-list-container {
+  max-height: 1500px;
+  overflow-y: auto;
+  padding: 10px;
   width: 40%;
+}
+
+@media (max-width: 992px) {
+  .public-menu .dishes-list-container h3 {
+    font-size: 1.2rem !important;
+  }
 }
 
 @media (max-width: 992px) {
   .public-menu .dishes-list-container {
     display: flex;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    overflow-y: none;
     width: 90%;
     margin: 0;
     justify-content: center;
@@ -11389,7 +11417,7 @@ a.text-dark:focus {
 .public-menu .dishes-list-container .dish {
   display: flex;
   border-radius: 50px;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
   margin-bottom: 50px;
   justify-content: space-between;
   min-height: 400px;
@@ -11446,6 +11474,14 @@ a.text-dark:focus {
   margin-top: 10px;
 }
 
+@media (max-width: 992px) {
+  .public-menu .dishes-list-container .dish button {
+    padding: 6px;
+    margin-top: 1px;
+    font-size: 16px;
+  }
+}
+
 .public-menu .dishes-list-container .dish button:hover {
   background-color: #1d1d1d;
   color: #fff;
@@ -11467,7 +11503,7 @@ a.text-dark:focus {
   min-height: 500px;
   width: 100%;
   border-radius: 50px;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
   position: relative;
   background-color: white;
 }
@@ -11510,7 +11546,7 @@ a.text-dark:focus {
   float: left;
   height: 100%;
   width: 49%;
-  box-shadow: 0 0 8px #000;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
   border-radius: 10px 0 0 10px;
 }
 
@@ -11522,6 +11558,8 @@ a.text-dark:focus {
 
 .public-menu .wrapper-cart .cart-product-stats-content p:last-child {
   margin-top: -6%;
+.public-menu .wrapper-cart .cart-product-stats-content p {
+  margin-bottom: 0.5em;
 }
 
 .public-menu .wrapper-cart .cart-product-image {
@@ -11535,7 +11573,7 @@ a.text-dark:focus {
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 0 10px 10px 0;
-  box-shadow: 0 0 8px #000;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
 }
 
 .public-menu .wrapper-cart .cart .cart-buttons {
@@ -11621,7 +11659,7 @@ a.text-dark:focus {
 }
 
 .flip-card {
-  top: 55%;
+  top: 65%;
   z-index: 2;
   left: 5%;
   position: absolute;
@@ -11817,6 +11855,7 @@ nav .container #navbarSupportedContent .my-btn-register {
 
 nav .container #navbarSupportedContent .my-btn-dashboard {
   font-size: 22px;
+  letter-spacing: 2px;
 }
 
 nav .container #navbarSupportedContent .my-btn-logout {
@@ -11894,6 +11933,22 @@ nav .container #navbarSupportedContent .my-btn-logout {
   font-size: 18px;
 }
 
+.crud-table td:last-child {
+  min-width: 400px;
+}
+
+@media (max-width: 992px) {
+  .crud-table td:last-child {
+    min-width: 170px;
+    text-align: center;
+  }
+
+  .crud-table td:last-child a,
+  .crud-table td:last-child button {
+    margin: 2px 0;
+  }
+}
+
 .my-btn-delete,
 .my-btn-edit,
 .my-btn-show {
@@ -11917,6 +11972,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
 
 .crud-form {
   font-size: 22px;
+  padding-bottom: 100px !important;
 }
 
 .crud-form .form-control {
@@ -11940,12 +11996,23 @@ nav .container #navbarSupportedContent .my-btn-logout {
   font-size: 22px;
 }
 
+.crud-title {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 60px;
+}
+
+.crud-title h1 {
+  margin-bottom: 0 !important;
+  margin-top: 100px;
+}
+
 .header {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 200px;
-  background-image: url("https://images.adsttc.com/media/images/5e4c/1025/6ee6/7e0b/9d00/0877/large_jpg/feature_-_Main_hall_1.jpg?1582043123");
+  background-image: radial-gradient(rgba(0, 2, 17, 0.16) 0%, rgba(0, 2, 17, 0.4) 100%), url("https://images.adsttc.com/media/images/5e4c/1025/6ee6/7e0b/9d00/0877/large_jpg/feature_-_Main_hall_1.jpg?1582043123");
   background-position: 50% 60%;
   text-align: center;
   padding: 0px 4px;
@@ -11973,7 +12040,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
 .main-container .info-container {
   width: 300px;
   border-radius: 50px;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
   padding: 40px;
   margin-left: 10%;
   background-color: white;
@@ -12030,7 +12097,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
 .main-container .boxes-container .box {
   display: flex;
   border-radius: 50px;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
   width: 30%;
   flex-direction: column;
   align-items: center;
@@ -12046,6 +12113,8 @@ nav .container #navbarSupportedContent .my-btn-logout {
 .main-container .boxes-container .box a {
   margin-top: 20px;
   font-size: 20px;
+  font-weight: bold;
+  font-size: 18px;
   width: 165px;
 }
 
@@ -12158,7 +12227,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
   min-height: 500px;
   width: 35%;
   border-radius: 50px;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
   position: relative;
   background-color: white;
 }
@@ -12207,7 +12276,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
   float: left;
   height: 100%;
   width: 49%;
-  box-shadow: 0 0 8px #000;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
   border-radius: 10px 0 0 10px;
 }
 
@@ -12219,6 +12288,8 @@ nav .container #navbarSupportedContent .my-btn-logout {
 
 .checkout-container #carrello .cart-product-stats-content p:last-child {
   margin-top: -6%;
+.checkout-container #carrello .cart-product-stats-content p {
+  margin-bottom: 0.5em;
 }
 
 .checkout-container #carrello .cart-product-image {
@@ -12232,7 +12303,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
   height: 100%;
   width: 49%;
   border-radius: 0 10px 10px 0;
-  box-shadow: 0 0 8px #000;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
 }
 
 .checkout-container #carrello .cart .cart-buttons {
@@ -12374,7 +12445,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
 .checkout-container #carrello #payment-form {
   width: 55%;
   border-radius: 50px;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
   background-color: white;
   padding: 40px;
 }
@@ -12394,7 +12465,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
 
 .checkout-container #carrello #payment-form .form-group input {
   margin: 5px 0;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 @media (max-width: 992px) {
@@ -12449,14 +12520,11 @@ nav .container #navbarSupportedContent .my-btn-logout {
   align-items: center;
   max-width: 750px;
   margin: 0 auto;
-}
-
-.section.stats .section-title-container {
-  margin-bottom: 40px;
+  padding-bottom: 180px !important;
 }
 
 .section.stats .stats-year {
-  font-size: 22px;
+  font-size: 1.5rem;
   align-self: flex-start;
   margin-top: 25px;
   margin-bottom: 20px;
@@ -12512,7 +12580,7 @@ main {
 }
 
 .section-title {
-  font-size: 50px;
+  font-size: 3rem;
   position: relative;
   z-index: 1;
   margin-bottom: 60px;

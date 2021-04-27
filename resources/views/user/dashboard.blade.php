@@ -41,7 +41,7 @@
     </div>
 
     <div class="box">
-        <img src="https://www.en.regione.lombardia.it/wps/wcm/connect/51150327-6f92-4a42-9648-a093b9b0c4d6/imm-statistic.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-51150327-6f92-4a42-9648-a093b9b0c4d6-l-1zic2" alt="">
+        <img src="https://www.giuseppefava.com/wp-content/uploads/2017/09/statistiche_per_wordpress.jpg" alt="">
             <a class="btn btn-bg-black btn-dark" href="{{route('statistics')}}">Vai alle statistiche</a>
     </div>
 </div>

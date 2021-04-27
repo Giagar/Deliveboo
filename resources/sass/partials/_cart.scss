@@ -32,8 +32,6 @@ min-height:100vh;
 
     .main {
         padding: 9% 0;
-        max-height:1600px;
-        overflow-y:auto;
         position: relative;
         @include flex;
         justify-content: space-around;
@@ -217,10 +215,30 @@ min-height:100vh;
 
     }
 
+    .dishes-list-container::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .dishes-list-container {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
     .dishes-list-container {
+     max-height:1500px;
+     overflow-y:auto;
+     padding:10px;
+        h3 {
+            @media (max-width: $desktop) {
+            font-size:1.2rem !important;
+            }
+
+        }
       width: 40%;
        @media (max-width: $desktop) {
             @include flex;
+            height:max-content;
+            overflow-y:none;
             width: 90%;
             margin: 0;
             justify-content: center;
@@ -251,7 +269,7 @@ min-height:100vh;
         .dish {
             @include flex;
             border-radius: 50px;
-            box-shadow: 0 0 10px #000;
+            box-shadow: $box-shadow-light;
             margin-bottom:50px;
             justify-content: space-between;
             min-height: 400px;
@@ -299,6 +317,11 @@ min-height:100vh;
                 padding: 10px;
                 font-weight: bold;
                 margin-top: 10px;
+                @media (max-width: $desktop) {
+                 padding:6px;
+                 margin-top:1px;
+                 font-size:16px;
+                }
 
                 &:hover {
                     background-color: $bg-footer-color;
@@ -320,7 +343,7 @@ min-height:100vh;
             min-height: 500px;
             width: 100%;
             border-radius: 50px;
-            box-shadow: 0 0 10px #000;
+            box-shadow: $box-shadow-light;
             position: relative;
             background-color: white;
 
@@ -357,7 +380,7 @@ min-height:100vh;
                     float: left;
                     height: 100%;
                     width: 49%;
-                    box-shadow: 0 0 8px #000;
+                    box-shadow: $box-shadow-light;
                     border-radius: 10px 0 0 10px;
 
                     &-content {
@@ -380,7 +403,7 @@ min-height:100vh;
                     background-size: cover;
                     background-repeat: no-repeat;
                     border-radius: 0 10px 10px 0;
-                    box-shadow: 0 0 8px #000;
+                    box-shadow: $box-shadow-light;
                 }
             }
 
@@ -473,7 +496,7 @@ min-height:100vh;
     @media (max-width: $desktop){
         display:none;
     }
-    top:55%;
+    top:65%;
     z-index:2;
     left:5%;
     position:absolute;

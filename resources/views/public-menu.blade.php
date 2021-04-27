@@ -7,7 +7,7 @@
 
 <div id="carrello" class="public-menu">
 
-    <div class="header" style="background-image: url({{ asset($restaurant->img) }})">
+    <div class="header" style="background-image:radial-gradient(rgba(0,2,17,0.16) 0%,rgba(0,2,17,0.4) 100%),url({{ asset($restaurant->img) }})">
         <p class="mobile-restaurant-name">{{$restaurant->restaurant_name}}</p>
         <p class="mobile-restaurant-description">{{$restaurant->restaurant_description}}</p>
         {{-- <div class="restaurant-info" style="background-image: url({{asset('images-websites/forchetta.jpg')}})">

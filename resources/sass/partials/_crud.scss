@@ -54,6 +54,21 @@ font-size:22px;
 }
 .crud-table{
     font-size:18px;
+
+    td:last-child {
+        min-width: 400px;
+
+        @media (max-width: $desktop) {
+            min-width: 170px;
+            text-align: center;
+
+            a, button {
+                margin: 2px 0;
+            }
+        }
+    }
+
+
 }
 
 .my-btn-delete,.my-btn-edit,.my-btn-show{
@@ -75,6 +90,7 @@ font-size:22px;
 
 .crud-form{
     font-size:22px;
+    padding-bottom: 100px !important;
     .form-control{
         font-size:22px;
     }
@@ -99,3 +115,15 @@ font-size:22px;
     font-size:22px;
 }
 }
+
+.crud-title {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 60px;
+    h1 {
+        margin-bottom: 0 !important;
+        margin-top: 100px;
+    }
+}
+
+
