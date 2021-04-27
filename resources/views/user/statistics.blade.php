@@ -70,7 +70,7 @@ let result = {
 <script>
     var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
-    type: 'line', // set the kind of chart
+    type: 'bar', // set the kind of chart
     data: {
         labels: [...monthValues],
         datasets: [

@@ -4,13 +4,10 @@
     align-items: center;
     max-width: 750px;
     margin: 0 auto;
-
-    .section-title-container {
-        margin-bottom: 40px;
-    }
+    padding-bottom: 180px !important;
 
     .stats-year {
-        font-size: 22px;
+        font-size: $font-medium;
         align-self: flex-start;
         margin-top: 25px;
         margin-bottom: 20px;
