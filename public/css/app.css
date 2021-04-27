@@ -11723,7 +11723,6 @@ a.text-dark:focus {
 
 footer {
   position: absolute;
-  font-size: 22px;
   z-index: 2;
   width: 100%;
   background-color: #1d1d1d;
@@ -11731,11 +11730,13 @@ footer {
 
 footer .top {
   background-color: #ff6e54;
+  font-size: 1.4rem;
 }
 
 footer .top div .grid-row div h6 {
   color: #1d1d1d;
   font-weight: bold;
+  font-size: 1.4rem;
 }
 
 footer .top div .grid-row div a {
@@ -11758,6 +11759,10 @@ footer .top div .grid-row div i:hover {
 
 footer .links {
   color: white;
+}
+
+footer .links div div {
+  font-size: 1rem;
 }
 
 footer .links div div a {
@@ -11785,12 +11790,12 @@ footer .links div div .contact-details {
 
 footer div {
   color: #fff;
-  margin-bottom: 15px;
 }
 
 footer .names {
   color: #fff;
   margin-bottom: 15px;
+  font-size: 1rem;
 }
 
 footer .names ul {
