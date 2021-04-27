@@ -1,9 +1,9 @@
 //LO STILE
 .crud-navbar{
 background-color:$bg-footer-color;
-font-size:22px;
+font-size: $font-small;
 .my-btn-create{
-    font-size:22px;
+    font-size: $font-small;
     @media (max-width: $desktop) {
         margin-top:2px;
     }
@@ -53,20 +53,35 @@ font-size:22px;
   }
 }
 .crud-table{
-    font-size:18px;
+    font-size: $font-small;
 
-    td:last-child {
-        min-width: 400px;
+    tbody {
 
-        @media (max-width: $desktop) {
-            min-width: 170px;
-            text-align: center;
+        tr {
+            th {
+                vertical-align: middle;
+            }
 
-            a, button {
-                margin: 2px 0;
+            td {
+                vertical-align: middle;
+            }
+
+            td:last-child {
+                min-width: 400px;
+
+
+                @media (max-width: $desktop) {
+                    min-width: 170px;
+                    text-align: center;
+
+                    a, button {
+                        margin: 2px 0;
+                    }
+                }
             }
         }
     }
+
 
 
 }

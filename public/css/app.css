@@ -10978,7 +10978,7 @@ a.text-dark:focus {
 }
 
 .landing-page .section-title-container .section-title {
-  font-size: 3rem;
+  font-size: 3.3rem;
   position: relative;
   z-index: 1;
   margin-bottom: 60px;
@@ -11858,21 +11858,22 @@ nav .container #navbarSupportedContent .my-btn-register {
 }
 
 nav .container #navbarSupportedContent .my-btn-dashboard {
-  font-size: 22px;
+  font-size: 1rem;
   letter-spacing: 1.7px;
 }
 
 nav .container #navbarSupportedContent .my-btn-logout {
-  font-size: 22px;
+  font-size: 1rem;
+  letter-spacing: 1.7px;
 }
 
 .crud-navbar {
   background-color: #1d1d1d;
-  font-size: 22px;
+  font-size: 1rem;
 }
 
 .crud-navbar .my-btn-create {
-  font-size: 22px;
+  font-size: 1rem;
 }
 
 @media (max-width: 992px) {
@@ -11934,21 +11935,29 @@ nav .container #navbarSupportedContent .my-btn-logout {
 }
 
 .crud-table {
-  font-size: 18px;
+  font-size: 1rem;
 }
 
-.crud-table td:last-child {
+.crud-table tbody tr th {
+  vertical-align: middle;
+}
+
+.crud-table tbody tr td {
+  vertical-align: middle;
+}
+
+.crud-table tbody tr td:last-child {
   min-width: 400px;
 }
 
 @media (max-width: 992px) {
-  .crud-table td:last-child {
+  .crud-table tbody tr td:last-child {
     min-width: 170px;
     text-align: center;
   }
 
-  .crud-table td:last-child a,
-  .crud-table td:last-child button {
+  .crud-table tbody tr td:last-child a,
+  .crud-table tbody tr td:last-child button {
     margin: 2px 0;
   }
 }
@@ -12023,14 +12032,14 @@ nav .container #navbarSupportedContent .my-btn-logout {
 }
 
 .header h1 {
-  font-size: 3.5em;
+  font-size: 3.3rem;
   color: white;
   text-shadow: 5px 5px 10px black;
 }
 
 @media screen and (max-width: 762px) {
   .header h1 {
-    font-size: 2.3em;
+    font-size: 2.3rem;
   }
 }
 
@@ -12052,10 +12061,12 @@ nav .container #navbarSupportedContent .my-btn-logout {
 
 .main-container .info-container h3 {
   padding: 5px 0;
+  font-size: 1.7rem;
 }
 
 .main-container .info-container ul {
   list-style: none;
+  font-size: 1rem;
 }
 
 .main-container .info-container ul span {
@@ -12079,13 +12090,13 @@ nav .container #navbarSupportedContent .my-btn-logout {
   }
 
   .main-container .info-container h3 {
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: bold;
     margin: 10px 0;
   }
 
   .main-container .info-container li {
-    font-size: 0.8em;
+    font-size: 0.85rem;
     word-wrap: break-word;
   }
 }
@@ -12116,7 +12127,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
 
 .main-container .boxes-container .box a {
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 1rem;
   width: 165px;
 }
 
@@ -12125,7 +12136,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
     width: 60%;
     padding: 5px;
     line-height: 1;
-    font-size: 16px;
+    font-size: 0.85rem;
   }
 }
 
@@ -12147,7 +12158,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
   }
 
   .main-container .boxes-container .box button a {
-    font-size: 0.8em;
+    font-size: 0.85rem;
   }
 }
 
@@ -12552,6 +12563,12 @@ nav .container #navbarSupportedContent .my-btn-logout {
   font-size: 20px;
 }
 
+@media screen and (max-width: 762px) {
+  :root {
+    font-size: 18px;
+  }
+}
+
 body {
   font-family: "Teko", sans-serif;
 }
@@ -12580,7 +12597,7 @@ main {
 }
 
 .section-title {
-  font-size: 3rem;
+  font-size: 3.3rem;
   position: relative;
   z-index: 1;
   margin-bottom: 60px;
