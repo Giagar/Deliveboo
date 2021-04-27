@@ -35,10 +35,19 @@ main {
 .btn-bg-black{
   background-color: $bg-footer-color !important;
   color: $secondary-color;
+  &:hover{
+    color: $bg-primary-color;
+  }
 }
 
 .btn-bg-salmon {
   background-color: $bg-primary-color !important;
+  &:hover{
+    background-color: hsl(9, 60%, 45%) !important;
+    color: #fff;
+    transition: 0 linear !important;
+    //filter: brightness(80%);
+  }
 }
 
 .section-title {

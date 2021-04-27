@@ -4,6 +4,10 @@ background-color:$bg-footer-color;
 font-size:22px;
 .my-btn-create{
     font-size:22px;
+    @media (max-width: $desktop) {
+        margin-top:2px;
+    }
+
 }
 .crud-search-section{
     @include flex;
@@ -24,17 +28,24 @@ font-size:22px;
 
           @media (max-width: $desktop) {
             width: 150px;
-            margin:2px 3px;
+            margin:2px 0px;
         }
 
         &:hover{
             background-color: rgba($bg-primary-color,0.9);
           }
       }
+      .search{
+        @media (max-width: $desktop) {
+            margin:0px 4px;
+        }
+
+      }
     input{
         border:none;
         border-radius: 3px;
         padding:5px 0 5px 5px;
+        margin: 2px 0px 2px 0px;
     }
   .crud-btn-active{
       background-color:$bg-primary-color;
@@ -71,7 +82,7 @@ font-size:22px;
     color:$bg-primary-color;
     background-color: $bg-footer-color;
     &:hover{
-         color:$bg-primary-color;
+         color:#fff;
     }
 }
 
