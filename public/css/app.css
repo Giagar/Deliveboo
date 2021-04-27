@@ -12532,6 +12532,8 @@ nav .container #navbarSupportedContent .my-btn-logout {
   max-width: 750px;
   margin: 0 auto;
   padding-bottom: 180px !important;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .section.stats .stats-year {
@@ -12557,6 +12559,18 @@ nav .container #navbarSupportedContent .my-btn-logout {
 .section.stats .chart-container {
   height: 500px;
   width: 100%;
+}
+
+@media screen and (max-width: 576px) {
+  .section.stats {
+    padding-bottom: 0px !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .section.stats {
+    margin-bottom: -50px !important;
+  }
 }
 
 :root {
