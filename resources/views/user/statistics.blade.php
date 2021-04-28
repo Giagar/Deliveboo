@@ -7,22 +7,26 @@
 <script>
 const orders ={!! $orders !!};
 
+function randomInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
 let result = {
     "01": {
-        totalOrders: 15,
-        money: 55.5,
+        totalOrders: randomInteger(5, 25),
+        money: randomInteger(20, 150),
         monthName: "Gennaio",
     },
 
     "02": {
-        totalOrders: 50,
-        money: 70,
+        totalOrders: randomInteger(5, 25),
+        money: randomInteger(20, 150),
         monthName: "Febbraio",
     },
 
     "03": {
-        totalOrders: 35,
-        money: 90,
+        totalOrders: randomInteger(5, 25),
+        money: randomInteger(20, 150),
         monthName: "Marzo",
     },
 
