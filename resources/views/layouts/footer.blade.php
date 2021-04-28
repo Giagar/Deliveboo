@@ -7,7 +7,7 @@
             <div class="container">
 
                 <!-- Grid row-->
-                <div class="grid-row row py-4 d-flex align-items-center px-3 mx-1">
+                <div class="grid-row row py-4 d-flex align-items-center mx-xl-2 px-xl-2">
 
                     <!-- Grid column -->
                     <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
