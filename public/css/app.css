@@ -11144,8 +11144,9 @@ a.text-dark:focus {
 }
 
 .public-menu .no-dishes {
-  margin-top: 50px;
-  font-size: 20px;
+  margin-top: 150px;
+  font-size: 30px;
+  margin-left: 10px;
 }
 
 .public-menu .mobile-restaurant-info {
@@ -12057,6 +12058,8 @@ nav .container #navbarSupportedContent .my-btn-logout {
   padding: 40px;
   margin-left: 10%;
   background-color: white;
+  text-align: center;
+  overflow-wrap: break-word;
 }
 
 .main-container .info-container h3 {
@@ -12071,10 +12074,13 @@ nav .container #navbarSupportedContent .my-btn-logout {
 
 .main-container .info-container ul span {
   font-weight: bold;
+  line-height: 0.9;
+  display: block;
 }
 
 .main-container .info-container ul li {
-  margin: 5px 0;
+  margin: 10px 0;
+  line-height: 0.9;
 }
 
 .main-container .info-container img {
