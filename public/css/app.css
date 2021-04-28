@@ -12240,6 +12240,17 @@ nav .container #navbarSupportedContent .my-btn-logout {
   padding: 10px 0;
 }
 
+.checkout-container .section-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkout-container .section-title-container .section-title {
+  margin: 0;
+  padding-top: 70px;
+}
+
 .checkout-container #carrello {
   display: flex;
   justify-content: space-around;

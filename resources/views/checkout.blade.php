@@ -15,7 +15,11 @@
         </ul>
     </div>
     @endif
-<div class="checkout-container">
+<div class="checkout-container section">
+    <div class="section-title-container">
+        <h2 class="text-center section-title">Il tuo carrello</h2>
+    </div>
+
     <div id="carrello" class="checkout" style="margin:10vh 0;"> {{-- Qui forse c'è un problema nell'usare due volte id carrello su due pagine diverse --}}
         <section class="cart">
 
