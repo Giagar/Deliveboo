@@ -29,6 +29,8 @@
         padding: 40px;
         margin-left:10%;
         background-color: white;
+        text-align: center;
+        overflow-wrap: break-word;
 
         h3 {
             padding: 5px 0;
@@ -40,9 +42,12 @@
             font-size: $font-small;
             span{
                font-weight: bold;
+               line-height: 0.9;
+               display: block;
             }
             li {
-                margin: 5px 0;
+                margin: 10px 0;
+                line-height: 0.9;
             }
         }
 
