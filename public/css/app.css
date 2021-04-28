@@ -12002,6 +12002,10 @@ nav .container #navbarSupportedContent .my-btn-logout {
   font-size: 1rem;
 }
 
+.crud-show {
+  padding-top: 70px !important;
+}
+
 .crud-show .buttons a {
   font-size: 22px;
 }
