@@ -1,5 +1,17 @@
 .checkout-container {
     padding: 10px 0;
+
+    .section-title-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .section-title {
+            margin: 0;
+            padding-top: 70px;
+        }
+    }
+
     #carrello {
         @include flex;
         justify-content: space-around;

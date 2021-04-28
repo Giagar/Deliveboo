@@ -11984,18 +11984,27 @@ nav .container #navbarSupportedContent .my-btn-logout {
   color: #fff;
 }
 
+.crud-title {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .crud-form {
-  font-size: 22px;
+  font-size: 1rem;
   padding-bottom: 100px !important;
 }
 
 .crud-form .form-control {
-  font-size: 22px;
+  font-size: 1rem;
 }
 
 .crud-form .form-buttons input,
 .crud-form .form-buttons a {
-  font-size: 22px;
+  font-size: 1rem;
+}
+
+.crud-show {
+  padding-top: 70px !important;
 }
 
 .crud-show .buttons a {
@@ -12235,6 +12244,17 @@ nav .container #navbarSupportedContent .my-btn-logout {
 
 .checkout-container {
   padding: 10px 0;
+}
+
+.checkout-container .section-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkout-container .section-title-container .section-title {
+  margin: 0;
+  padding-top: 70px;
 }
 
 .checkout-container #carrello {

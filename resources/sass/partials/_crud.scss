@@ -101,23 +101,28 @@ font-size: $font-small;
     }
 }
 
-
+.crud-title {
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
 .crud-form{
-    font-size:22px;
+    font-size: $font-small;
     padding-bottom: 100px !important;
+
     .form-control{
-        font-size:22px;
+        font-size: $font-small;
     }
     .form-buttons{
         input,a{
-        font-size:22px;
+        font-size: $font-small;
     }
     }
 }
 
 
 .crud-show{
+    padding-top: 70px !important;
  .buttons{
      a{
          font-size:22px;

@@ -1,7 +1,11 @@
 @extends('layouts.baseuser')
 @section('content')
 
-    <div class="product-container d-flex align-items-center flex-column crud-show" style="padding-top: 25px; padding-bottom: 25px;">
+
+    <div class="section product-container d-flex align-items-center flex-column crud-show" style="padding-top: 25px; padding-bottom: 25px;">
+        <div class="section-title-container">
+            <h1 class="section-title">{{ $dish->name }}</h1>
+        </div>
         <div class="card" style="width: 20rem;">
             <img class="card-img-top" src="{{asset($dish->img)}}" >
             <div class="card-body">

@@ -9,20 +9,20 @@ const orders ={!! $orders !!};
 
 let result = {
     "01": {
-        totalOrders: 0,
-        money: 0,
+        totalOrders: 15,
+        money: 55.5,
         monthName: "Gennaio",
     },
 
     "02": {
-        totalOrders: 0,
-        money: 0,
+        totalOrders: 50,
+        money: 70,
         monthName: "Febbraio",
     },
 
     "03": {
-        totalOrders: 0,
-        money: 0,
+        totalOrders: 35,
+        money: 90,
         monthName: "Marzo",
     },
 
