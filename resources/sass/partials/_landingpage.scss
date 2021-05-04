@@ -11,7 +11,7 @@
 
     main {
         background-color: #d7eaf0;
-        font-family: "Teko", sans-serif;
+        // font-family: "Teko", sans-serif;
     }
 }
 
@@ -32,6 +32,37 @@
 
 //STYLE
 .landing-page {
+
+    header {
+        height: 600px;
+        background-color: #EFECF3;
+
+        .header-content{
+            max-width: 1200px; // crea variabile
+            height: 100%;
+            // outline: 1px solid blue;
+            background: url("../../../storage/app/images/header-background.jpeg") no-repeat;
+            background-size:  auto 500px;
+            background-position: 90%;
+            margin: 0 auto;
+            position: relative;
+
+            .header-promo-container {
+                position: absolute;
+                top: 55%;
+                left: 90px;
+
+                .header-promo-variable {
+                    font-size: $font-extralarge !important;
+                }
+
+                .header-promo-fixed {
+                    font-size: $font-large !important;
+                }
+            }
+        }
+    }
+
     .section-title-container {
         @include flex;
         justify-content: center;
@@ -50,8 +81,9 @@
 
     .categoriesSection {
         padding: 10px 0;
-        max-width: 900px;
+        max-width: 1200px;
         margin: 0 auto;
+        outline: 1px dotted lightblue;
 
         .categories {
             cursor: pointer;

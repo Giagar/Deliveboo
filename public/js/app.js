@@ -49655,7 +49655,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       maxRestaurantShown: 9,
       restaurantsFound: 0,
       // flag per messaggio errore ricerca ristoranti
-      searchResultsTitle: "" // titolo mostrato a seconda della ricerca fatta
+      searchResultsTitle: "",
+      // titolo mostrato a seconda della ricerca fatta
       // categoryIcons: {
       //     Americano: 'Am',
       //     Cinese: 'Ci',
@@ -49678,7 +49679,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       //     Gelato: 'Ge',
       //     Caffetteria: 'Ca',
       // }
-
+      headerPromoContent: ["Feeling lazy?", "Craving sushi?", "Long day at work?", "Friends coming over?", "Time for something new?", "Discover and get great food"]
     };
   },
   mounted: function mounted() {

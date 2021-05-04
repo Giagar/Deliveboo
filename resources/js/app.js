@@ -63,6 +63,8 @@ const app = new Vue({
             //     Gelato: 'Ge',
             //     Caffetteria: 'Ca',
             // }
+
+            headerPromoContent: ["Feeling lazy?", "Craving sushi?", "Long day at work?", "Friends coming over?", "Time for something new?", "Discover and get great food"],
         }
     },
     mounted: function() {

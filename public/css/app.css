@@ -35,7 +35,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Nunito", sans-serif;
+  --font-family-sans-serif: "Noto Sans", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -67,7 +67,7 @@ section {
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
@@ -6408,7 +6408,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -6533,7 +6533,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -10955,7 +10955,6 @@ a.text-dark:focus {
 
 #app main {
   background-color: #d7eaf0;
-  font-family: "Teko", sans-serif;
 }
 
 .active-category {
@@ -10970,6 +10969,35 @@ a.text-dark:focus {
 
 .section:last-child {
   padding-bottom: 100px !important;
+}
+
+.landing-page header {
+  height: 600px;
+  background-color: #EFECF3;
+}
+
+.landing-page header .header-content {
+  max-width: 1200px;
+  height: 100%;
+  background: url(/images/header-background.jpeg?c68b262f9c33119d67e6f3d9cfe1e58c) no-repeat;
+  background-size: auto 500px;
+  background-position: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.landing-page header .header-content .header-promo-container {
+  position: absolute;
+  top: 55%;
+  left: 90px;
+}
+
+.landing-page header .header-content .header-promo-container .header-promo-variable {
+  font-size: 3.3rem !important;
+}
+
+.landing-page header .header-content .header-promo-container .header-promo-fixed {
+  font-size: 2.3rem !important;
 }
 
 .landing-page .section-title-container {
@@ -10990,8 +11018,9 @@ a.text-dark:focus {
 
 .landing-page .categoriesSection {
   padding: 10px 0;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
+  outline: 1px dotted lightblue;
 }
 
 .landing-page .categoriesSection .categories {
@@ -12685,7 +12714,7 @@ nav .container #navbarSupportedContent .my-btn-logout {
 }
 
 body {
-  font-family: "Teko", sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 main {
