@@ -10978,9 +10978,9 @@ a.text-dark:focus {
 
 .landing-page header .header-content {
   max-width: 1200px;
-  height: 100%;
+  height: 600px;
   background: url(/images/header-background.jpeg?c68b262f9c33119d67e6f3d9cfe1e58c) no-repeat;
-  background-size: auto 500px;
+  background-size: auto 600px;
   background-position: 90%;
   margin: 0 auto;
   position: relative;
@@ -11020,20 +11020,22 @@ a.text-dark:focus {
   padding: 10px 0;
   max-width: 1200px;
   margin: 0 auto;
+  height: 200px;
+  overflow-x: scroll;
   outline: 1px dotted lightblue;
 }
 
 .landing-page .categoriesSection .categories {
   cursor: pointer;
-  margin: 10px 20px;
+  margin: 10px 17.5px;
   text-align: center;
   position: relative;
   border-radius: 6px;
 }
 
 .landing-page .categoriesSection .categories img {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   text-align: center;
   position: relative;

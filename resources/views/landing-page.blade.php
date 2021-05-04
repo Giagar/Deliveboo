@@ -28,7 +28,7 @@
             </div>
 
 
-            <div class="d-flex flex-wrap justify-content-center categoriesSection">
+            <div class="d-flex justify-content-start categoriesSection">
                 <div @click="selectedCategory(category)" v-for="(category, indexCategory) in categories" :key="indexCategory" :class="'categories text-center' + (selected === category.name ? ' active-category ' : '')">
                     <img :src="category.img" alt="">
                     <h4>@{{category.name}}</h4>
