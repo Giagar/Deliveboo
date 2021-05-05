@@ -79,6 +79,43 @@
         }
     }
 
+    .main-gallery {
+        background: #EEE;
+        max-width: 1110px;
+
+        .gallery-cell {
+          width: 150px;
+          height: 200px;
+          margin-right: 10px;
+          background: #8C8;
+          counter-increment: gallery-cell;
+        }
+
+        .gallery-cell.is-selected {
+          /*background: #ED2;*/
+        }
+
+        .gallery-cell:hover {
+          background: yellow;
+        }
+
+        /* cell number */
+        .gallery-cell:before {
+          display: block;
+          text-align: center;
+        //   content: counter(gallery-cell);
+          line-height: 200px;
+          font-size: 80px;
+          color: white;
+        }
+
+        .flickity-page-dots {
+          display:none;
+        }
+      }
+
+
+
     .categoriesSection {
         padding: 10px 0;
         max-width: 1200px;

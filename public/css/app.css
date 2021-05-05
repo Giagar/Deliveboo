@@ -11016,6 +11016,40 @@ a.text-dark:focus {
   text-transform: uppercase;
 }
 
+.landing-page .main-gallery {
+  background: #EEE;
+  max-width: 1110px;
+  /* cell number */
+}
+
+.landing-page .main-gallery .gallery-cell {
+  width: 150px;
+  height: 200px;
+  margin-right: 10px;
+  background: #8C8;
+  counter-increment: gallery-cell;
+}
+
+.landing-page .main-gallery .gallery-cell.is-selected {
+  /*background: #ED2;*/
+}
+
+.landing-page .main-gallery .gallery-cell:hover {
+  background: yellow;
+}
+
+.landing-page .main-gallery .gallery-cell:before {
+  display: block;
+  text-align: center;
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+.landing-page .main-gallery .flickity-page-dots {
+  display: none;
+}
+
 .landing-page .categoriesSection {
   padding: 10px 0;
   max-width: 1200px;
