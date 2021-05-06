@@ -28,17 +28,18 @@
                 <h2 class="text-center section-title">Seleziona una categoria</h2>
             </div>
 
-            <div class="main-gallery">
-                <div class="gallery-cell cell1">1</div>
-                <div class="gallery-cell cell2">2</div>
-                <div class="gallery-cell cell3">3</div>
-                <div class="gallery-cell cell4">4</div>
-                <div class="gallery-cell cell5">5</div>
-                <div class="gallery-cell cell6">6</div>
-                <div class="gallery-cell cell7">7</div>
-                <div class="gallery-cell cell8">8</div>
-                <div class="gallery-cell cell9">9</div>
-                <div class="gallery-cell cell10">10</div>
+            <div class="main-gallery" v-if="Object.keys(categories).length > 0">
+                <div v-for="(category, indexCategory) in categories" class="gallery-cell" :key="indexCategory"></div>
+                {{-- <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div> --}}
             </div>
 
             <div class="d-flex justify-content-start categoriesSection">
@@ -88,17 +89,19 @@
 
     </main>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
 <script src="{{ asset('js/app.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
 <script>
-    var flkty = new Flickity( '.main-gallery', {
-        // options
-        cellAlign: 'left',
-        contain: true,
-        // freeScroll: true,
-        // wrapAround: true,
-        autoPlay: true
-    });
+    setTimeout(() => {
+        var flkty = new Flickity( '.main-gallery', {
+            // options
+            cellAlign: 'left',
+            contain: true,
+            // freeScroll: true,
+            // wrapAround: true,
+            // autoPlay: true
+        });
+    }, 500);
 </script>
 
 @endsection
